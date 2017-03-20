@@ -1,6 +1,6 @@
-Sanger Biocluster 
-------------------
------------------
+**Sanger Biocluster **
 
-Welcome to a new world !  
------------------------
+
+
+> Welcome to a new world !   
+
