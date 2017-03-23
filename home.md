@@ -6,12 +6,12 @@ Sanger Biocluster
 
 桑格开发工作流
 ---------------
-![Sanger开发工作流](/uploads/695daeb29a6bb5e0944e4265be7e6fa0/Sanger开发工作流.png)
+![开发流程](img/Sanger开发工作流.svg)
 
 
 ### 规范文档
 
-* 集群使用
+#### 集群使用
 	
 	+ 开发环境
 	登录节点： 192.168.12.102 用户：sanger-dev，用户目录使用~/sg-users中个人目录,非个人目录中不要随意存放文件或删除文件
@@ -24,7 +24,7 @@ Sanger Biocluster
 		- install_packages/ 软件包安装目录
 		- library/  安装软件时需要的linux库
 		- program/	基础软件，编程语言等
-		安装需记录下安装信息，在[App Install List](App Install List)中添加记录。
+		安装需记录下安装信息，在[AppInstall](AppInstall.md)中添加记录。
 
 
 	+ 调试代码
@@ -32,7 +32,7 @@ Sanger Biocluster
 		~/workspace 为测试运行数据结果目录。
 
 
-* 开发编程
+#### 开发编程
 
 	+ Git & gitlab
 	代码开发统一使用git库进行代码编写和提交；
@@ -44,11 +44,10 @@ Sanger Biocluster
 		注释信息简洁明晰；
 
 
-* 流程解析PPT报告
-
+#### 流程解析PPT报告
 	包含要点：分析功能、分析方法、软件命令、输入输出、文件内容和格式、命令参数、运行逻辑、运行测试情况（稳定性和资源耗用）。
 
-
+#### 方案设计
 
 
 
@@ -56,30 +55,30 @@ Sanger Biocluster
 
 ### 基础技能
 
-* 集群系统
+#### 集群系统
 
-* Linux
+#### Linux
 
-* Slurm
+#### Slurm
 
-* Git
+#### Git
 
-* Python
+#### Python
 
-* Axure
+#### Axure
 
-* Mongo
+#### Mongo
 
-* MySQL
+#### MySQL
 
 
 ### 开发工具
 
-* 代码提交
-* 代码编写
-* 集群使用
-* 原型制作
-* 数据库
+#### 代码提交
+#### 代码编写
+#### 集群使用
+#### 原型制作
+#### 数据库
 
 
 ### 框架学习
@@ -89,6 +88,14 @@ Sanger Biocluster
 
 
 ### 可视化模板
+
+
+
+
+
+
+
+
 
 
 
