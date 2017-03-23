@@ -33,6 +33,7 @@ Sanger Biocluster
 
 
 * 开发编程
+
 	+ Git & gitlab
 	代码开发统一使用git库进行代码编写和提交；
 	登录gitlba平台 git.majorbio.com 进行协作开发，受保护分支需进行merge request代码审核。
@@ -44,6 +45,7 @@ Sanger Biocluster
 
 
 * 流程解析PPT报告
+
 	包含要点：分析功能、分析方法、软件命令、输入输出、文件内容和格式、命令参数、运行逻辑、运行测试情况（稳定性和资源耗用）。
 
 
