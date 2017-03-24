@@ -8,7 +8,7 @@ Sanger Biocluster
 
 桑格开发工作流
 ---------------
-![开发流程](img/Sanger开发工作流.svg)
+![开发流程图](img/Sanger-workflow.png)
 
 
 # 规范文档
