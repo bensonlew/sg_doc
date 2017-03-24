@@ -28,7 +28,7 @@ Sanger Biocluster
 	- install_packages/ 软件包安装目录
 	- library/  安装软件时需要的linux库
 	- program/	基础软件，编程语言等
-	安装需记录下安装信息，在[AppInstall](app-install-list.md)中添加记录。
+	安装需记录下安装信息，在[AppInstall](AppInstallList)中添加记录。
 
 
 * 调试代码
