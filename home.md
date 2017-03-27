@@ -88,7 +88,7 @@ Sanger Biocluster
 	- 单模块说明文档
 
 	包含要点：模块路径Path、程序安装、功能描述、参数设计、运行逻辑
-	参考示例：[blast Tool](/examples/blast.md)
+	参考示例：[blast Tool](/examples/blast)
 
 	- workflow流程图
 
@@ -178,21 +178,20 @@ Sanger Biocluster
 
 
 # 生信模块
-
-	生信模块存放目录为：`src\mbio`
+生信模块存放目录为：`src\mbio`
 
 ### workflow
 
-	workflow存放目录为：`src\mbio\workflows`
+workflow存放目录为：`src\mbio\workflows`
 
 | 模块名称 | 路径  | 功能说明 |
 | ------- |-------|-------------|
-| metabase|[meta.metabase](/mfiles/workflows/metabase.md)|微生物多样性流程基础分析工作流.|
+| metabase|[meta.metabase](/mfiles/workflows/metabase)|微生物多样性流程基础分析工作流.|
 |         |       |             |
 
 ### module
 
-	modules存放目录为：`src\mbio\modules`
+modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |
 | ------- |-------|-------------|
@@ -201,7 +200,7 @@ Sanger Biocluster
 
 ### tool
 
-	tools存放目录为：`src\mbio\tools`
+tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明 |
 | ------- |-------|-------------|
@@ -210,7 +209,7 @@ Sanger Biocluster
 
 ### file
 
-	files存放目录为：`src\mbio\files`
+files存放目录为：`src\mbio\files`
 
 | 模块名称 | 路径  | 功能说明 |
 | ------- |-------|-------------|
@@ -219,7 +218,7 @@ Sanger Biocluster
 
 ### package
 
-	packages存放目录为：`src\mbio\packages`
+packages存放目录为：`src\mbio\packages`
 
 | 模块名称 | 路径  | 功能说明 |
 | ------- |-------|-------------|
