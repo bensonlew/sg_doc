@@ -88,7 +88,7 @@ Sanger Biocluster
 	- 单模块说明文档
 
 	包含要点：模块路径Path、程序安装、功能描述、参数设计、运行逻辑
-	参考示例：[blast Tool](/examples/blast)
+	参考示例：[blast Tool](/examples/blast.md)
 
 	- workflow流程图
 
