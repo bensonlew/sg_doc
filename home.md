@@ -88,7 +88,7 @@ Sanger Biocluster
 	- 单模块说明文档
 
 	包含要点：模块路径Path、程序安装、功能描述、参数设计、运行逻辑
-	参考示例：[blast Tool](examples/tool_info.md)
+	参考示例：[blast Tool](/examples/blast.md)
 
 	- workflow流程图
 
@@ -187,7 +187,7 @@ Sanger Biocluster
 
 | 模块名称 | 路径  | 功能说明 |
 | ------- |-------|-------------|
-| metabase|[meta.metabase](mfiles\workflows\metabase)|微生物多样性流程基础分析工作流.|
+| metabase|[meta.metabase](/mfiles/workflows/metabase.md)|微生物多样性流程基础分析工作流.|
 |         |       |             |
 
 ### module
