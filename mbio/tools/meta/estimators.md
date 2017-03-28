@@ -10,6 +10,7 @@
 -----------------------------------
 
 otu2shared
+
 mothur
 
 安装路径
@@ -21,13 +22,15 @@ mothur
 模块Path
 -----------
 
-**tools.meta.diversity.alpha.estimatos**
+**tools.meta.alpha_diversity.estimatos**
 
 主要命令及功能模块
 -----------------------------------
 
 _otu2shared.pl -i otu_table.xls -l 0.97 -o otu.shared_
+
 _mothur "#summary.single(shared=otu.shared,groupmode=f,calc=ace-chao-shannon-simpson)"_
+
 _estimatos.py_
 
 参数设计
