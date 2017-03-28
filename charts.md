@@ -5,7 +5,7 @@
 
 | [PCA](/charts/pca_plot)| [PCA_3d](/charts/pca_3d)|[PCA_3d](/charts/pca_3d)|
 | -------------------------- |------------------------ |------------------------ |
-|[![pca示例](/img/pca.JPG)](http://git.majorbio.com/sanger_bioinfo/SangerCharts/blob/master/demo/pca_n.html) | ![pca示例](img/pca.jpg)      | ![pca示例](img/pca.JPG)      |
+|[![pca示例](img/pca.JPG)](http://git.majorbio.com/sanger_bioinfo/SangerCharts/blob/master/demo/pca_n.html) | ![pca示例](img/pca.jpg)      | ![pca示例](img/pca.JPG)      |
 | [PCA](/charts/pca_plot)| [PCA_3d](/charts/pca_3d)|[PCA_3d](/charts/pca_3d)|
 |![pca示例](img/pca.JPG) | [![pca_3d示例](img/pca.JPG)](http://git.majorbio.com/sanger_bioinfo/SangerCharts/blob/master/demo/PCA_3D.html)      |![pca示例](img/pca.JPG)      |
 
