@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+
+	<title>jvenn</title>
+	<!-- Les styles -->
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="css/docs.css" rel="stylesheet" media="screen">
+	<link href="css/prettify.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/prettify.js"></script>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      	<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="./index.html">jvenn</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="./index.html">About</a></li>
+						<li><a href="./example.html">Example</a></li>
+						<li class="active"><a href="./documentation.html">Plugin documentation</a></li>
+						<li><a href="./usermanual.html">User manual</a></li>
+						<li><a target="_blank" href="https://mulcyber.toulouse.inra.fr/plugins/mediawiki/wiki/venny/index.php/Accueil">Sources</a></li>
+						<li><a href="mailto:support.genopole@toulouse.inra.fr">Contact</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="span3 bs-docs-sidebar">
+				<ul class="nav nav-list bs-docs-sidenav affix">
+					<li class="active"><a href="#plugin-insertion"><i class="icon-chevron-right"></i> plugin insertion</a></li>
+					<li><a href="#series"><i class="icon-chevron-right"></i> series</a></li>
+					<li><a href="#displayMode"><i class="icon-chevron-right"></i> displayMode</a></li>
+					<li><a href="#displayStat"><i class="icon-chevron-right"></i> displayStat</a></li>
+					<li><a href="#fnClickCallback"><i class="icon-chevron-right"></i> fnClickCallback</a></li>
+					<li><a href="#colors"><i class="icon-chevron-right"></i> colors</a></li>
+					<li><a href="#fontFamily"><i class="icon-chevron-right"></i> fontFamily</a></li>
+					<li><a href="#fontSize"><i class="icon-chevron-right"></i> fontSize</a></li>
+					<li><a href="#shortNumber"><i class="icon-chevron-right"></i> shortNumber</a></li>
+					<li><a href="#disableClick"><i class="icon-chevron-right"></i> disableClick</a></li>
+					<li><a href="#useValues"><i class="icon-chevron-right"></i> useValues</a></li>
+					<li><a href="#exporting"><i class="icon-chevron-right"></i> exporting</a></li>
+					<li><a href="#search"><i class="icon-chevron-right"></i> search...</a></li>
+		    	</ul>
+		  	</div>
+		  	
+		  	<div class="span9">
+		  		<section id="plugin-insertion">
+					<div class="page-header">
+				    	<h1>Plugin insertion</h1>
+					</div>
+				  	<p>In order to use jvenn, you need to import within your web page: </p>
+				  	<ul>
+				  		<li><a href="http://jquery.com/">jQuery v1.6.x or higher</a></li>
+				  		<li><a href="src/jvenn.min.js">jvenn.min.js</a></li>
+				  	</ul>
+				  	<p>Take a peek at the code below, a single function call to initialise the venn diagram is all it takes:</p> 
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+        name: 'Actors',
+        data: ["Marilyn Monroe", "Arnold Schwarzenegger", "Jack Nicholson", "Barbra Streisand", "Robert de Niro", "Dean Martin", "Harrison Ford"]
+      }, {
+        name: 'Singers',
+        data: ["Freddy Mercury", "Barbra Streisand", "Dean Martin", "Ricky Martin", "Celine Dion", "Marilyn Monroe"]
+      }]
+  });
+});</pre>
+				</section>
+				
+		  		<section id="series">
+					<div class="page-header">
+				    	<h1>series: the data in json</h1>
+					</div>
+				  	<p>The serie can be a list of value, the plugin will then compute itself the intersections between lists.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+        name: 'Actors',
+        data: ["Marilyn Monroe", "Arnold Schwarzenegger", "Jack Nicholson", "Barbra Streisand", "Robert de Niro", "Dean Martin", "Harrison Ford"]
+      }, {
+        name: 'Singers',
+        data: ["Freddy Mercury", "Barbra Streisand", "Dean Martin", "Ricky Martin", "Celine Dion", "Marilyn Monroe"]
+      }]
+  });
+});</pre>
+					<p> The serie can also define the number of occurence for each intersections and their values. If only the data are provided, 
+					the values are computed. If only the values are provided the callback function is desactivated.</p>
+					<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+    	name: {A: 'Actors',
+               B: 'Singers'},
+    	data: {A: ["Arnold Schwarzenegger", "Jack Nicholson", "Robert de Niro", "Harrison Ford"], B: ["Freddy Mercury", "Ricky Martin", "Celine Dion"], AB: ["Marilyn Monroe", "Barbra Streisand", "Dean Martin"]},
+    	values: {A: 4, B: 3, AB: 3}
+    }],
+  });
+});</pre>
+					<p>Finaly, the serie can define the list values with the number of occurence for each value.</p>
+					<pre class="prettyprint">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+          name: 'sample1',
+          data: ["Otu1", "Otu2", "Otu3", "Otu4", "Otu5"],
+          values: [5, 15, 250, 20, 23]
+       },{
+          name: 'sample2',
+          data: ["Otu1", "Otu5", "Otu6", "Otu7"],
+          values: [234, 29, 239, 5]
+       }]
+  });
+});</pre>
+				</section>
+				
+				<section id="displayMode">
+					<div class="page-header">
+				    	<h1>displayMode</h1>
+					</div>
+				  	<p>The default value is 'classic' to have a classical venn diagram to be displayed. If you want a Edwards-Venn diagram display,
+				  	just set this option to 'edwards'. Available values for this parameters are: 'classic', 'edwards'.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    displayMode: 'edwards'
+  });
+});</pre>
+				</section>
+
+				<section id="displayStat">
+					<div class="page-header">
+				    	<h1>displayStat</h1>
+					</div>
+				  	<p>The default value is true to display some statistics based on input lists. The first chart represents the histogram of the 
+				  	lists size, providing to the user a rapid view on its lists composition to verify the samples homogeneity. The second chart 
+				  	displays the number of common and specific elements between lists. This feature allows to quickly get an insight on the 
+				  	similarity of the data sets when comparing multiple Venn diagrams.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    displayStat: false
+  });
+});</pre>
+				</section>
+				
+				<section id="fnClickCallback">
+					<div class="page-header">
+				    	<h1>fnClickCallback</h1>
+					</div>
+				  	<p>The callback function to execute when the user click on a number. </p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+      name: {A: 'List 1',
+                  B: 'List 2',
+                  C: 'List 3',
+                  D: 'List 4'},
+      data: {A: 340, B: 562, C: 620, D: 592,
+                AB: 639, AC: 456, AD: 257, BC: 915,
+                BD: 354, CD: 143, ABC: 552, ABD: 578,
+                ACD: 298, BCD: 613, ABCD: 148}
+    }],
+    fnClickCallback: function() {
+      var value = "";
+      if (this.listnames.length == 1) {
+        value += "Elements only in ";
+      } else {
+        value += "Common elements in ";
+      }
+      for (name in this.listnames) {
+         value += this.listnames[name] + " ";
+      }
+      value += ":\n";
+      for (val in this.list) {
+        value += this.list[val] + "\n";
+      }
+      alert(value);
+    }
+  });
+});</pre>
+				</section>
+				
+				<section id="colors">
+					<div class="page-header">
+				    	<h1>colors</h1>
+					</div>
+				  	<p>Jvenn comes with some default colors, you can change them to the ones you want.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    colors: ["rgb(0,102,0)","rgb(90,155,212)","rgb(241,90,96)","rgb(250,220,91)","rgb(255,117,0)","rgb(192,152,83)"]
+  });
+});</pre>
+				</section>
+
+				<section id="fontFamily">
+					<div class="page-header">
+				    	<h1>fontFamily</h1>
+					</div>
+				  	<p>The jvenn default font family is Arial, you can change it using "fontFamily" parameter.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    fontFamily: "monospace"
+  });
+});</pre>
+				</section>
+				
+				<section id="fontSize">
+					<div class="page-header">
+				    	<h1>fontSize</h1>
+					</div>
+				  	<p>The jvenn default font size is 12px, you can change it using "fontSize" parameter.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    fontSize: "11px"
+  });
+});</pre>
+				</section>
+
+				<section id="shortNumber">
+					<div class="page-header">
+				    	<h1>shortNumber</h1>
+					</div>
+				  	<p>Default is false, if set to true, when intersection counts are too big to be displayed, jvenn will
+				  	add a "?" instead of the value, which is accessible on the rollover action.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    shortNumber: true
+  });
+});</pre>
+				</section>
+				
+				<section id="disableClick">
+					<div class="page-header">
+				    	<h1>disableClick</h1>
+					</div>
+				  	<p>Default is false, if set to true, the click on the number si disabled.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+        name: 'Actors',
+        data: ["Marilyn Monroe", "Arnold Schwarzenegger", "Jack Nicholson", "Barbra Streisand", "Robert de Niro", "Dean Martin", "Harrison Ford"]
+      }, {
+        name: 'Singers',
+        data: ["Freddy Mercury", "Barbra Streisand", "Dean Martin", "Ricky Martin", "Celine Dion", "Marilyn Monroe"]
+      }],
+      disableClick: true
+  });
+});</pre>
+				</section>
+				
+				<section id="useValues">
+					<div class="page-header">
+				    	<h1>useValues</h1>
+					</div>
+				  	<p>Default is false, if set to true, the values provided in a mixte serie will be considered as the number of occurence of the element.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+          name: 'sample1',
+          data: ["Otu1", "Otu2", "Otu3", "Otu4", "Otu5", "Otu6", "Otu7"],
+          values: [5, 15, 250, 20, 23, 58, 89]
+       }],
+      useValues: true
+  });
+});</pre>
+				</section>
+				
+				<section id="exporting">
+					<div class="page-header">
+				    	<h1>exporting</h1>
+					</div>
+				  	<p>Default is true, an export module is added to the window, if set to false the export module is disabled.</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+          name: 'sample1',
+          data: ["Otu1", "Otu2", "Otu3", "Otu4", "Otu5", "Otu6", "Otu7"],
+          values: [5, 15, 250, 20, 23, 58, 89]
+       }],
+      exporting: false
+  });
+});</pre>
+				</section>
+				
+				<section id="search">
+					<div class="page-header">
+				    	<h1>search...</h1>
+					</div>
+				  	<p>Three parameters to manage a search field:
+				  	<ul>
+				  		<li>searchInput: a jquery object (an html input element), default value is null for no search feature</li>
+				  		<li>searchStatus: a jquery object (a span type element) to display the search status</li>
+				  		<li>searchMinSize: the minimum size of the input string to start the search.</li>
+				  	</ul>
+				  	</p>
+				  	<pre class="prettyprint linenums">
+$(document).ready(function(){
+  $('#example').jvenn({
+    series: [{
+          name: 'sample1',
+          data: ["Otu1", "Otu2", "Otu3", "Otu4", "Otu5", "Otu6", "Otu7"],
+          values: [5, 15, 250, 20, 23, 58, 89]
+       }],
+       searchInput:  $("#search-field"),
+       searchStatus: $("#search-status"),
+       searchMinSize: 1
+  });
+});</pre>
+				</section>
+		  	</div>
+		</div>
+		
+		<hr>
+		<footer style="text-align: center;">
+			<p>Copyright &copy; 2015, INRA | Designed by <a href="http://bioinfo.genotoul.fr" target="_blank">GenoToul Bioinfo</a> and
+			   <a href="http://sigenae.org" target="_blank">Sigenae</a> teams.
+			</p>
+	    </footer>
+	</div>
+	<script>
+     	!function ($) {
+     		$(function(){
+				window.prettyPrint && prettyPrint()   
+			})
+		}(window.jQuery)
+	</script>
+</body>
+</html>

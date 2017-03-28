@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	
+	<title>jvenn: an interactive Venn diagram viewer</title>
+	<meta name="description" content="A new JavaScript library. It processes lists and produces Venn diagrams. It handles up to six input lists and presents results using classical or Edwards-Venn layouts. User interactions can be controlled and customized. Finally, jvenn can easily be embeded in a web page, allowing to have dynamic Venn diagrams."> 
+	
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<style type="text/css">
+		body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
+	</style>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      	<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="./index.html">jvenn</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active"><a href="./index.html">About</a></li>
+						<li><a href="./example.html">Example</a></li>
+						<li><a href="./documentation.html">Plugin documentation</a></li>
+						<li><a href="./usermanual.html">User manual</a></li>
+						<li><a target="_blank" href="https://mulcyber.toulouse.inra.fr/plugins/mediawiki/wiki/venny/index.php/Accueil">Sources</a></li>
+						<li><a href="mailto:support.genopole@toulouse.inra.fr">Contact</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<!-- Main hero unit for a primary marketing message or call to action -->
+		<div class="hero-unit">
+			<h1>jvenn</h1>
+			<p><b>jvenn</b> is a plug-in for the <a href="http://www.jquery.com/" target="_blank">jQuery</a> Javascript 
+				library. It is a flexible tool, based upon the venny tool first developed by J.C Oliveros (Oliveros, J.C (2007) 
+				<a href="http://bioinfogp.cnb.csic.es/tools/venny/index.html" target="_blank">VENNY</a>, An integrative tool for 
+				comparing lists with Venn Diagrams). Key features:</p>
+			<p><ul>
+				<li>handles up to 6 classes venn diagram,</li>
+				<li>allows to display Edwards-Venn diagram,</li>
+				<li>is easily integrable within your own web site,</li>
+				<li>allows to provide the data from 3 different ways (lists/intersection counts/count lists),</li>
+				<li>control the click callback function,</li>
+				<li>provides statistic charts based on input data,</li>
+				<li>search for elements,</li>
+				<li>exports the venn diagram to PNG and SVG,</li>
+				<li>exports lists to CSV.</li>
+			</ul></p>
+        	<br/>
+			<div style="position:absolute;width:1040px;padding:0px 5px 0 5px;background-color:white;border:1px solid lightgrey;border-radius:5px;">
+				<span class="label label-info" style="position:absolute;top:-10px;left:-10px">How to cite</span>
+			    <h6>Philippe Bardou, Jérôme Mariette, Frédéric Escudié, Christophe Djemiel and Christophe Klopp. jvenn: an interactive Venn diagram viewer.
+			  	    BMC Bioinformatics 2014, 15:293 doi:10.1186/1471-2105-15-293 &nbsp;&nbsp; - &nbsp;&nbsp;
+				<a href="http://www.biomedcentral.com/1471-2105/15/293" target="_blank"> Abstract/FREE Full Text </a></h6>
+			</div>
+			<br/><br/>
+      </div>
+      
+      <!-- Example row of columns -->
+      <div class="row">
+		  <div class="span4">
+  			<h2>Plugin documentation</h2>
+  			<p>Having problems embedding jvenn in your Web application? Check out our documentation on how to include and use the library.</p>
+  			<p><a class="btn" href="./documentation.html">Read documentation &raquo;</a></p>
+		  </div>
+		  <div class="span4">
+  			<h2>User manual</h2>
+  			<p>Having problems using jvenn? Check out our manual on how to use the Web application.</p>
+  			<p><a class="btn" href="./usermanual.html">Read manual &raquo;</a></p>
+		  </div>
+		  <div class="span4">
+		  	<h2>Example</h2>
+		  	<p>Check out an example of jvenn integration providing lists as input.</p>
+		  	<p><a class="btn" href="./example.html">View example &raquo;</a></p>
+          </div>
+      </div>
+      <hr>
+      <footer style="text-align: center;">
+			<p>Copyright &copy; 2015, INRA | Designed by <a href="http://bioinfo.genotoul.fr" target="_blank">GenoToul Bioinfo</a> and
+			   <a href="http://sigenae.org" target="_blank">Sigenae</a> teams.
+			</p>
+	  </footer>
+    </div>
+</body>
+</html>

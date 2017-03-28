@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>highcharts</title>
+
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/highcharts/js/highcharts.src.js"></script>
+<script src="../lib/highcharts/js/highcharts-more.src.js"></script>
+<script src="../lib/highcharts/js/highcharts.js"></script>
+<script src="../lib/highcharts/js/modules/heatmap.js"></script>
+<script src="../lib/highcharts/js/modules/exporting.js"></script>
+<script src="../lib/highcharts/js/highcharts.js"></script>
+<script src="../lib/highcharts/js/highcharts-3d.js"></script>
+<script src="../lib/highcharts/js/modules/exporting.js"></script>
+<script src="../src/PCA_3D.js"></script>
+</head>
+<body>
+  <div id="container" style="width: 800px; height: 800px; margin: 0 auto"></div>
+<script language="JavaScript">
+function howManyArgs(){
+    alert (arguments.length)
+}
+  var contents =  {
+    series: [{
+        name: 'weishengwu1',
+        color: 'rgba(223,83,83,.5)',
+        data: [[-1, 6, 5],
+       [8, -7, 9],
+       [1, 3, 4],
+       [4, 6, 8],
+       [5, 7, 7],
+       [6, 9, 6],
+       [7, 0, 5],
+       [2, 3, 3],
+       [3, 9,-8],
+       [3, 6, 5],
+       [4, 9, 4],
+       [2, 3, 3],
+       [6, 9, 9],
+       [0, 7, 0],
+       [7, 7, 9],
+       [7, 2, -9],
+       [0, 6, 2],
+       [4, 6, 7],
+       [3, 7, 7],
+       [0, -1, 7],
+       [2, 8, 6],
+       [2, 3, 7],
+       [6, 4, 8],
+       [-3, 5, 9],
+       [7, 9, 5],
+       [1, 9, 2]]
+    },{
+      name:'weishengwu2',
+      color:'rggba(119,152,191,.5)',
+      data:[[0, 1, 5],
+            [6, -7, 3],
+            [8, 3, 2],
+            [3, 8, -3],
+            [2, 1, 6],
+            [4, -6, 7],
+            [8, 9, 9],
+            [5, -4, 2],
+            [6, 1, 3],
+            [-6, 9, 5],
+            [4, 8, -2],
+            [-9, 7, 4],
+            [5, 4, 2],
+            [9, 6, 1],
+            [2, 7, 3],
+            [4, 5, 4],
+            [6, -8, 1],
+            [3, 4, 0],
+            [2, 2, 6],
+            [5, 1, 2],
+            [9, 9, 7],
+            [6, 9, 9],
+            [8, 4, 3],
+            [4, 1, 7],
+            [6, 2, 5],
+            [0, 4, 9],
+            [3, 5, 9],
+            [6, 9, 1],
+            [1, 9, 2]]
+    }]
+    }
+
+
+jQuery.highcharts_report.showbox_plot('container', contents);
+</script>
+
+
+</body>
+</html>

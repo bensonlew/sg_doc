@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Highcharts</title>
+<script src="../jquery.min.js"></script>
+
+<script src="../Highstock-4.2.5/js/highstock.js"></script>
+<script src="../highcharts/js/highcharts-more.js"></script>
+<script src="../highcharts/js/modules/exporting.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="container" style="width: 800px; height: 600px; margin: 0 auto"></div>
+<script language="JavaScript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'columnrange',
+            inverted: true
+        },
+        title: {
+            text: 'reads分布图'
+        },
+        plotOptions: {
+            columnrange: {
+                dataLabels: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        rangeSelector: {
+
+              selected: 1
+          },
+          scrollbar: {
+                 enabled: true,
+  			   barBorderWidth: 0.5
+            },
+        series: [{
+            name: 'gene_site',
+            data: [
+              [0,144,426],
+  [1,284,679],
+  [2,290,715],
+  [3,352,852],
+  [4,397,927],
+  [5,425,993],
+  [2,754,1647],
+  [3,867,1884],
+  [1,876,1897]
+            ]
+        }],
+        xAxis:{
+          visible : false,
+          reversed : false
+        },
+        yAxis:{
+            gridLineWidth: 0
+
+        }
+    });
+});
+</script>
+</body>
+</html>

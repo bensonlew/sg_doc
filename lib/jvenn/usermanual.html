@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	
+	<title>jvenn</title>
+	<!-- Les styles -->
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="css/docs.css" rel="stylesheet" media="screen">
+	<link href="css/prettify.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/prettify.js"></script>
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      	<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="brand" href="./index.html">jvenn</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li><a href="./index.html">About</a></li>
+						<li><a href="./example.html">Example</a></li>
+						<li><a href="./documentation.html">Plugin documentation</a></li>
+						<li class="active"><a href="./usermanual.html">User manual</a></li>
+						<li><a target="_blank" href="https://mulcyber.toulouse.inra.fr/plugins/mediawiki/wiki/venny/index.php/Accueil">Sources</a></li>
+						<li><a href="mailto:support.genopole@toulouse.inra.fr">Contact</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="span3 bs-docs-sidebar">
+				<ul class="nav nav-list bs-docs-sidenav affix">
+					<li class="active"><a href="#quickStart"><i class="icon-chevron-right"></i> Quick start</a></li>
+					<li><a href="#export"><i class="icon-chevron-right"></i> Export to ...</a></li>
+					<li><a href="#search"><i class="icon-chevron-right"></i> Search</a></li>
+					<li><a href="#legend"><i class="icon-chevron-right"></i> Switch button panel</a></li>
+		    		<li><a href="#extraCharts"><i class="icon-chevron-right"></i> Extra chats</a></li>
+		    	</ul>
+		  	</div>
+		  	
+		  	<div class="span9">
+		  		<section id="quickStart">
+					<div class="page-header">
+				    	<h1>Quick start</h1>
+				    </div>
+				    <h4>How to provide list(s) of element(s)</h4>
+				    <p>
+				    On the right of the example page, you can fill each of the six textareas with your own data (<b>warning:</b> one element per line!).
+				    If the same item is given multiple times, this one will be considered as unique. <br/>
+				    You can also customize the list labels using the text field on the top of each textarea. The length of the name is limited at eleven characters.
+				    </p>
+				    <div class="bs-docs-example" style="text-align: center;">
+				  		<img width="50%" src="img/jvenn-input-lists.png" class="img-rounded">
+				  	</div> 
+				    <h4>Two display modes: classic and Edwards</h4>
+				    <p>The default value is 'classic' to output a classical venn diagram. If you want an Edwards-Venn
+				    diagram representation, just select 'edwards' using the drop-down list. Available values are: 'classic' and 'edwards'.</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="img/jvenn-classic.png" class="img-rounded img-polaroid"> <img width="48%" src="img/jvenn-edwards.png" class="img-rounded img-polaroid">
+				  	</div>
+				  	<h4>Highlighting intersections</h4>
+				  	<p>When you point an intersection count, all list(s) sharing it are highlighted.</p>
+				  	<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="img/jvenn-hl-classic.png" class="img-rounded img-polaroid"> <img width="48%" src="img/jvenn-hl-edwards.png" class="img-rounded img-polaroid">
+				  	</div>
+				  	<h4>Question mark</h4>
+				  	<p>For all diagrams, when the intersection count size exceeds the allowed space, the value is substituted by a question mark.
+				  	The real value pops-up on mouseover.</p>
+				  	<h4>Click function</h4>
+				  	<p>To display the specific or shared element(s) click on the intersection numbers. The linked elements are listed in the
+				  	textarea below the jvenn diagram.</p>
+				  	<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="50%" src="img/jvenn-click.png" class="img-rounded">
+				  	</div> 
+				</section>
+		  		
+		  		<section id="export">
+					<div class="page-header">
+				    	<h1>Export to PNG, SVG and/or CSV</h1>
+				    </div>
+				    <p>By clicking on the top right icon you can export:
+					    <ul>
+					    	<li>the venn diagram as a PNG file</li>
+					    	<li>the venn diagram as a SVG file</li>
+					    	<li>the intersection table as a CSV file</li>
+					    </ul>
+					</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="50%" src="img/jvenn-export.png" class="img-rounded">
+				  	</div> 
+				</section>
+				
+				<section id="search">
+					<div class="page-header">
+				    	<h1>Search for an element</h1>
+				    </div>
+				    <p>Fill the input field on the top of the page to search for an element (case sensitive). Three different status are possible: 
+					<ul>
+						<li><b>found</b> only one element matched, the corresponding intersection is then highlighted</li>
+					    <li><b>not found</b> no element matched, all intersections are faded out</li>
+   					    <li><b>ambiguous</b> two or more elements matched, keep on searching...</li>
+					    </ul>
+					</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="img/jvenn-search1.png" class="img-rounded img-polaroid"> <img width="48%" src="img/jvenn-search2.png" class="img-rounded img-polaroid">
+				  	</div>
+				</section>
+				
+				<section id="legend">
+					<div class="page-header">
+				    	<h1>Switch button panel</h1>
+					</div>
+				  	<p>
+				  	If you provide more than 3 lists a switch button panel is available. Use it to focus on the intersection of interest.
+				  	Moreover, to enhance the figure’s readability on the classical six lists Venn graphic, it was decided
+					not to present all the values and to link some areas to their figures using lines. This
+					still did not permit to show all figures, use the switch button panel to display it.
+					<br/><br/>
+					<b>Warning:</b> having one switch botton on disable all other interaction with the diagram.</p>
+					<div class="bs-docs-example" style="text-align: center;">
+				  		<img width="48%" src="img/jvenn-legend-classic.png" class="img-rounded img-polaroid"> <img width="48%" src="img/jvenn-legend-edwards.png" class="img-rounded img-polaroid">
+				  	</div>
+				</section>
+				
+				<section id="extraCharts">
+					<div class="page-header">
+				    	<h1>Extra charts</h1>
+					</div>
+				  	<p>Having an overview of the list size and comparing multiple diagrams can be difficult using a Venn diagram. Thus, jvenn provides
+				  	two extra charts bellow the Venn.
+					  	<ul>
+					  		<li>The first one represents the input lists size histogram. It allows users to	check the homogeneity of the lists size.</li>
+							<li>The second one displays the number of elements located in intersections of a certain size.
+								This feature can be used to compare the compactness of multiple Venn diagrams.
+							</li>
+						</ul>
+					</p>
+					<div class="bs-docs-example">
+				  		<img width="50%" style="float:left" src="img/jvenn-extra-chart.png" class="img-rounded">
+				  		<br/><br/>
+				  		In the first chart you can see the number of elements in each list (the shorter list is the "list 5" with 858 elements).
+				  		<br/><br/><br/><br/>
+				  		In the second chart, 1707 elements are specific of one list and 399 elements are shared by two of the six lists.
+				  		<br/><br/><br/>
+				  	</div>
+		  	</div>
+		</div>
+		
+		<hr>
+		<footer style="text-align: center;">
+			<p>Copyright &copy; 2015, INRA | Designed by <a href="http://bioinfo.genotoul.fr" target="_blank">GenoToul Bioinfo</a> and
+			   <a href="http://sigenae.org" target="_blank">Sigenae</a> teams.
+			</p>
+	    </footer>
+	</div>
+	<script>
+     	!function ($) {
+     		$(function(){
+				window.prettyPrint && prettyPrint()   
+			})
+		}(window.jQuery)
+	</script>
+</body>
+</html>
