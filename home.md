@@ -2,7 +2,7 @@ Sanger Biocluster
 ======================
 
 >                
-> *Welcome to a Sanger !*
+> ### *Welcome to a Sanger !*
 >              
 
 * [开发环境](#user-content-开发环境)
@@ -17,7 +17,7 @@ Sanger Biocluster
 * [基础技能](#user-content-基础技能)
 * [开发工具](#user-content-开发工具)
 
-> ###  [:flags:生信模块库](/mbio) | [:eye_in_speech_bubble:可视化模板库](/charts)
+> ###  [:flags: 生信模块库](/mbio) | [:eye_in_speech_bubble: 可视化模板库](/charts)
 
 
 # 开发环境
@@ -83,7 +83,7 @@ Sanger Biocluster
 
 
 # 桑格开发工作流
-![开发流程图](img/Sanger-workflow.png)
+![开发流程图](/img/Sanger-workflow.png)
 
 ### 流程解析
 *	解析报告PPT要求：
@@ -172,6 +172,7 @@ python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 
 	需求文档包括页面原型和分析图表表结构对应关系说明文档。
 
 	文档中约定名词名称规则：
+
 		- 页面筛选项：页面是否有筛选项，如果有会列出来。
 		- 页面动态筛选项：筛选项是从数据表中读取出来的(名称，对应的表，对应的字段)。动态筛选项一般存在主表里面
 		- html标签
@@ -184,16 +185,17 @@ python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 
 		- 展示的样式：对照的是原型里面的图表,根据对应的标题可以找到
 
 	文档包括以下部分：
+
 		1. 概况说明:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca.md)、图类型、js脚本)
 		2. 流程各部分图表对应关系说明
 
-		`数据表格`：包括展示样式、数据表、筛选项、结果表  
-		eg.
-		![表结构对应关系示例](/img/表结构对应关系.png)
+		 `数据表格`：包括展示样式、数据表、筛选项、结果表  
+		 eg.
+		 ![表结构对应关系示例](/img/表结构对应关系.png)
 
-		`作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数  
-		eg.
-		![表结构对应关系示例](/img/表结构对应关系2.png)
+		 `作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数  
+		 eg.
+		 ![表结构对应关系示例](/img/表结构对应关系2.png)
 
 
 
