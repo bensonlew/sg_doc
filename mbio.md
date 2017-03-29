@@ -21,6 +21,12 @@ modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |相关应用|
 | ------- |-------|-------------|-----|
+| alpha_diversity | [meta.alpha_diversity]       | 无rst文档 |
+| beta_diversity | [meta.beta_diversity]      | 无rst文档 |
+| corr_network_analysis | [meta.corr_network_analysis]       | 无rst文档 |
+| otu_analysis | [meta.otu_analysis]      | 无rst文档 |
+| miseq_qc | [meta.miseq_qc]      | 无rst文档 |
+| sample_extract | [meta.sample_extract]      | 无rst文档 |
 |         |       |             |  |
 |         |       |             |  |
 
