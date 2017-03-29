@@ -39,7 +39,7 @@ tools存放目录为：`src\mbio\tools`
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
 | estimators | [meta.alpha_diversity.estimators](/mbio/tools/meta/estimators) | 计算样本的多样性指数ace、chao、shannon |             |
-| rarefaction | [meta.alpha_diversity.rarefaction](/mbio/tools/meta/rarefaction) |             |             |
+| rarefaction | [meta.alpha_diversity.rarefaction](/mbio/tools/meta/rarefaction) | 比较测序数据量不同的样本中物种的丰富度 |             |
 | anosim_box | [meta.beta_diversity.anosim_box] |             |             |
 | anosim | [meta.beta_diversity.anosim] |             |             |
 | dbrda | [meta.beta_diversity.dbrda] |             |             |
