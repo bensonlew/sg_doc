@@ -83,7 +83,7 @@ Sanger Biocluster
 
 
 # 桑格开发工作流
-![开发流程图](/img/Sanger-workflow.png)
+![开发流程图](img/Sanger-workflow.png)
 
 ### 流程解析
 *	解析报告PPT要求：
@@ -146,15 +146,15 @@ Sanger Biocluster
 	在`sanger_bioinfo\src\mbio\packages\meta\copy_demo.py` 中run函数中按规则添加代码；
 
 	测试：
-	```
-python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 -n "task_id;target_task_id;target_project_sn;target_member_id" -d "tsanger_2639;tsanger_2639_15;10000485_1;shenghe_test" -b http://192.168.12.102:8090
-	```
+	`python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 -n "task_id;target_task_id;target_project_sn;target_member_id" -d "tsanger_2639;tsanger_2639_15;10000485_1;shenghe_test" -b http://192.168.12.102:8090`
+
 > :wind_chime:note: otu_id,group_id,group_id,env_id, alpha_diversity_id以外的主表ID混用，非标准的主表detail表模式，自行添加修改代码。
 
 
 ### Web开发
 
 * 可视化模板开发
+
 	该部分由生信开发和系统开发合作开发。
 	梳理流程交互报告中展示的图类型，参照[可视化模板库](/charts)已有模板，罗列出当前开发流程中可直接使用模板、需修改模板、需研发模板。
 	> :wind_chime:note：修改和研发的模板需在模板库中更新或添加记录。
@@ -162,10 +162,10 @@ python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 
 * 系统开发交接
 	+ 数据库表结构设计文档
 
-	测试机mongodb地址：`192.168.10.189`
+		测试机mongodb地址：`192.168.10.189`
 
-	表结构参考示例：
-	![表结构示例](/img/表结构.png)
+		表结构参考示例：
+		![表结构示例](img/表结构.png)
 
 	+ 需求文档：
 
@@ -173,29 +173,30 @@ python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 
 
 	文档中约定名词名称规则：
 
-		- 页面筛选项：页面是否有筛选项，如果有会列出来。
-		- 页面动态筛选项：筛选项是从数据表中读取出来的(名称，对应的表，对应的字段)。动态筛选项一般存在主表里面
-		- html标签
+		``页面筛选项``：页面是否有筛选项，如果有会列出来。
+
+		``页面动态筛选项``：筛选项是从数据表中读取出来的(名称，对应的表，对应的字段)。动态筛选项一般存在主表里面
+
+		``html标签``
 		```
 		文本框：<input type=”text” name=”title” value=”图片标题”/>
 		复选框：<input type=”checkbox” name=”title”/>是否选中
 		单选按钮：<input type=”radio” name=”title“ />显示图例
 		下拉框：<select name=”specimen_name”><option value=”L1”>L1</option><option value=”L2”>L2</option></select>
 		```
-		- 展示的样式：对照的是原型里面的图表,根据对应的标题可以找到
+		``展示样式``：对照的是原型里面的图表,根据对应的标题可以找到
 
 	文档包括以下部分：
-
-		1. 概况说明:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca.md)、图类型、js脚本)
+		1. 概况说明:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca)、图类型、js脚本)
 		2. 流程各部分图表对应关系说明
 
-		 `数据表格`：包括展示样式、数据表、筛选项、结果表  
-		 eg.
-		 ![表结构对应关系示例](/img/表结构对应关系.png)
+		 `数据表格`：包括展示样式、数据表、筛选项、结果表
 
-		 `作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数  
-		 eg.
-		 ![表结构对应关系示例](/img/表结构对应关系2.png)
+		 eg. ![表结构对应关系示例](img/表结构对应关系.png)
+
+		 `作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数
+
+		 eg. ![表结构对应关系示例](img/表结构对应关系2.png)
 
 
 
