@@ -1,12 +1,17 @@
-工具说明
+estimators
 ==========================
 
-功能和用途描述
+模块Path
+-----------
+
+**tools.meta.alpha_diversity.estimatos**
+
+功能描述
 -----------------------------------
 
 计算样本的多样性指数ace、chao、shannon等，能够通过多样性指数了解微生物物种的多样性与丰度。
 
-使用软件、程序或包
+调用程序
 -----------------------------------
 
 otu2shared
@@ -19,27 +24,25 @@ mothur
 `/mnt/ilustre/users/sanger/app`
 
 
-模块Path
------------
-
-**tools.meta.alpha_diversity.estimatos**
 
 主要命令及功能模块
 -----------------------------------
 
-_otu2shared.pl -i otu_table.xls -l 0.97 -o otu.shared_
+```
+otu2shared.pl -i otu_table.xls -l 0.97 -o otu.shared_
 
 _mothur "#summary.single(shared=otu.shared,groupmode=f,calc=ace-chao-shannon-simpson)"_
 
-_estimatos.py_
+_estimatos.py
+```
 
 参数设计
 -----------------------------------
 
 ```
-    {"name": "OTUtable", "type": "infile", "format": "txt"},  # 输入文件
-    {"name": "indices", "type": "string", "default": "all"},  # 指数类型
-    {"name": "estimatos", "type": "outfile", "format": "txt"}  # 输出结果
+{"name": "OTUtable", "type": "infile", "format": "txt"},  # 输入文件
+{"name": "indices", "type": "string", "default": "all"},  # 指数类型
+{"name": "estimatos", "type": "outfile", "format": "txt"}  # 输出结果
 ```
 
 运行逻辑

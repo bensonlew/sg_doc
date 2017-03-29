@@ -31,11 +31,37 @@ Sanger Biocluster
 	安装主目录目录：`/mnt/ilustre/users/sanger-dev/app/`
 	- `bioinfo/` 分析软件安装目录，其中通用型软件按功能类别安装在各个目录中，其他按产品类型安装在各自目录中，安装文件夹以'软件名-版本号'命名
 	- `database/`	存放分析计算过程中软件需调用的生信数据库文件
-	- `gcc/` 各版本gcc编译器
+	- `gcc/` 各版本gcc编译器，根据需要添加版本
 	- `install_packages/` 软件包安装目录
 	- `library/`  安装软件时需要的linux库
 	- `program/`	基础软件，编程语言等
 	安装需记录下安装信息，在[AppInstall](AppInstallList)中添加记录。
+
+	`bioinfo/`生信软件类别目录结构：
+	```
+	||-seq/ #与序列相关的软件
+	|||-scripts/ #每个script目录表示我们自己编写的脚本存放的目录
+	|||-fastx_toolkit_0.0.14
+	||-meta/ #meta分析相关的软件存放目录
+	|||-scripts/
+	||-rna/ #rna分析相关的软件存放目录
+	|||-scripts/
+	||-phylogenetic/ #进化分析相关的软件存放目录
+	|||-scripts/
+	||-taxon/ #用于物种分类的软件存放目录
+	|||-scripts/
+	||-align/ #用于比对的软件存放目录
+	|||-scripts/
+	||-plot #用于画图可视化的软件存放目录
+	|||-scripts/
+	||-statistical #与统计相关的软件存放目录
+	|||-scripts/
+	||-annotation
+	|||-scripts/
+	||-gene-structure #基因结构相关软件存放目录
+	|||-scripts/
+	```
+
 
 
 * 调试代码
@@ -106,8 +132,74 @@ Sanger Biocluster
 
 
 ### 模块开发
+**注意事项：**
+* 环境变量设置
 
-### 接口编写
+	框架移除了本地环境变量加载（python以及library库目录部分会保留），tool如果依赖到本地环境变量，将会报错，按需在tool中加载环境变量，不使用.bash_profile配置环境变量
+
+* 文件链接
+
+	框架采用文件硬链的方式上传文件（上传地址和服务器系统在同一个文件系统），检查所有文件上传的目录，目录下的所有文件必须都是以硬链的方式链到该处，不可以有软链（软硬链说明：https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/）   python中的os.link()是硬链
+
+* demo设置
+
+	在`sanger_bioinfo\src\mbio\packages\meta\copy_demo.py` 中run函数中按规则添加代码；
+
+	测试：
+	```
+python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 -n "task_id;target_task_id;target_project_sn;target_member_id" -d "tsanger_2639;tsanger_2639_15;10000485_1;shenghe_test" -b http://192.168.12.102:8090
+	```
+> :wind_chime:note: otu_id,group_id,group_id,env_id, alpha_diversity_id以外的主表ID混用，非标准的主表detail表模式，自行添加修改代码。
+
+
+### Web开发
+
+* 可视化模板开发
+	该部分由生信开发和系统开发合作开发。
+	梳理流程交互报告中展示的图类型，参照[可视化模板库](/charts)已有模板，罗列出当前开发流程中可直接使用模板、需修改模板、需研发模板。
+	> :wind_chime:note：修改和研发的模板需在模板库中更新或添加记录。
+
+* 系统开发交接
+	+ 数据库表结构设计文档
+
+	测试机mongodb地址：`192.168.10.189`
+
+	表结构参考示例：
+	![表结构示例](/img/表结构.png)
+
+	+ 需求文档：
+
+	需求文档包括页面原型和分析图表表结构对应关系说明文档。
+
+	文档中约定名词名称规则：
+		- 页面筛选项：页面是否有筛选项，如果有会列出来。
+		- 页面动态筛选项：筛选项是从数据表中读取出来的(名称，对应的表，对应的字段)。动态筛选项一般存在主表里面
+		- html标签
+		```
+		文本框：<input type=”text” name=”title” value=”图片标题”/>
+		复选框：<input type=”checkbox” name=”title”/>是否选中
+		单选按钮：<input type=”radio” name=”title“ />显示图例
+		下拉框：<select name=”specimen_name”><option value=”L1”>L1</option><option value=”L2”>L2</option></select>
+		```
+		- 展示的样式：对照的是原型里面的图表,根据对应的标题可以找到
+
+	文档包括以下部分：
+		1. 概况说明:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca.md)、图类型、js脚本)
+		2. 流程各部分图表对应关系说明
+
+		`数据表格`：包括展示样式、数据表、筛选项、结果表  
+		eg.
+		![表结构对应关系示例](/img/表结构对应关系.png)
+
+		`作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数  
+		eg.
+		![表结构对应关系示例](/img/表结构对应关系2.png)
+
+
+
+* 接口编写
+
+
 
 ### 测试发布
 相关负责人员：蓝英、王兆月，（注：协助测试员: 周玄、周茉莉、韩畅、曾静、宣红东，每次测试人员由蓝英按情况安排）
@@ -133,22 +225,55 @@ Sanger Biocluster
 
 	推送外网更新。
 
-	**Sanger平台更新规范**
+**Sanger平台更新规范**
 	1. 普通功能需求按类型整理后2-3周更新一次；
 	2. 问题bug和重要紧急的功能需求按实际情况及时更新推送；
 	3. 大的改动功能需求和新增分析项按计划时间更新（与产品部确认推送时间），提前3-5天通知产品线预发布机测试，提前1天通知相关部门（产品线、营销部）更新内容；
 	4. 重大变更更新推送时间安排在下班后1-2小时内完成，提前通知相关人员准备更新，更新前一天在平台上发提示更新的公告，告知用户将要更新维护的时间和内容；
 	5. 每1-2周在平台发布更新内容公告。
 
+**代码提交文档规范**
+
+参考示例：
+
+	PMS对应需求/bug id：
+	需求/bug名称：
+	开发人：
+	web端相关开发人员：
+	测试人员：
+	简单说明：
+	日期：
+
+	集群软件安装配置（软件，python包，perl包，R包）：
+		eg.
+			软件名称：
+			软件下载包路径：
+			安装路径：
+			安装命令：
+			其他配置：
+
+	接口端口号：
+
+	提交代码列表（包含biocluster目录路径）：
+
+	集群测试示例：
+	eg.
+		python ~/biocluster/bin/webapitest.py post meta/beta/multi_analysis -c client01 -n "analysis_type;otu_id;level_id;env_labs;distance_algorithm;env_id;task_type;submit_location;group_detail;group_id" -d "pca;579acd6aa4e1af8890b869af;8;ENV_1,ENV_2,ENV_3,ENV_4;bray_curtis;579acd6aa4e1af8890b869a2;reportTask;beta_multi_analysis_pca;/mnt/ilustre/users/sanger-dev/sg-users/hesheng/test/test_file/web_group_detail.txt;579acd6aa4e1af8890b869a0" -b http://192.168.12.102:8090
 
 
 # 基础技能
 
 * 集群系统
+	- [集群原理及使用-郭权-20170322.ppt](/learn/集群原理及使用-郭权-20170322.ppt)
+	- [集群原理简介-邱萍-20160601.ppt](/learn/集群原理简介-邱萍-20160601.ppt)
 
 * Linux
 
 * Slurm
+	- [SLURM 安装与配置.pdf](/learn/SLURM 安装与配置.pdf)
+	- [user_guide_slurm.pdf](/learn/user_guide_slurm.pdf)
+	- [用 SLURM 优化超级计算机内的资源管理.pdf](/learn/用 SLURM 优化超级计算机内的资源管理.pdf)
+	- [](/learn/)
 
 * Git
 

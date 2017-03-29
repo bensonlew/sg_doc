@@ -1,7 +1,30 @@
 App 安装记录表
 
+> note: 表格内如需换行在一行结尾加上`<br> `即可
+
+
 | 软件名 | 安装位置  | 安装包路径  | 安装命令 | 环境配置 |
 | -------|-----------|-------------|----------|----------|
+|bowtie2-2.2.9| /bioinfo/align/bowtie2-2.2.9/  |/install_packages/bowtie2-2.2.9-linux-x86_64.zip | wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.9/bowtie2-2.2.9-linux-x86_64.zip/ <br>  unzip bowtie2-2.2.9-linux-x86_64.zip -d  /mnt/ilustre/users/sanger-dev/app/bioinfo/align/bowtie2-2.2.9 |  |
+|trinityrnaseq-2.2.0 | bioinfo/rna/trinityrnaseq-2.2.0/ |/install_packages/trinity-v2.2.0.zip|samtools安装出错 undefined reference to `gzopen64'<br> cd  ~/app/bioinfo/rna/trinityrnaseq-2.2.0/ <br> vi Makefile 把安装samtools的make部分注释掉 <br> cd samtools-0.1.19 <br> vi Makefile <br> 修改CFLAGS= -g -Wall -O2 -L /mnt/ilustre/users/sanger-dev/app/program/zlib-1.2.8/lib <br> make & make install  <br> cd ../../  <br> make <br> make plugins|          |
 |        |           |             |          |          |
-|        |           |             |          |          |
-|        |           |             |          |          |
+| RSEM-1.2.31 | /bioinfo/rna/RSEM-1.2.31/ | /install_packages/RSEM-1.2.31.tar.gz | tar -xzvf RSEM-1.2.31.tar.gz<br>cd RSEM-1.2.31<br>修改Makefile，改变samtools变量，指定到/mnt/ilustre/users/sanger-dev/app/bioinfo/align/samtools-1.3.1/samtools<br>###<br>SAMTOOLS = /mnt/ilustre/users/sanger-dev/app/bioinfo/align/samtools-1.3.1<br>HTSLIB = htslib-1.3.1<br>####<br>make<br>make install DESTDIR=/mnt/ilustre/users/sanger-dev/app/bioinfo/rna/ prefix=RSEM-1.2.31/ |  |
+| bowtie-1.1.2 | /bioinfo/align/bowtie-1.1.2 | /install_packages/bowtie-1.1.2-linux-x86_64.zip | unzip bowtie-1.1.2-linux-x86_64.zip  -d  /mnt/ilustre/users/sanger-dev/app/bioinfo/align/bowtie-1.1.2<br>boost-1.61.0 | /library/boost-1.61.0 | /install_packages/ | export PATH=/mnt/ilustre/users/sanger-dev/app/gcc/5.1.0/bin:$PATH<br>export LD_LIBRARY_PATH=/mnt/ilustre/users/sanger-dev/app/gcc/5.1.0/lib64:$LD_LIBRARY_PATH<br>./bootstrap.sh --prefix=/mnt/ilustre/users/sanger-dev/app/library/boost-1.61.0<br>./b2 install --prefix="/mnt/ilustre/users/sanger-dev/app/library/boost-1.61.0" |  |
+| SPAdes-3.9.0 | /bioinfo/rna/SPAdes-3.9.0/ | /install_packages/SPAdes-3.9.0-Linux.tar.gz | wget http://spades.bioinf.spbau.ru/release3.9.0/SPAdes-3.9.0-Linux.tar.gz<br>tar -xzf SPAdes-3.9.0-Linux.tar.gz -C /mnt/ilustre/users/sanger-dev/app/bioinfo/rna/|  |
+| stringtie-1.2.4 | /bioinfo/rna/stringtie-1.2.4 | /install_packages/stringtie-1.2.4.Linux_x86_64.tar.gz | wget http://ccb.jhu.edu/software/stringtie/dl/stringtie-1.2.4.Linux_x86_64.tar.gz<br>tar -xzvf stringtie-1.2.4.Linux_x86_64.tar.gz -C ~/app/bioinfo/rna/<br>cd  ~/app/bioinfo/rna/<br>mv stringtie-1.2.4.Linux_x86_64 stringtie-1.2.4|  |
+| subread-1.5.0 | /bioinfo/align/subread-1.5.0 | /install_packages/subread-1.5.0-p3-Linux-x86_64.tar.gz | wget https://sourceforge.net/projects/subread/files/subread-1.5.0-p3/subread-1.5.0-p3-source.tar.gz<br>tar zxvf subread-1.5.0-p3-source.tar.gz<br>/mnt/ilustre/users/sanger-dev/app/bioinfo/align/subread-1.5.0<br>kallisto-0.43.0 | /bioinfo/rna/| |
+| kallisto-0.43.0 | /install_packages/kallisto_linux-v0.43.0.tar.gz | wget https://github.com/pachterlab/kallisto/releases/download/v0.43.0/kallisto_linux-v0.43.0.tar.gz<br>tar zxvf kallisto_linux-v0.43.0.tar.gz<br>/mnt/ilustre/users/sanger-dev/app/bioinfo/rna/kallisto-0.43.0|  |
+| tablemaker-2.1.1 | /bioinfo/rna/ tablemaker-2.1.1 | /install_packages/tablemaker2.1.1.Linux_x86_64.tar.gz | wget https://ndownloader.figshare.com/files/3193031 -O "tablemaker-2.1.1.Linux_x86_64.tar.gz"<br>Tar zxvf tablemaker-2.1.1.Linux_x86_64.tar.gz<br>/mnt/ilustre/users/sanger-dev/app/bioinfo/align/tablemaker-2.1.1|  |
+| bison-3.0.4 | /program/bison-3.0.4<br> | /install_packages/bison-3.0.4.tar.gz | tar zxvf bison-3.0.4.tar.gz  -C /mnt/ilustre/users/sanger-dev/app/<br>cd bison-3.0.4<br>./configure<br>make && make install|   |
+| bioawk | /bioinfo/seq/bioawk | /install_packages/bioawk-master | git clone git://github.com/lh3/bioawk.git<br>cd bioawk<br>make<br>注：这里要修改Makefile文件中的修改路径到bison与yacc所在路劲<br>YACC = /mnt/ilustre/users/sanger-dev/app/program/bison-3.0.4/bin/bison -y<br>YACC = /mnt/ilustre/users/sanger-dev/app/program/bison-3.0.4/bin/yacc|   |
+| seqtk | /bioinfo/seq/seqtk | Git 直接下载seqtk文件夹 | git clone https://github.com/lh3/seqtk.git;<br>cd seqtk;<br>make|  |
+| samblaster | /bioinfo/seq/samblaster | Git直接下载samblaster文件夹 | git clone git://github.com/GregoryFaust/samblaster.git<br>cd samblaster<br>make<br>|  |
+| bedtools-2.25.0 | /bioinfo/seq/bedtools-2.25.0 | /install_packages/bedtools-2.25.0.tar.gz | wget https://github.com/arq5x/bedtools2/releases/download/v2.25.0/bedtools-2.25.0.tar.gz<br>或者 git clone git://github.com/arq5x/bedtools2.git<br>tar -zxvf bedtools-2.25.0.tar.gz -C /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/bedtools-2.25.0<br>cd bedtools-2.25.0<br>make clean<br>make all<br>注：如果出现gzstream.C:(.text+0x2a2): undefined reference to `gzopen64'<br>下载了zlib-1.2.8<br>方法很多看博客中讲述到 ln -sf ../lib/libz.so.1.2.7 /usr/lib64/libz.so但是权限不够，使用不了，但是可以通过修改Makefile文件中的环境变量能够解决，<br>export LIBS = /mnt/ilustre/users/sanger-dev/app/program/zlib-1.2.8/lib/libz.so.1.2.8<br>|   |
+| bcftools-1.3.1 | /bioinfo/seq/bcftools-1.3.1 | /install_packages/bcftools-1.3.1.tar.gz | tar -jxvf bcftools-1.3.1.tar.bz2 -C /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/bcftools-1.3.1<br>cd bcftools-1.3.1<br>make clean<br>make all<br>先安装htslib（make命令），然后再安装bcftools（make命令）<br>|  |
+| bwa-0.7.9a | /bioinfo/align/bwa-0.7.9a | /install_packages/bwa-0.7.9a.tar.bz2 | tar jxf bwa-0.7.9a.tar.bz2 -C /mnt/ilustre/users/sanger-dev/app/bioinfo/align/<br>make<br>|  |
+| ruby-2.3.1 | /app/program/ruby-2.3.1 | /install_packages/ruby-2.3.1.tar.gz | tar -zxvf  ruby-2.3.1 -C /mnt/ilustre/users/sanger-dev/app/program |  |
+| bioruby-vcf | /bioinfo/seq/bioruby-vcf | install_packages/bioruby-vcf-master.zip | |  |
+| gatk | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/ | /mnt/ilustre/users/sanger-dev/app/install_packages/GenomeAnalysisTK-3.6.tar.bz2 | 在官网用邮箱注册，下载软件，是已经编译好的GenomeAnalysisTK.jar，直接可以java调用<br>|  |
+| annovar | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/annovar |  | |  |
+| vep | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/vep | /mnt/ilustre/users/sanger-dev/app/install_packages/vep.zip | perl INSTALL.pl --NO_HTSLIB<br>|  |
+| pindel | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/pindel-master | /mnt/ilustre/users/sanger-dev/app/install_packages/pindel-master.zip | ./INSTALL [path-to-htslib]<br>./pindel [options]
