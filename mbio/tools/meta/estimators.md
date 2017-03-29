@@ -29,11 +29,11 @@ mothur
 -----------------------------------
 
 ```
-otu2shared.pl -i otu_table.xls -l 0.97 -o otu.shared_
+otu2shared.pl -i otu_table.xls -l 0.97 -o otu.shared
 
-_mothur "#summary.single(shared=otu.shared,groupmode=f,calc=ace-chao-shannon-simpson)"_
+mothur "#summary.single(shared=otu.shared,groupmode=f,calc=ace-chao-shannon-simpson)"
 
-_estimatos.py
+estimatos.py
 ```
 
 参数设计
