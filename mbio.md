@@ -21,12 +21,12 @@ modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |相关应用|
 | ------- |-------|-------------|-----|
-| alpha_diversity | [meta.alpha_diversity]       | 无rst文档 |
-| beta_diversity | [meta.beta_diversity]      | 无rst文档 |
-| corr_network_analysis | [meta.corr_network_analysis]       | 无rst文档 |
-| otu_analysis | [meta.otu_analysis]      | 无rst文档 |
-| miseq_qc | [meta.miseq_qc]      | 无rst文档 |
-| sample_extract | [meta.sample_extract]      | 无rst文档 |
+| alpha_diversity | [meta.alpha_diversity.alpha_diversity] | 无rst文档 |    |
+| beta_diversity | [meta.beta_diversity.beta_diversity] | 无rst文档 |    |
+| corr_network_analysis | [meta.otu.corr_network_analysis] | 无rst文档 |    |
+| otu_analysis | [meta.otu.otu_analysis] | 无rst文档 |    |
+| miseq_qc | [meta.qc.miseq_qc] | 无rst文档 |    |
+| sample_extract | [meta.sample_extract.sample_extract] | 无rst文档 |    |
 |         |       |             |  |
 |         |       |             |  |
 
@@ -38,6 +38,45 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
+| estimators | [meta.alpha_diversity.estimators] |             |             |
+| rarefaction | [meta.alpha_diversity.rarefaction] |             |             |
+| anosim_box | [meta.beta_diversity.anosim_box] |             |             |
+| anosim | [meta.beta_diversity.anosim] |             |             |
+| dbrda | [meta.beta_diversity.dbrda] |             |             |
+| distance_box | [meta.beta_diversity.distance_box] |             |             |
+| distance_calc | [meta.beta_diversity.distance_calc] |             |             |
+| enterotyping | [meta.beta_diversity.enterotyping] |             |             |
+| environmental_regression | [meta.beta_diversity.environmental_regression] |             |             |
+| hcluster | [meta.beta_diversity.hcluster] |             |             |
+| metagenomeseq | [meta.beta_diversity.metagenomeseq] |             |             |
+| meta_sourcetracker | [meta.beta_diversity.meta_sourcetracker] |             |             |
+| nmds | [meta.beta_diversity.nmds] |             |             |
+| n_pca | [meta.beta_diversity.n_pca] |             |             |
+| pca | [meta.beta_diversity.pca] |             |             |
+| pcoa | [meta.beta_diversity.pcoa] |             |             |
+| plot-enterotyping | [meta.beta_diversity.plot-enterotyping] |             |             |
+| randomforest | [meta.beta_diversity.randomforest] |             |             |
+| rda_cca | [meta.beta_diversity.rda_cca] |             |             |
+| roc | [meta.beta_diversity.roc] |             |             |
+| fastq_sample_extract | [meta.fastq_sample_extract] |             |             |
+| function_gene | [meta.function_gene.function_gene] |             |             |
+| function_predict | [meta.function_predict] |             |             |
+| corr_network_calc | [meta.otu.corr_network_calc] |             |             |
+| filter_otu | [meta.otu.filter_otu] |             |             |
+| otu_association | [meta.otu.otu_association] |             |             |
+| otunetwork | [meta.otu.otunetwork] |             |             |
+| otu_taxon_stat | [meta.otu.otu_taxon_stat] |             |             |
+| pan_core_otu | [meta.otu.pan_core_otu] |             |             |
+| sort_samples | [meta.otu.sort_samples] |             |             |
+| sub_sample | [meta.otu.sub_sample] |             |             |
+| usearch_otu | [meta.otu.usearch_otu] |             |             |
+| pipe_submit_all | [meta.pipe.pipe_submit_all] |             |             |
+| base_info | [meta.qc.base_info] |             |             |
+| qc_format | [meta.qc.qc_format] |             |             |
+| reads_len_info | [meta.qc.reads_len_info] |             |             |
+| samples_info | [meta.qc.samples_info] |             |             |
+| sample_check | [meta.sample_check] |             |             |
+| phylo_tree | [phylo.phylo_tree] |             |             |
 |         |       |             |             |
 |         |       |             |         |
 
@@ -49,6 +88,17 @@ files存放目录为：`src\mbio\files`
 
 | 模块名称 | 路径  | 功能说明 | 相关应用|
 | ------- |-------|-------------|---------|
+| group_file_dir | [meta.alpha_diversity.group_file_dir] |             |             |
+| distance_matrix | [meta.beta_diversity.distance_matrix] |             |             |
+| newick_tree | [meta.beta_diversity.newick_tree] |             |             |
+| env_table | [meta.env_table] |             |             |
+| biom | [meta.otu.biom] |             |             |
+| group_table | [meta.otu.group_table] |             |             |
+| otu_seqids | [meta.otu.otu_seqids] |             |             |
+| otu_table | [meta.otu.otu_table] |             |             |
+| pan_core_table | [meta.otu.pan_core_otu] |             |             |
+| tax_summary_dir | [meta.otu.tax_summary_dir] |             |             |
+| venn_table | [meta.otu.venn_table] |             |             |
 |         |       |             |             |
 |         |       |             |             |
 
@@ -60,5 +110,8 @@ packages存放目录为：`src\mbio\packages`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|-----|
-|         |       |             |         |
-|         |       |   cc          |       |
+| copy_demo | [meta.copy_demo] |             |         |
+| export_otu | [meta.otu.export_otu] |             |       |
+| pan_core_otu | [meta.otu.pan_core_otu] |             |       |
+| stat_fasta_info | [meta.otu.stat_fasta_info] |             |       |
+
