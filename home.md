@@ -19,6 +19,7 @@ Sanger Biocluster
 
 > ###  [:flags: 生信模块库](/mbio) | [:eye_in_speech_bubble: 可视化模板库](/charts)
 
+> ### [:scroll:  Bicluster 教程](/biocluster)
 
 # 开发环境
 
@@ -173,21 +174,20 @@ Sanger Biocluster
 
 		文档中约定名词名称规则：
 
-		- ``页面筛选项``：页面是否有筛选项，如果有会列出来。
-		- ``页面动态筛选项``：筛选项是从数据表中读取出来的(名称，对应的表，对应的字段)。动态筛选项一般存在主表里面
-		- ``html标签``
-			```
-			文本框：<input type=”text” name=”title” value=”图片标题”/>
-			复选框：<input type=”checkbox” name=”title”/>是否选中
-			单选按钮：<input type=”radio” name=”title“ />显示图例
-			下拉框：<select name=”specimen_name”><option value=”L1”>L1</option><option value=”L2”>L2</option></select>
-			```
-		- ``展示样式``：对照的是原型里面的图表,根据对应的标题可以找到
+		- 页面筛选项：页面是否有筛选项，如果有会列出来。
+		- 页面动态筛选：筛选项是从数据表中读取出来的(名称，对应的表，对应的字段)。动态筛选项一般存在主表里面
+		- html标签
+			- 文本框：```<input type=”text” name=”title” value=”图片标题”/>```
+			- 复选框：```<input type=”checkbox” name=”title”/>是否选中```
+			- 单选按钮：```<input type=”radio” name=”title“ />显示图例```
+			- 下拉框：```<select name=”specimen_name”><option value=”L1”>L1</option><option value=”L2”>L2</option></select>```
+
+		- 展示样式：对照的是原型里面的图表,根据对应的标题可以找到
 
 		文档包括以下部分：
-		
-		- `概况说明`:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca)、图类型、js脚本)
-		- `图表对应`:流程各部分图表对应关系说明,分为数据表格和作图展示两种<br>
+
+		- 概况说明:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca)、图类型、js脚本)
+		- 图表对应:流程各部分图表对应关系说明,分为数据表格和作图展示两种<br>
 			`数据表格`：包括展示样式、数据表、筛选项、结果表,示例如下：
 			![表结构对应关系示例](img/表结构对应关系.png)<br>
 			`作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数，示例如下：
@@ -271,18 +271,32 @@ Sanger Biocluster
 	- [SLURM 安装与配置.pdf](/learn/SLURM 安装与配置.pdf)
 	- [user_guide_slurm.pdf](/learn/user_guide_slurm.pdf)
 	- [用 SLURM 优化超级计算机内的资源管理.pdf](/learn/用 SLURM 优化超级计算机内的资源管理.pdf)
-	- [](/learn/)
 
 * Git
+	- [GIT使用1-20160520.pdf](/learn/GIT使用1-20160520.pdf)
+	- [GIT使用2-20161223.pdf](/learn/GIT使用2-20161223.pdf)
+	- [gitlab使用方法-20170322.pdf](/learn/gitlab使用方法-20170322.pdf)
 
 * Python
+	- [python教程-许挺151207.pptx](/learn/python教程-许挺151207.pptx)
+	- [Python多线程-何胜20160415.pptx](/learn/Python多线程-何胜20160415.pptx)
+	- [Python多线程与多进程-shenghe20160425.pdf](/learn/Python多线程与多进程-shenghe20160425.pdf)
+	- [网页抓取 石今.pdf](/learn/网页抓取 石今.pdf)
 
 * Axure
+	- [交互分析原型设计-邱萍-20160715.ppt](/learn/交互分析原型设计-邱萍-20160715.ppt)
 
 * Mongo
+	-[mongo数据表设计基本规则.pptx](/learn/mongo数据表设计基本规则.pptx)
 
 * MySQL
 
+* Web
+	-[html基础介绍20160425.ppt](/learn/html基础介绍20160425.ppt)
+	-[CSS基础介绍-邱萍-20160429.ppt](/learn/CSS基础介绍-邱萍-20160429.ppt)
+	-[javascript简介(1)-许挺-20160429.pptx](/learn/javascript简介(1)-许挺-20160429.pptx)
+	-[highcharts-shenghe20160511.pdf](/learn/highcharts-shenghe20160511.pdf)
+	-[d3基础  秦丹花 160506.ppt](/learn/d3基础  秦丹花 160506.ppt)
 
 # 开发工具
 
@@ -303,5 +317,5 @@ Sanger Biocluster
 	- Axure
 
 * 数据库
-	- mongo:rockmongo
-	- mysql:navicat
+	- mongo: rockmongo
+	- mysql: navicat
