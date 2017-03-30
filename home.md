@@ -1,8 +1,8 @@
-Sanger Biocluster
+Sanger Bioinfo
 ======================
 
 >                
-> ### *Welcome to a Sanger !*
+> ### *Welcome to a Sanger !*                   [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:scroll:  Biocluster 教程](/biocluster)
 >              
 
 * [开发环境](#user-content-开发环境)
@@ -17,7 +17,6 @@ Sanger Biocluster
 * [基础技能](#user-content-基础技能)
 * [开发工具](#user-content-开发工具)
 
-> ###  [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:scroll:  Bicluster 教程](/biocluster)
 
 # 开发环境
 
