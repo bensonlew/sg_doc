@@ -12,14 +12,12 @@ Sanger Biocluster
 	+ [流程解析](#user-content-流程解析)
 	+ [产品设计](#user-content-产品设计)
 	+ [模块开发](#user-content-模块开发)
-	+ [接口编写](#user-content-接口编写)
+	+ [Web开发](#user-content-Web开发)
 	+ [测试发布](#user-content-测试发布)
 * [基础技能](#user-content-基础技能)
 * [开发工具](#user-content-开发工具)
 
-> ###  [:flags: 生信模块库](/mbio) | [:eye_in_speech_bubble: 可视化模板库](/charts)
-
-> ### [:scroll:  Bicluster 教程](/biocluster)
+> ###  [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:scroll:  Bicluster 教程](/biocluster)
 
 # 开发环境
 
@@ -188,12 +186,10 @@ Sanger Biocluster
 
 		- 概况说明:数据库名称、模板图说明(模板说明md文件[参考示例pca.md](/charts/pca)、图类型、js脚本)
 		- 图表对应:流程各部分图表对应关系说明,分为数据表格和作图展示两种<br>
-			`数据表格`：包括展示样式、数据表、筛选项、结果表,示例如下：
+			`**数据表格**`：包括展示样式、数据表、筛选项、结果表,示例如下：
 			![表结构对应关系示例](img/表结构对应关系.png)<br>
-			`作图展示`：包括展示样式、数据表、作图模板、筛选项、所需参数，示例如下：
+			`**作图展示**`：包括展示样式、数据表、作图模板、筛选项、所需参数，示例如下：
 			![表结构对应关系示例](img/表结构对应关系2.png)
-
-
 
 * 接口编写
 
@@ -223,7 +219,8 @@ Sanger Biocluster
 
 	推送外网更新。
 
-**Sanger平台更新规范**
+ **Sanger平台更新规范**
+
 	1. 普通功能需求按类型整理后2-3周更新一次；
 	2. 问题bug和重要紧急的功能需求按实际情况及时更新推送；
 	3. 大的改动功能需求和新增分析项按计划时间更新（与产品部确认推送时间），提前3-5天通知产品线预发布机测试，提前1天通知相关部门（产品线、营销部）更新内容；
@@ -287,16 +284,16 @@ Sanger Biocluster
 	- [交互分析原型设计-邱萍-20160715.ppt](/learn/交互分析原型设计-邱萍-20160715.ppt)
 
 * Mongo
-	-[mongo数据表设计基本规则.pptx](/learn/mongo数据表设计基本规则.pptx)
+	- [mongo数据表设计基本规则.pptx](/learn/mongo数据表设计基本规则.pptx)
 
 * MySQL
 
 * Web
-	-[html基础介绍20160425.ppt](/learn/html基础介绍20160425.ppt)
-	-[CSS基础介绍-邱萍-20160429.ppt](/learn/CSS基础介绍-邱萍-20160429.ppt)
-	-[javascript简介(1)-许挺-20160429.pptx](/learn/javascript简介(1)-许挺-20160429.pptx)
-	-[highcharts-shenghe20160511.pdf](/learn/highcharts-shenghe20160511.pdf)
-	-[d3基础  秦丹花 160506.ppt](/learn/d3基础  秦丹花 160506.ppt)
+	- [html基础介绍20160425.ppt](/learn/html基础介绍20160425.ppt)
+	- [CSS基础介绍-邱萍-20160429.ppt](/learn/CSS基础介绍-邱萍-20160429.ppt)
+	- [javascript简介(1)-许挺-20160429.pptx](/learn/javascript简介(1)-许挺-20160429.pptx)
+	- [highcharts-shenghe20160511.pdf](/learn/highcharts-shenghe20160511.pdf)
+	- [d3基础  秦丹花 160506.ppt](/learn/d3基础  秦丹花 160506.ppt)
 
 # 开发工具
 
