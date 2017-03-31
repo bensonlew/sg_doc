@@ -28,23 +28,23 @@ demo: 暂无
 
 # 参数示例
 
-```
-content = {
-	"data": [["all",156,23,22,55,20], ["all", 156,23,22,55,25]],//曲线A,B数据,第一个字符为必穿传字符，曲线分组时为分组名，不分组时放all
-	"categories": [1,2,3,4,5],//长度一般与曲线的数组长度相同
-	"params": {
-        "colors": ["#388E3C", "#F44336"],//一条线一个颜色
-        "x_label": "Number of Reads Sampled",
-        "y_label": "Sobs index of OTU level",
-        "show_legend": true,
-        "merge": 'mean',
-        "errorbar": true,
-        "tooltip_names": ["A", "B"],
-        "title": "Rarefaction curves"
-    },
-    "size": {
-        "width": 800,
-        "height": 600
-    }
-}
-```
+	```
+	content = {
+		"data": [["all",156,23,22,55,20], ["all", 156,23,22,55,25]],//曲线A,B数据,第一个字符为必穿传字符，曲线分组时为分组名，不分组时放all
+		"categories": [1,2,3,4,5],//长度一般与曲线的数组长度相同
+		"params": {
+	        "colors": ["#388E3C", "#F44336"],//一条线一个颜色
+	        "x_label": "Number of Reads Sampled",
+	        "y_label": "Sobs index of OTU level",
+	        "show_legend": true,
+	        "merge": 'mean',
+	        "errorbar": true,
+	        "tooltip_names": ["A", "B"],
+	        "title": "Rarefaction curves"
+	    },
+	    "size": {
+	        "width": 800,
+	        "height": 600
+	    }
+	}
+	```

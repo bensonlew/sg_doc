@@ -4,12 +4,9 @@
 
 ## 散点图
 
-| [PCA](/charts/pca)| [PCA_3d](/charts/pca_3d)|[PCA_3d](/charts/pca_3d)|
+| [PCA](/charts/scatter/pca)| [PCA_3d](/charts/scatter/pca)|[PCA_3d](/charts/pca_3d)|
 | -------------------------- |------------------------ |------------------------ |
-|[![pca示例](img/pca.JPG)](http://git.majorbio.com/sanger_bioinfo/SangerCharts/blob/master/demo/pca_n.html) | ![pca示例](img/pca.jpg)      | ![pca示例](img/pca.JPG)      |
-| [PCA](/charts/pca)| [PCA_3d](/charts/pca_3d)|[PCA_3d](/charts/pca_3d)|
-|![pca示例](img/pca.JPG) | [![pca_3d示例](img/pca.JPG)](http://git.majorbio.com/sanger_bioinfo/SangerCharts/blob/master/demo/PCA_3D.html)      |![pca示例](img/pca.JPG)      |
-
+|[![pca示例](img/散点PCA.png)](http://git.majorbio.com/sanger_bioinfo/SangerCharts/blob/master/demo/pca_n.html) | ![3d散点示例](img/散点3D.png)      | ![pca示例](img/pca.JPG)      |
 
 
 ## 曲线图
@@ -26,7 +23,15 @@
 
 ## 饼图
 
+| [Pie](/charts/pie/pie)| [T检验柱状图](/charts/bar/bar)|[差异检验柱状图](/charts/bar/bar)|
+| -------------------------- |------------------------ |------------------------ |
+|![常规饼图](img/pie.png) | ![T检验柱状图示例](img/多样性指数T检验.JPG)      | ![差异检验柱状图](img/两样本比较-多物种差异检验柱形图.jpeg)      |
+
 ## 箱线图
+
+| [箱线图](/charts/box/box)| [T检验柱状图](/charts/bar/bar)|[差异检验柱状图](/charts/bar/bar)|
+| -------------------------- |------------------------ |------------------------ |
+|![常规饼图](img/box.png) | ![T检验柱状图示例](img/多样性指数T检验.JPG)      | ![差异检验柱状图](img/两样本比较-多物种差异检验柱形图.jpeg)      |
 
 ## 热力图
 
