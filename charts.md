@@ -23,15 +23,15 @@
 
 ## 饼图
 
-| [Pie](/charts/pie/pie)| [T检验柱状图](/charts/bar/bar)|[差异检验柱状图](/charts/bar/bar)|
+| [Pie](/charts/pie/pie)| [Tpie](/charts/bar/bar)|[pie](/charts/bar/bar)|
 | -------------------------- |------------------------ |------------------------ |
-|![常规饼图](img/pie.png) | ![T检验柱状图示例](img/多样性指数T检验.JPG)      | ![差异检验柱状图](img/两样本比较-多物种差异检验柱形图.jpeg)      |
+|![常规饼图](img/pie.png) | ![Tpie](img/pie.png)      | ![pie](img/pie.png)      |
 
 ## 箱线图
 
-| [箱线图](/charts/box/box)| [T检验柱状图](/charts/bar/bar)|[差异检验柱状图](/charts/bar/bar)|
+| [箱线图](/charts/box/box)| [box](/charts/box/boxr)|[box](/charts/box/boxr)|
 | -------------------------- |------------------------ |------------------------ |
-|![常规饼图](img/box.png) | ![T检验柱状图示例](img/多样性指数T检验.JPG)      | ![差异检验柱状图](img/两样本比较-多物种差异检验柱形图.jpeg)      |
+|![常规饼图](img/box.png) | ![box](img/box.png)      | ![box](img/box.png)      |
 
 ## 热力图
 
