@@ -34,8 +34,7 @@ Sanger Bioinfo
 	- `install_packages/` 软件包安装目录
 	- `library/`  安装软件时需要的linux库
 	- `program/`	基础软件，编程语言等
-
->	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
+	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
 	`bioinfo/`生信软件类别目录结构：
 	```
@@ -124,8 +123,7 @@ Sanger Bioinfo
 
 	包含要点：模块路径Path、程序安装、功能描述、参数设计、运行逻辑
 	参考示例：[blast Tool](/examples/blast)
-
-	> :bellhop: 模块开发时所有模块{-必须-}对应一个md格式模块说明文档。
+	:bellhop: 模块开发时所有模块{-必须-}对应一个md格式模块说明文档。
 
 	- workflow流程图
 
