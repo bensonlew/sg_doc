@@ -2,8 +2,9 @@ Sanger Bioinfo
 ======================
 
 >                
-> ### *Welcome to a Sanger !*                   [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:scroll:  Biocluster 教程](/biocluster)
->              
+> ## *Welcome to a Sanger !*                   
+> ### [:flags: 生信模块库](/mbio)  |   [:dagger: APP软件库](AppInstallList)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:scroll:  Biocluster 教程](/biocluster)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
+
 
 * [开发环境](#user-content-开发环境)
 	+ [集群使用](#user-content-集群使用)
@@ -22,7 +23,7 @@ Sanger Bioinfo
 
 ### 集群使用
 
-登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
+开发登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
 
 * 软件安装
 
@@ -33,7 +34,7 @@ Sanger Bioinfo
 	- `install_packages/` 软件包安装目录
 	- `library/`  安装软件时需要的linux库
 	- `program/`	基础软件，编程语言等
-	安装需记录下安装信息，在[AppInstall](AppInstallList)中添加记录。
+>	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
 	`bioinfo/`生信软件类别目录结构：
 	```
@@ -59,7 +60,7 @@ Sanger Bioinfo
 	||-gene-structure #基因结构相关软件存放目录
 	|||-scripts/
 	```
-
+> :wind_chime:note: 该部分目录类别如有更改或新增，请对应更新上述列表。
 
 
 * 调试代码
