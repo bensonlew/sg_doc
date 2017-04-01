@@ -3,7 +3,7 @@ Sanger Bioinfo
 
 >                
 > ## *Welcome to a Sanger !*                   
-> ### [:flags: 生信模块库](/mbio)  |   [:dagger: APP软件库](AppInstallList)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:scroll:  Biocluster 教程](/biocluster)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
+> ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:scroll:  Biocluster 教程](/biocluster)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
 
 
 * [开发环境](#user-content-开发环境)
@@ -34,6 +34,7 @@ Sanger Bioinfo
 	- `install_packages/` 软件包安装目录
 	- `library/`  安装软件时需要的linux库
 	- `program/`	基础软件，编程语言等
+
 >	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
 	`bioinfo/`生信软件类别目录结构：
@@ -124,6 +125,8 @@ Sanger Bioinfo
 	包含要点：模块路径Path、程序安装、功能描述、参数设计、运行逻辑
 	参考示例：[blast Tool](/examples/blast)
 
+	> :bellhop: 模块开发时所有模块{-必须-}对应一个md格式模块说明文档。
+
 	- workflow流程图
 
 	包含要点：模块间上下游关系连接、module与tool之间的包含、File模块列表以及模块上file编号标注、模块开发者名字缩写标注、接口列表。
@@ -131,6 +134,9 @@ Sanger Bioinfo
 
 
 ### 模块开发
+
+生信模块包括： workflow、module、Tool、File
+
 **注意事项：**
 * 环境变量设置
 
