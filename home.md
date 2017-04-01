@@ -12,7 +12,7 @@ Sanger Bioinfo
 	+ [流程解析](#user-content-流程解析)
 	+ [产品设计](#user-content-产品设计)
 	+ [模块开发](#user-content-模块开发)
-	+ [Web开发](#user-content-Web开发)
+	+ [Web开发](#user-content-web开发)
 	+ [测试发布](#user-content-测试发布)
 * [基础技能](#user-content-基础技能)
 * [开发工具](#user-content-开发工具)
