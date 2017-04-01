@@ -58,7 +58,6 @@ tools存放目录为：`src\mbio\tools`
 | [rda_cca](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/beta_diversity/rda_cca.py) | [meta.beta_diversity.rda_cca](/mbio/tools/meta/rda_cca) |             |             |
 | [roc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/beta_diversity/roc.py) | [meta.beta_diversity.roc] |             |             |
 | [fastq_sample_extract](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/fastq_sample_extract.py) | [meta.fastq_sample_extract] |             |             |
-| [function_gene] | [meta.function_gene.function_gene] |             |             |
 | [function_predict](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/function_predict.py) | [meta.function_predict] |             |             |
 | [corr_network_calc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/corr_network_calc.py) | [meta.otu.corr_network_calc] |             |             |
 | [filter_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/filter_otu.py) | [meta.otu.filter_otu] |             |             |
@@ -73,11 +72,10 @@ tools存放目录为：`src\mbio\tools`
 | [base_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/base_info.py) | [meta.qc.base_info](/mbio/tools/meta/base_info) |             |             |
 | [qc_format](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/qc_format.py) | [meta.qc.qc_format] |             |             |
 | [reads_len_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/reads_len_info.py) | [meta.qc.reads_len_info](/mbio/tools/meta/reads_len_info) |             |             |
-| [samples_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/samples_info) | [meta.qc.samples_info](/mbio/tools/meta/samples_info) |             |             |
+| [samples_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/samples_info.py) | [meta.qc.samples_info](/mbio/tools/meta/samples_info) |             |             |
 | [sample_check](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/sample_check.py) | [meta.sample_check] |             |             |
 | [phylo_tree](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/phylo/phylo_tree.py) | [phylo.phylo_tree] |             |             |
 |         |       |             |             |
-|         |       |             |         |
 
 ## file
 
@@ -87,18 +85,17 @@ files存放目录为：`src\mbio\files`
 
 | 模块名称 | 路径  | 功能说明 | 相关应用|
 | ------- |-------|-------------|---------|
-| group_file_dir | [meta.alpha_diversity.group_file_dir] |             |             |
-| distance_matrix | [meta.beta_diversity.distance_matrix] |             |             |
-| newick_tree | [meta.beta_diversity.newick_tree] |             |             |
-| env_table | [meta.env_table] |             |             |
-| biom | [meta.otu.biom] |             |             |
-| group_table | [meta.otu.group_table] |             |             |
-| otu_seqids | [meta.otu.otu_seqids] |             |             |
-| otu_table | [meta.otu.otu_table] |             |             |
-| pan_core_table | [meta.otu.pan_core_otu] |             |             |
-| tax_summary_dir | [meta.otu.tax_summary_dir] |             |             |
-| venn_table | [meta.otu.venn_table] |             |             |
-|         |       |             |             |
+| [group_file_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/alpha_diversity/group_file_dir.py) | [meta.alpha_diversity.group_file_dir] |             |             |
+| [distance_matrix](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/beta_diversity/distance_matrix.py) | [meta.beta_diversity.distance_matrix] |             |             |
+| [newick_tree](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/beta_diversity/newick_tree.py) | [meta.beta_diversity.newick_tree] |             |             |
+| [env_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/env_table.py) | [meta.env_table] |             |             |
+| [biom](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/biom.py) | [meta.otu.biom] |             |             |
+| [group_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/group_table.py) | [meta.otu.group_table] |             |             |
+| [otu_seqids](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/otu_seqids.py) | [meta.otu.otu_seqids] |             |             |
+| [otu_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/otu_table.py) | [meta.otu.otu_table] |             |             |
+| [pan_core_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |             |
+| [tax_summary_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/tax_summary_dir.py) | [meta.otu.tax_summary_dir] |             |             |
+| [venn_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/venn_table.py) | [meta.otu.venn_table] |             |             |
 |         |       |             |             |
 
 ## package
@@ -109,8 +106,7 @@ packages存放目录为：`src\mbio\packages`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|-----|
-| copy_demo | [meta.copy_demo] |             |         |
-| export_otu | [meta.otu.export_otu] |             |       |
-| pan_core_otu | [meta.otu.pan_core_otu] |             |       |
-| stat_fasta_info | [meta.otu.stat_fasta_info] |             |       |
+| [copy_demo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/copy_demo.py) | [meta.copy_demo] |             |         |
+| [export_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/export_otu.py) | [meta.otu.export_otu] |             |       |
+| [pan_core_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |       |
 
