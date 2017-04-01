@@ -10,7 +10,7 @@ workflow存放目录为：`src\mbio\workflows`
 
 | 模块名称 | 路径  | 功能说明 | 相关应用|
 | ------- |-------|-------------|----|
-| metabase|[meta.metabase](/mbio/workflows/metabase)|微生物多样性流程基础分析工作流.| |
+| [metabase](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/workflows/meta/meta_base.py)|[meta.metabase](/mbio/workflows/metabase)|微生物多样性流程基础分析工作流.| |
 |         |       |             | |
 
 ## module
@@ -21,13 +21,12 @@ modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |相关应用|
 | ------- |-------|-------------|-----|
-| alpha_diversity | [meta.alpha_diversity.alpha_diversity] | 无rst文档 |    |
-| beta_diversity | [meta.beta_diversity.beta_diversity] | 无rst文档 |    |
-| corr_network_analysis | [meta.otu.corr_network_analysis] | 无rst文档 |    |
-| otu_analysis | [meta.otu.otu_analysis] | 无rst文档 |    |
-| miseq_qc | [meta.qc.miseq_qc] | 无rst文档 |    |
-| sample_extract | [meta.sample_extract.sample_extract] | 无rst文档 |    |
-|         |       |             |  |
+| [alpha_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/module/meta/alpha_diversity/alpha_diversity.py) | [meta.alpha_diversity.alpha_diversity] | 无rst文档 |    |
+| [beta_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/module/meta/beta_diversity/beta_diversity.py)  | [meta.beta_diversity.beta_diversity] | 无rst文档 |    |
+| [corr_network_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/module/meta/otu/corr_network_analysis.py) | [meta.otu.corr_network_analysis] | 无rst文档 |    |
+| [otu_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/module/meta/otu/otu_analysis.py) | [meta.otu.otu_analysis] | 无rst文档 |    |
+| [miseq_qc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/module/meta/qc/miseq_qc.py)  | [meta.qc.miseq_qc] | 无rst文档 |    |
+| [sample_extract] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/module/meta/sample_extract/sample_extract.py) | [meta.sample_extract.sample_extract] | 无rst文档 |    |
 |         |       |             |  |
 
 ## tool
@@ -38,8 +37,8 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
-| estimators | [meta.alpha_diversity.estimators](/mbio/tools/meta/estimators) | 计算样本的多样性指数ace、chao、shannon |             |
-| rarefaction | [meta.alpha_diversity.rarefaction](/mbio/tools/meta/rarefaction) | 比较测序数据量不同的样本中物种的丰富度 |             |
+| estimators | [meta.alpha_diversity.estimators](/mbio/tools/meta/estimators.md) | 计算样本的多样性指数ace、chao、shannon |             |
+| rarefaction | [meta.alpha_diversity.rarefaction](/mbio/tools/meta/rarefaction.md) | 比较测序数据量不同的样本中物种的丰富度 |             |
 | anosim_box | [meta.beta_diversity.anosim_box] |             |             |
 | anosim | [meta.beta_diversity.anosim] |             |             |
 | dbrda | [meta.beta_diversity.dbrda] |             |             |
