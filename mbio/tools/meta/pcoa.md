@@ -34,11 +34,18 @@ ordination.pl -type pcoa -outdir outdir -dist distancematrix
 -----------------------------------
 
 ```
-            {"name": "input", "type": "infile", "format": "distancematrix"},  # 输入距离矩阵
-            {"name": "output", "type": "outfile", "format": "pcoa_outdir"},  # 包含样本的坐标表，样本权重表，主成分解释度表
+{"name": "dis_matrix", "type": "infile","format": "meta.beta_diversity.distance_matrix"}
 ```
 
 运行逻辑
 -----------------------------------
 
 提供距离矩阵，计算PCOA分析得到几个结果表
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 2
+self._memory = '3G'
+```

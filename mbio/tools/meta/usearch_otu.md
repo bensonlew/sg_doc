@@ -48,15 +48,26 @@ make_otu_table.py -i otu.seqids.tmp  -o otu_table.biom
 -----------------------------------
 
 ```
-    {'name': 'fasta', 'type': 'infile', 'format': 'Fasta'},  # 输入fasta文件，序列名称格式为'>sampleID_seqID'.
-    {'name': 'identity', 'type': 'float', 'default': 0.97},  # 相似性值，范围0-1.
-    {'name': 'otu_table', 'type': 'outfile', 'format': 'OtuTable'},  # 输出结果otu表
-    {'name': 'otu_rep', 'type': 'outfile', 'format': 'Fasta'},  # 输出结果otu代表序列
-    {'name': 'otu_seqids', 'type': 'outfile', 'format': 'OtuSeqids'},  # 输出结果otu中包含序列列表
-    {'name': 'otu_biom', 'type': 'outfile', 'format': 'Biom', 'default': 'otu_table.biom'}  # 输出结果biom格式otu表
+{'name': 'fasta', 'type': 'infile', 'format': 'sequence.fasta'},# 输入fasta文件，序列名称格式为'>sampleID_seqID'.
+{'name': 'identity', 'type': 'float', 'default': 0.97},# 相似性值，范围0-1.
+{'name': 'otu_table', 'type': 'outfile','format': 'meta.otu.otu_table'},  # 输出结果otu表
+{'name': 'otu_rep', 'type': 'outfile','format': 'sequence.fasta'},  # 输出结果otu代表序列
+{'name': 'otu_seqids', 'type': 'outfile','format': 'meta.otu.otu_seqids'},  # 输出结果otu中包含序列列表
+{'name': 'otu_biom', 'type': 'outfile','format': 'meta.otu.biom'}  # 输出结果biom格式otu表
 ```
 
 运行逻辑
 -----------------------------------
 
 各个cmd顺序运行，最后收集结果文件整理到output中。
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 10
+total = os.path.getsize(self.option("fasta").prop["path"])
+total = int(math.ceil(total / (1024 * 1024 * 1024)))
+total = int(total * 10)
+self._memory = "{}G".format(total)
+```

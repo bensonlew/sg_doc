@@ -9,7 +9,7 @@ rarefaction
 功能描述
 -----------------------------------
 
-比较测序数据量不同的样本中物种的丰富度；说明样本的测序数据量是否合理。
+比较测序数据量不同的样本中物种的丰富度；说明样本的测序数据量是否合理，稀释性曲线。
 
 调用程序
 -----------------------------------
@@ -38,13 +38,21 @@ rarefaction.single(shared=otu.shared,calc=sobs-chao-shannon,groupmode=f,freq=100
 -----------------------------------
 
 ```
-    {"name": "OTUtable", "type": "infile", "format": "txt"},  # 输入文件
-    {"name": "indices", "type": "string", "default": "all"},  # 指数类型
-    {"name": "random_number", "type": "int", "default": 100},  # 随机取样数   
-    {"name": "rarefaction", "type": "outfile", "format": "txt"}  # 输出结果
+    {"name": "otu_table", "type": "infile", "format": "meta.otu.otu_table,meta.otu.tax_summary_dir"},  # 输入文件
+    {"name": "indices", "type": "string", "default": "sobs,shannon"},  # 指数类型
+    {"name": "freq", "type": "int", "default": 100},  # 随机取样数   
+    {"name": "level", "type": "string", "default": "otu"}  # level水平
 ```
 
 运行逻辑
 -----------------------------------
 
 传入`OTUtable`后，根据默认参数值，输出统计结果。
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 11
+self._memory = '5G'
+```

@@ -27,15 +27,14 @@ fasttoolkit
 -----------------------------------
 
 ```
-
+bioinfo/seq/fastx_toolkit_0.0.14/fastx_quality_stats -i fastq -o file_name
 ```
 
 参数设计
 -----------------------------------
 
 ```
-    {"name": "input_path", "type": "infile", "format": "fastq_dir"},  # 输入文件
-    {"name": "output", "type": "outfile", "format": "base_info_dir"}  # 输出结果
+{"name": "fastq_path", "type": "infile", "format": "sequence.fastq_dir"}]  # 输入fastq文件夹
 ```
 
 运行逻辑
@@ -52,3 +51,17 @@ fasttoolkit
 ```
 
 由外部提供fastq_dir, 生成相应的qc/base_info_dir文件夹，对文件夹里的每个fastq文件做统计，返回对应的base_info文件,放在qc/base_info_dir文件夹当中
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 10
+total = 0
+for f in self.option("fasta_path").prop["fasta_fullname"]:
+    total += os.path.getsize(f)
+total = total / (1024 * 1024 * 1024)
+total = total * 4
+total = math.ceil(total)
+self._memory = '{}G'.format(int(total))
+```

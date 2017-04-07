@@ -34,15 +34,23 @@ compare_categories.py [options] {--method METHOD -i/--input_dm INPUT_DM -m/--map
 -----------------------------------
 
 ```
-            {"name": "method", "type": "string","default":"bray_curtis"},  # 默认距离算法，默认选择待定
-            {"name": "input1", "type": "infile", "format": "OtuTable"},  # 输入文件,为otutable
-            {"name": "input2", "type": "infile", "format": "distancematrix"},  # 输入文件，距离矩阵，选择提供距离矩阵时，覆盖otutable和距离算法。
-            {"name": "input3", "type": "infile", "format": "EnvTable"},  # 输入文件，环境因子表。
-            {"name": "output1", "type": "outfile", "format": "CoordinateTable"},  # 样本的坐标表
-            {"name": "output2", "type": "outfile", "format": "CoordinateTable"},  # 环境因子坐标表
+{"name": "otutable", "type": "infile", "format": "meta.otu.otu_table, meta.otu.tax_summary_dir"},
+{"name": "method", "type": "string", "default": "bray_curtis"},
+{"name": "level", "type": "string", "default": "otu"},
+{"name": "dis_matrix", "type": "infile", "format": "meta.beta_diversity.distance_matrix"},
+{"name": "envtable", "type": "infile", "format": "meta.otu.group_table"},
+{"name": "envlabs", "type": "string", "default": ""}  # 用逗号分隔的环境因子名称
 ```
 
 运行逻辑
 -----------------------------------
 
 先通过距离算法和otutable获得距离矩阵，如果提供了距离矩阵，覆盖着两者，根据距离矩阵和环境因子表进行计算db-RDA
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 2
+self._memory = '3G'
+```

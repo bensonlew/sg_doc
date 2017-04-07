@@ -40,12 +40,20 @@ estimatos.py
 -----------------------------------
 
 ```
-{"name": "OTUtable", "type": "infile", "format": "txt"},  # 输入文件
-{"name": "indices", "type": "string", "default": "all"},  # 指数类型
-{"name": "estimatos", "type": "outfile", "format": "txt"}  # 输出结果
+{"name": "otu_table", "type": "infile", "format": "meta.otu.otu_table,meta.otu.tax_summary_dir"},  # 输入文件
+{"name": "indices", "type": "string", "default": "ace,chao,shannon,simpson"},  # 指数类型
+{"name": "level", "type": "string", "default": "otu"}  # level水平
 ```
 
 运行逻辑
 -----------------------------------
 
 传入`OTUtable`后，计算出所有样本的各个指数值，最后输出统计结果。当用户选择特定指数类型时，改变输出结果。
+
+资源配置
+------------------------------------
+
+```
+self._cpu = 11
+self._memory = ''
+```
