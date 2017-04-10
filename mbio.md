@@ -63,9 +63,9 @@ tools存放目录为：`src\mbio\tools`
 | [filter_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/filter_otu.py) | [meta.otu.filter_otu] |             |             |
 | [otu_association](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/otu_association.py) | [meta.otu.otu_association] |             |             |
 | [otunetwork](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/otunetwork.py) | [meta.otu.otunetwork] |             |             |
-| [otu_taxon_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/otu_taxon_stat.py) | [meta.otu.otu_taxon_stat] |             |             |
+| [otu_taxon_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/otu_taxon_stat.py) | [meta.otu.otu_taxon_stat](/mbio/tools/meta/otu_taxon_stat) | 根据原始的otu表和otu的分类信息表生成绝对丰度和相对丰度的单一水平物种分类统计表和多水平物种分类统计 |             |
 | [pan_core_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |             |
-| [sort_samples](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/sort_samples.py) | [meta.otu.sort_samples] |             |             |
+| [sort_samples](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/sort_samples.py) | [meta.otu.sort_samples](/mbio/tools/meta/sort_samples) | 传入一个group表，以及是否进行样本合并的参数生成一张OTU表并对并依照group表OTU表进行筛选合并 |             |
 | [sub_sample](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/sub_sample.py) | [meta.otu.sub_sample] |             |             |
 | [usearch_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/otu/usearch_otu.py) | [meta.otu.usearch_otu](/mbio/tools/meta/usearch_otu) | 对多样本序列进行OTU聚类分析 |             |
 | [pipe_submit_all](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/pipe/pipe_submit_all.py) | [meta.pipe.pipe_submit_all] |             |             |
