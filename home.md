@@ -77,13 +77,13 @@ Sanger Bioinfo
 
 	从服务器上传数据到云平台目录。
 	示例如下：
-```
-python ~/biocluster/scripts/dataexchange/get_file_list.py -i ~/sg-users/yuguo/testdata -o testdata.list
-python ~/biocluster/scripts/dataexchange/upload.py -l testdata.list -c FNSBGA -m tsanger
+	```
+	python ~/biocluster/scripts/dataexchange/get_file_list.py -i ~/sg-users/yuguo/testdata -o testdata.list
+	python ~/biocluster/scripts/dataexchange/upload.py -l testdata.list -c FNSBGA -m tsanger
 
-python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NSOUKH -m tsanger
-python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NWKBVB
-```
+	python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NSOUKH -m tsanger
+	python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NWKBVB
+	```
 
 * Slurm任务提交
 
