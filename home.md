@@ -33,7 +33,7 @@ Sanger Bioinfo
 	- `gcc/` 各版本gcc编译器，根据需要添加版本
 	- `install_packages/` 软件包安装目录
 	- `library/`  安装软件时需要的linux库
-	- `program/`	基础软件，编程语言等
+	- `program/`	基础软件，编程语言等<br>
 	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
 	`bioinfo/`生信软件类别目录结构：
@@ -67,6 +67,54 @@ Sanger Bioinfo
 
 	编写的代码进行调试时将修改的脚本拷到 `~/biocluster`中相应位置，禁止整个文件夹复制，避免开发人员之间代码覆盖，互相影响。
 	`~/workspace` 为测试运行数据结果目录。
+
+	+ Tool调试
+	+ Module调试
+	+ Workflow调试
+	+ 接口调试
+
+* 命令行数据上传
+
+	从服务器上传数据到云平台目录。
+	示例如下：
+```
+python ~/biocluster/scripts/dataexchange/get_file_list.py -i ~/sg-users/yuguo/testdata -o testdata.list
+python ~/biocluster/scripts/dataexchange/upload.py -l testdata.list -c FNSBGA -m tsanger
+
+python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NSOUKH -m tsanger
+python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NWKBVB
+```
+
+* Slurm任务提交
+
+	用户命令包括：sacct, salloc, sattach, sbatch, sbcast, scancel, scontrol, sinfo, smap, squeue,srun, strigger 和 sview.
+	命令使用–help选项可以打印命令改命令的概要。需要注意的是命令选项都是大小写区分的。
+
+	`sacct` 用来报告已经完成或正在进行作业或作业步骤的计费信息。
+
+	`salloc`  用来实时分配作业资源。通常用来分配资源并生成一个终端shell。终端执行srun命令开始并行任务。
+
+	`sattach` 用来连接正在执行任务的标准输入、输出、错误并带信号量接受功能。
+
+	`sbatch` 用来提交作业脚本以便之后执行。这个脚本通常包含一个或多个srun命令来开始并行任务。
+
+	`sbcast` 用来传输一个本地文件到已分配节点的本地磁盘。使用无盘的计算节点时候，相比共享的文件系统，这个可以大大提高性能。
+
+	`scancel` 用来取消等待或者正在运行的任务和任务步骤。
+
+	`scontrol` 为用来查看或修改Slurm状态的管理工具。需要注意的是许多scontrol的命令只能以root身份执行。
+
+	`sinfo` 用来报告Slurm管理的节点和分区和节点状态。它包含各种过滤、排序和格式化的选项。
+
+	`smap` 用来报告Slurm管理的作业、分区、节点的状态信息，只以图形化显示来反映网络拓扑信息。
+
+	`squeue` 报告作业或作业步骤的状态。它包含各种过滤、排序、格式选项。默认情况下，它以优先级排序报告运行作业，然后以优先级排序报告等待作业。
+
+	`srun` 用来实时提交运行作业，或者初始化作业步骤。srun含有各种指定需求资源的选项，包含：节点数量范围，处理器数量，指定使用或排除哪些节点以及指定节点的特性（如多少内存，磁盘空间，和其他一定的特性等）。一个作业可以在已分配节点的范围内包含多个顺序执行或独立/共享资源并行执行的作业步骤.
+
+	`strigger` 用来设置，获取或查看时间触发器。时间触发器包含例如节点down机或作业达到时间限制等。
+
+	`sview` 为获取或更新Slurm管理的作业、分区、节点的状态信息。
 
 
 ### 协作编程
@@ -122,7 +170,7 @@ Sanger Bioinfo
 	- 单模块说明文档
 
 	包含要点：模块路径Path、程序安装、功能描述、参数设计、运行逻辑
-	参考示例：[blast Tool](/examples/blast)
+	参考示例：[blast Tool](/examples/blast)<br>
 	:bellhop: 模块开发时所有模块{-必须-}对应一个md格式模块说明文档。
 
 	- workflow流程图
@@ -149,9 +197,8 @@ Sanger Bioinfo
 	在`sanger_bioinfo\src\mbio\packages\meta\copy_demo.py` 中run函数中按规则添加代码；
 
 	测试：
-	`python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 -n "task_id;target_task_id;target_project_sn;target_member_id" -d "tsanger_2639;tsanger_2639_15;10000485_1;shenghe_test" -b http://192.168.12.102:8090`
-
-> :wind_chime:note: otu_id,group_id,group_id,env_id, alpha_diversity_id以外的主表ID混用，非标准的主表detail表模式，自行添加修改代码。
+	`python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 -n "task_id;target_task_id;target_project_sn;target_member_id" -d "tsanger_2639;tsanger_2639_15;10000485_1;shenghe_test" -b http://192.168.12.102:8090`<br>
+	> :wind_chime:note: otu_id,group_id,group_id,env_id, alpha_diversity_id以外的主表ID混用，非标准的主表detail表模式，自行添加修改代码。
 
 
 ### Web开发
