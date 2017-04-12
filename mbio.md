@@ -96,8 +96,13 @@ files存放目录为：`src\mbio\files`
 | [pan_core_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/pan_core_table.py) | [meta.otu.pan_core_otu] |             |             |
 | [tax_summary_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/tax_summary_dir.py) | [meta.otu.tax_summary_dir] |             |             |
 | [venn_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/venn_table.py) | [meta.otu.venn_table] |             |             |
-| [gff3](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/sequence/gff3.py) | [sequence.gff3] |[gff3文件check,parse方法]  |             |
-|         |       |             |             |
+| [gff3](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/sequence/gff3.py) | [sequence.gff3] |gff3文件check,parse方法  |             |
+| [gtf](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/sequence/gtf.py)  |  [sequence.gtf]     | gtf文件check,parse方法|             |
+| [sequence_ontology](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/sequence/sequence_ontology.py)  |  [sequence.sequence_ontology] |sequence_ontology(.obo文件解析与检查)|             |
+| [bam](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/ref_rna/bam.py)  |  [ref_rna.bam]     | bam文件检查  |             |
+| [ctab](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/ref_rna/ctab.py)  |  [ref_rna.ctab]     | ctab格式检查  |组装，rna表达量定量|
+| [summary](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/)  |  [ref_rna.summary]     |   featureCounts 输出的summary文件|ref_rna表达量定量|
+| [bam_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/ref_rna/assembly/bam_dir.py)  |  [ref_rna.assembly.bam_dir] |  只有bam文件的文件夹检查 |  ref-rna, 组装,基因结构等分析  |
 
 ## package
 
