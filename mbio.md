@@ -96,6 +96,7 @@ files存放目录为：`src\mbio\files`
 | [pan_core_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/pan_core_table.py) | [meta.otu.pan_core_otu] |             |             |
 | [tax_summary_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/tax_summary_dir.py) | [meta.otu.tax_summary_dir] |             |             |
 | [venn_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/otu/venn_table.py) | [meta.otu.venn_table] |             |             |
+| [gff3](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/sequence/gff3.py) | [meta.otu.venn_table] |             |             |
 |         |       |             |             |
 
 ## package
