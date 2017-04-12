@@ -34,12 +34,20 @@ plot-hcluster_tree.pl  -i distancefile -m [average/single/complete] -o outputdir
 -----------------------------------
 
 ```
-            {"name": "method", "type": "string", "default": "complete"},  # 选择构建层级聚类树的方法，默认选用complete
-            {"name": "input", "type": "infile", "format": "distancematrix"},  # 输入文件,距离矩阵
-            {"name": "output", "type": "outfile", "default": "newicktree"},  # 输出文件，newick tree文件
+{"name": "dis_matrix", "type": "infile","format": "meta.beta_diversity.distance_matrix"},
+{"name": "newicktree", "type": "outfile","format": "meta.beta_diversity.newick_tree"},
+{"name": "linkage", "type": "string", "default": "average"}
 ```
 
 运行逻辑
 -----------------------------------
 
-调用脚本完成分析获得newicktree文件。
+调用脚本根据距离矩阵分析获得newicktree文件。
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 1
+self._memory = '3G'
+```

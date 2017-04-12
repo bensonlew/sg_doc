@@ -14,12 +14,10 @@ read_len_info
 调用程序
 -----------------------------------
 
-package 待定
+调用的是file中的一个模块作为分析函数
 
 安装路径
 -----------------------------------
-
-
 
 
 
@@ -27,16 +25,15 @@ package 待定
 -----------------------------------
 
 ```
-
+from mbio.files.sequence.fasta import FastaFile
+Python脚本实现序列信息的统计
 ```
 
 参数设计
 -----------------------------------
 
 ```
-            {"name": "input_fastq_path", "type": "infile", "format": "fastq_dir"},  # 输入文件
-            {"name": "input_fasta_path", "type": "infile", "format": "fasta_dir"},  # 输入文件
-            {"name": "output", "type": "outfile", "format": "base_info_dir"}  # 输出结果
+{"name": "fasta_path", "type": "infile", "format": "sequence.fasta_dir"}
 ```
 
 运行逻辑
@@ -54,3 +51,17 @@ package 待定
 ```
 
 由外部提供fastq_dir,生成相应的qc/reads_length_info_dir文件夹，对文件夹里的每个fastq文件做统计，返回对应的reads_length_info文件,放在qc/reads_length_info_dir文件夹当中
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 10
+total = 0
+for f in self.option("fasta_path").prop["fasta_fullname"]:
+    total += os.path.getsize(f)
+total = total / (1024 * 1024 * 1024)
+total = total * 4
+total = math.ceil(total)
+self._memory = '{}G'.format(int(total))
+```

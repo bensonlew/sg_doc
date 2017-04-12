@@ -34,11 +34,18 @@ ordination.pl -type nmds -outdir outdir -dist distancematrix
 -----------------------------------
 
 ```
-            {"name": "input", "type": "infile", "format": "distance_matrix"},  # 输入距离矩阵
-            {"name": "output", "type": "outfile", "format": "nmds_outdir"},  # 包含样本坐标
+{"name": "dis_matrix", "type": "infile","format": "meta.beta_diversity.distance_matrix"}
 ```
 
 运行逻辑
 -----------------------------------
 
 提供距离矩阵进行NMDS分析
+
+资源配置
+-----------------------------------
+
+```
+self._cpu = 2
+self._memory = '3G'
+```
