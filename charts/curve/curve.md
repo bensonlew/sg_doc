@@ -21,6 +21,7 @@ demo: 暂无
 	+ tooltip_names：所有曲线的名字
 	+ merge：是否根据分组画线的标准差
 	+ errorbar：与merge同时设置，计算标准差的方法
+	+ line_type: 曲线类型，line为折线，spline为曲线,
 * size: 图片大小参数
 	+ width：设定图片的宽度
 	+ height：设定图片的高度
@@ -40,7 +41,8 @@ demo: 暂无
 	        "merge": 'mean',
 	        "errorbar": true,
 	        "tooltip_names": ["A", "B"],
-	        "title": "Rarefaction curves"
+	        "title": "Rarefaction curves"，
+	        "line_type": "line"
 	    },
 	    "size": {
 	        "width": 800,
