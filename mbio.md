@@ -2,6 +2,13 @@
 ==========
 生信模块存放目录为：`src\mbio`
 
+* [workflow](#user-content-workflow)
+* [module](#user-content-module)
+* [tool](#user-content-tool)
+* [file](#user-content-module)
+* [package](#user-content-package)
+
+
 ## workflow
 
 workflow存放目录为：`src\mbio\workflows`
@@ -109,4 +116,3 @@ packages存放目录为：`src\mbio\packages`
 | [copy_demo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/copy_demo.py) | [meta.copy_demo] |             |         |
 | [export_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/export_otu.py) | [meta.otu.export_otu] |             |       |
 | [pan_core_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |       |
-
