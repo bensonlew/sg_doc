@@ -15,6 +15,7 @@ Sanger Bioinfo
 	+ [模块开发](#user-content-模块开发)
 	+ [Web开发](#user-content-web开发)
 	+ [测试发布](#user-content-测试发布)
+    + [工具应用开发](#user-content-工具应用开发)
 * [基础技能](#user-content-基础技能)
 * [开发工具](#user-content-开发工具)
 
@@ -276,6 +277,25 @@ Sanger Bioinfo
 * Step 5 ：i-sanger外部正式机
 
 	推送外网更新。
+
+
+### 工具应用开发
+    工具开发需要完成的内容有以下几点(以下说明中tool代表tool和module甚至包含workflow)：
+    1.工具的独立性确认与功能完善：工具可能开发时被用于其他module/workflow，导致工具的设计偏向，例如：PCA工具开始只可以适用于OTU表(特征在行为OTU)，需要修改增加行列参数。
+    2.工具的api接口：工具由pipeline(工作流接收端口)提交到WPM服务，服务在tool上层添加SingleWorkflow包装运行tool；需要编写一个api/database导表，完成tool结果导入mongo数据库；当前(暂时)调用方式为SingleWorkflow自动调用api/database/toolapps相对导表模块路径与tool模块相对mbio路径相同的模块。例如：src/mbio/tools/meta/beta_diversity/pca.py工具调用src/mbio/api/database/toolapps/tools/meta/beta_diversity/pca.py实例化Pca对象，运行run函数。简化代码如下：
+        class Pca(Base):
+            def __init__(self, bind_object):
+                super(Pca, self).__init__(bind_object)
+                self.output_dir = self.bind_object.output_dir
+                self._db_name = 'toolapps'
+                self.check()
+            @report_check
+            def run(self):
+                self.main_id = self.scatter_in()
+                self.table_ids = self.table_in()
+                return self.main_id
+    3.mongo数据表的设计：工具表设计角度与分析不同，数据不考虑分析，只考虑分析的展示形式，例如：散点数据，venn数据，表格数据，柱图数据等等，结果表导入mongo中时按照对应的展示类型导入即可，新的展示类型数据需要重新设计展示类型的结构，此处需要慎重，设计尽量完整。
+    4.其他注意事项：报错信息确认，不能偏向某个流程说明；网页的描述有三类，一是分析的参数整体说明；二是各个参数的说明；三是文件格式说明，不能把文件的格式说明偏向分析内容，文件格式是通用的。
 
  **Sanger平台更新规范**
 
