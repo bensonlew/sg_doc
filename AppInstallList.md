@@ -27,4 +27,7 @@ App 安装记录表
 | gatk | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/ | /mnt/ilustre/users/sanger-dev/app/install_packages/GenomeAnalysisTK-3.6.tar.bz2 | 在官网用邮箱注册，下载软件，是已经编译好的GenomeAnalysisTK.jar，直接可以java调用<br>|  |
 | annovar | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/annovar |  | |  |
 | vep | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/vep | /mnt/ilustre/users/sanger-dev/app/install_packages/vep.zip | perl INSTALL.pl --NO_HTSLIB<br>|  |
-| pindel | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/pindel-master | /mnt/ilustre/users/sanger-dev/app/install_packages/pindel-master.zip | ./INSTALL [path-to-htslib]<br>./pindel [options]
+| pindel | /mnt/ilustre/users/sanger-dev/app/bioinfo/seq/pindel-master | /mnt/ilustre/users/sanger-dev/app/install_packages/pindel-master.zip | ./INSTALL [path-to-htslib]<br>./pindel [options] | |
+| reportlab/rlextra | 无 | 无 |pip install rlextra -i https://网站用户名:[密码]@www.reportlab.com/pypi<br>需要先安装pillow: pip install pillow| |
+| h5py| 无 | 无 | pip install h5py | |
+| ImageMagick | app/program/ImageMagick | app/install_packages/ImageMagick | ./configure --prefix=/mnt/ilustre/users/sanger/app/program/ImageMagick<br>make<br> make install| ||
