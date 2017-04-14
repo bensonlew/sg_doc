@@ -1,13 +1,16 @@
 Biocluster教程系列
 ==================
 
-> 学无止境
+> 学无止境,持续更新中...
+> 欢迎大家积极补充教程和经验文档~
 
 * [概述](#user-content-概述)
 * [基础](/biocluster/Basic)
 * [事件驱动编程](/biocluster/Event_Oriented)
 * [Module/Workflow开发](/biocluster/Moudule_Workflow)
 * [Tool/Agent开发](/biocluster/Tool_Agent)
+* [Web服务](/biocluster/web)
+* [WPM相关基础](/biocluster/wpm)
 * [运行和测试](/biocluster/Run_Test)
 
 概述
