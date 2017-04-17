@@ -202,8 +202,12 @@ Sanger Bioinfo
 
 * 数据库连接
 
-    1. 连接mongo数据库时，必须从Config中获取，目前有两种数据库连接，一是Config().mongo_client，是分析结果mongo数据库连接，二是Config().biodb_mongo_client，是生信参考数据库，如：KEGG数据库、NCBI物种分类、COG数据库等等。
-    + 连接mysql数据库时，也必须从Config中获取，使用Config().get_db()方法获取连接对象。一般情况下，mysql在模块开发时没有必要使用，使用时请确认必要性。
+    1. mbio目录下的模块数据库访问必须使用：from bioclusterconfig import Config
+        - 连接mongo数据库时，必须从Config中获取，目前有两种数据库连接，一是Config().mongo_client，是分析结果mongo数据库连接，二是Config().biodb_mongo_client，是生信参考数据库，如：KEGG数据库、NCBI物种分类、COG数据库等等。
+        - 连接mysql数据库时，也必须从Config中获取，使用Config().get_db()方法获取连接对象。一般情况下，mysql在模块开发时没有必要使用，使用时请确认必要性。
+    2. webroot目录下模块数据库访问使用：from webroot.mainapp.config.db import Config
+        - mongo数据库两种连接方式分别是Config().get_mongo_client()返回分析结果数据库连接，Config().get_biodb_mongo_client()返回生信参考数据库连接
+        - 连接mysql数据库从Config中获取，使用Config().get_db()方法获取连接对象。
 
 
 * demo设置
