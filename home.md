@@ -201,13 +201,12 @@ Sanger Bioinfo
 	框架采用文件硬链的方式上传文件（上传地址和服务器系统在同一个文件系统），检查所有文件上传的目录，目录下的所有文件必须都是以硬链的方式链到该处，不可以有软链（软硬链说明：https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/）   python中的os.link()是硬链
 
 * 数据库连接
-
-    1. mbio目录下的模块数据库访问必须使用：from bioclusterconfig import Config
-        - 连接mongo数据库时，必须从Config中获取，目前有两种数据库连接，一是Config().mongo_client，是分析结果mongo数据库连接，二是Config().biodb_mongo_client，是生信参考数据库，如：KEGG数据库、NCBI物种分类、COG数据库等等。
-        - 连接mysql数据库时，也必须从Config中获取，使用Config().get_db()方法获取连接对象。一般情况下，mysql在模块开发时没有必要使用，使用时请确认必要性。
-    2. webroot目录下模块数据库访问使用：from webroot.mainapp.config.db import Config
-        - mongo数据库两种连接方式分别是Config().get_mongo_client()返回分析结果数据库连接，Config().get_biodb_mongo_client()返回生信参考数据库连接
-        - 连接mysql数据库从Config中获取，使用Config().get_db()方法获取连接对象。
+	1. mbio目录下的模块数据库访问必须使用：from bioclusterconfig import Config
+	    - 连接mongo数据库时，必须从Config中获取，目前有两种数据库连接，一是Config().mongo_client，是分析结果mongo数据库连接，二是Config().biodb_mongo_client，是生信参考数据库，如：KEGG数据库、NCBI物种分类、COG数据库等等。
+	    - 连接mysql数据库时，也必须从Config中获取，使用Config().get_db()方法获取连接对象。一般情况下，mysql在模块开发时没有必要使用，使用时请确认必要性。
+	2. webroot目录下模块数据库访问使用：from webroot.mainapp.config.db import Config
+	    - mongo数据库两种连接方式分别是Config().get_mongo_client()返回分析结果数据库连接，Config().get_biodb_mongo_client()返回生信参考数据库连接
+	    - 连接mysql数据库从Config中获取，使用Config().get_db()方法获取连接对象。
 
 
 * demo设置
@@ -288,25 +287,6 @@ Sanger Bioinfo
 
 	推送外网更新。
 
-
-### 工具应用开发
-    工具开发需要完成的内容有以下几点(以下说明中tool代表tool和module甚至包含workflow)：
-    1.工具的独立性确认与功能完善：工具可能开发时被用于其他module/workflow，导致工具的设计偏向，例如：PCA工具开始只可以适用于OTU表(特征在行为OTU)，需要修改增加行列参数。
-    2.工具的api接口：工具由pipeline(工作流接收端口)提交到WPM服务，服务在tool上层添加SingleWorkflow包装运行tool；需要编写一个api/database导表，完成tool结果导入mongo数据库；当前(暂时)调用方式为SingleWorkflow自动调用api/database/toolapps相对导表模块路径与tool模块相对mbio路径相同的模块。例如：src/mbio/tools/meta/beta_diversity/pca.py工具调用src/mbio/api/database/toolapps/tools/meta/beta_diversity/pca.py实例化Pca对象，运行run函数。简化代码如下：
-        class Pca(Base):
-            def __init__(self, bind_object):
-                super(Pca, self).__init__(bind_object)
-                self.output_dir = self.bind_object.output_dir
-                self._db_name = 'toolapps'
-                self.check()
-            @report_check
-            def run(self):
-                self.main_id = self.scatter_in()
-                self.table_ids = self.table_in()
-                return self.main_id
-    3.mongo数据表的设计：工具表设计角度与分析不同，数据不考虑分析，只考虑分析的展示形式，例如：散点数据，venn数据，表格数据，柱图数据等等，结果表导入mongo中时按照对应的展示类型导入即可，新的展示类型数据需要重新设计展示类型的结构，此处需要慎重，设计尽量完整，对图形展示有良好的抽象。
-    4.其他注意事项：tool报错信息确认，不能偏向某个流程说明，例如PCA报错不要说OTU表格式错误；网页的描述有三类，一是分析的参数整体说明；二是各个参数的说明；三是文件格式说明，不能把文件的格式说明偏向分析内容，文件格式是通用的。
-
  **Sanger平台更新规范**
 
 	1. 普通功能需求按类型整理后2-3周更新一次；
@@ -343,6 +323,28 @@ Sanger Bioinfo
 	eg.
 		python ~/biocluster/bin/webapitest.py post meta/beta/multi_analysis -c client01 -n "analysis_type;otu_id;level_id;env_labs;distance_algorithm;env_id;task_type;submit_location;group_detail;group_id" -d "pca;579acd6aa4e1af8890b869af;8;ENV_1,ENV_2,ENV_3,ENV_4;bray_curtis;579acd6aa4e1af8890b869a2;reportTask;beta_multi_analysis_pca;/mnt/ilustre/users/sanger-dev/sg-users/hesheng/test/test_file/web_group_detail.txt;579acd6aa4e1af8890b869a0" -b http://192.168.12.102:8090
 
+
+### 工具应用开发
+
+工具开发需要完成的内容有以下几点(以下说明中tool代表tool和module甚至包含workflow)：
+1. 工具的独立性确认与功能完善：工具可能开发时被用于其他module/workflow，导致工具的设计偏向，例如：PCA工具开始只可以适用于OTU表(特征在行为OTU)，需要修改增加行列参数。
+2. 工具的api接口：工具由pipeline(工作流接收端口)提交到WPM服务，服务在tool上层添加SingleWorkflow包装运行tool；需要编写一个api/database导表，完成tool结果导入mongo数据库；当前(暂时)调用方式为SingleWorkflow自动调用api/database/toolapps相对导表模块路径与tool模块相对mbio路径相同的模块。例如：src/mbio/tools/meta/beta_diversity/pca.py工具调用src/mbio/api/database/toolapps/tools/meta/beta_diversity/pca.py实例化Pca对象，运行run函数。简化代码如下：
+
+	```
+	    class Pca(Base):
+	        def __init__(self, bind_object):
+	            super(Pca, self).__init__(bind_object)
+	            self.output_dir = self.bind_object.output_dir
+	            self._db_name = 'toolapps'
+	            self.check()
+	        @report_check
+	        def run(self):
+	            self.main_id = self.scatter_in()
+	            self.table_ids = self.table_in()
+	            return self.main_id
+	```
+3. mongo数据表的设计：工具表设计角度与分析不同，数据不考虑分析，只考虑分析的展示形式，例如：散点数据，venn数据，表格数据，柱图数据等等，结果表导入mongo中时按照对应的展示类型导入即可，新的展示类型数据需要重新设计展示类型的结构，此处需要慎重，设计尽量完整，对图形展示有良好的抽象。
+4. 其他注意事项：tool报错信息确认，不能偏向某个流程说明，例如PCA报错不要说OTU表格式错误；网页的描述有三类，一是分析的参数整体说明；二是各个参数的说明；三是文件格式说明，不能把文件的格式说明偏向分析内容，文件格式是通用的。
 
 # 基础技能
 
