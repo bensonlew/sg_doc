@@ -339,6 +339,10 @@ Sanger Bioinfo
 
 	提交代码列表（包含biocluster目录路径）：
 
+    新collection以及索引：
+    例如： sg_example          index: task_id, otu_id
+          sg_example_detail   index: sg_example_id
+
 	集群测试示例：
 	eg.
 		python ~/biocluster/bin/webapitest.py post meta/beta/multi_analysis -c client01 -n "analysis_type;otu_id;level_id;env_labs;distance_algorithm;env_id;task_type;submit_location;group_detail;group_id" -d "pca;579acd6aa4e1af8890b869af;8;ENV_1,ENV_2,ENV_3,ENV_4;bray_curtis;579acd6aa4e1af8890b869a2;reportTask;beta_multi_analysis_pca;/mnt/ilustre/users/sanger-dev/sg-users/hesheng/test/test_file/web_group_detail.txt;579acd6aa4e1af8890b869a0" -b http://192.168.12.102:8090
