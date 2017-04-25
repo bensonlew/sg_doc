@@ -340,8 +340,8 @@ Sanger Bioinfo
 	提交代码列表（包含biocluster目录路径）：
 
     新collection以及索引：
-    例如： sg_example          index: task_id, otu_id
-          sg_example_detail   index: sg_example_id
+    例如： sanger.sg_example          index: task_id, otu_id
+          sanger.sg_example_detail   index: sg_example_id
 
 	集群测试示例：
 	eg.
