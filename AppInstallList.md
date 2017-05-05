@@ -5,6 +5,8 @@
 
 | 软件名 | 安装位置  | 安装包路径  | 安装命令 | 环境配置 |
 | -------|-----------|-------------|----------|----------|
+|SOAPdenovo2-src-r240|/bioinfo/metaGenomic/|/install_packages/SOAPdenovo2-src-r240.tgz|wget https://sourceforge.net/projects/soapdenovo2/files/latest/SOAPdenovo2-src-r240.tgz<br>tar -zxvf SOAPdenovo2-src-r240.tgz -C /mnt/ilustre/users/sanger-dev/app/bioinfo/metaGenomic/ <br>make||
+|metagene|/bioinfo/metaGenomic/ | /install_packages/metagene.tar.gz | wget http://metagene.cb.k.u-tokyo.ac.jp/metagene/metagene.tar.gz <br> tar -zxvf metagene.tar.gz -C  /mnt/ilustre/users/sanger-dev/app/bioinfo/metaGenomic/| |
 |bowtie2-2.2.9| /bioinfo/align/bowtie2-2.2.9/  |/install_packages/bowtie2-2.2.9-linux-x86_64.zip | wget https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.9/bowtie2-2.2.9-linux-x86_64.zip/ <br>  unzip bowtie2-2.2.9-linux-x86_64.zip -d  /mnt/ilustre/users/sanger-dev/app/bioinfo/align/bowtie2-2.2.9 |  |
 |trinityrnaseq-2.2.0 | bioinfo/rna/trinityrnaseq-2.2.0/ |/install_packages/trinity-v2.2.0.zip|samtools安装出错 undefined reference to `gzopen64'<br> cd  ~/app/bioinfo/rna/trinityrnaseq-2.2.0/ <br> vi Makefile 把安装samtools的make部分注释掉 <br> cd samtools-0.1.19 <br> vi Makefile <br> 修改CFLAGS= -g -Wall -O2 -L /mnt/ilustre/users/sanger-dev/app/program/zlib-1.2.8/lib <br> make & make install  <br> cd ../../  <br> make <br> make plugins|          |
 |        |           |             |          |          |
