@@ -28,7 +28,7 @@ modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |相关应用|
 | ------- |-------|-------------|-----|
-| [refrna_assemble](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/assemble/refrna_assemble.py) | [assemble.refrna_assemble] | 无rst 文档|   |
+| [refrna_assemble](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/assemble/refrna_assemble.py) | [assemble.refrna_assemble](mbio/module/assemble/refrna_assemble) | 无rst 文档|   |
 | [alpha_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/alpha_diversity/alpha_diversity.py) | [meta.alpha_diversity.alpha_diversity] | 无rst文档 |    |
 | [beta_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/beta_diversity/beta_diversity.py)  | [meta.beta_diversity.beta_diversity] | 无rst文档 |    |
 | [corr_network_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/otu/corr_network_analysis.py) | [meta.otu.corr_network_analysis] | 无rst文档 |    |
