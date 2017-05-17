@@ -45,6 +45,7 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
+| [new_transcripts](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/new_transcripts.py) | [assemble.new_transcripts](/mbio/tools/assemble/new_transcripts) | 根据class_code,挑选新转录本(i,j,o,u,x)和新基因(u) |   |
 | [gffcompare](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/gffcompare.py) | [assemble.gffcompare](/mbio/tools/assemble/gffcompare) | 对gtf结果进行比较 |   |
 | [stringtie_merge](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/stringtie_merge.py) | [assemble.stringtie_merge](/mbio/tools/assemble/stringtie_merge) | 样本合并|   |
 | [stringtie](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/stringtie.py) | [assemble.stringtie](/mbio/tools/assemble/stringtie) | 单个样本组装|   |
