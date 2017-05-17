@@ -45,6 +45,7 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
+| [cufflinks](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/cufflinks.py) | [assemble.cufflinks](/mbio/tools/assemble/cufflinks) | 样本进行组装|   |
 | [estimators](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/alpha_diversity/estimators.py) | [meta.alpha_diversity.estimators](/mbio/tools/meta/estimators) | 计算样本的多样性指数ace、chao、shannon |             |
 | [rarefaction](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/alpha_diversity/rarefaction.py) | [meta.alpha_diversity.rarefaction](/mbio/tools/meta/rarefaction) | 比较测序数据量不同的样本中物种的丰富度 |             |
 | [anosim_box](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/beta_diversity/anosim_box.py) | [meta.beta_diversity.anosim_box] |             |             |
