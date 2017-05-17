@@ -100,7 +100,6 @@ files存放目录为：`src\mbio\files`
 | 模块名称 | 路径  | 功能说明 | 相关应用|
 | ------- |-------|-------------|---------|
 | [merge_txt.py](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/assemble/merge_txt.py.py) |  [assemble.merge_txt.py] |     |   |  
-| [sample_data_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/assemble/sample_data_dir.py) |  [assemble.sample_data_dir] |             |             |
 | [group_file_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/alpha_diversity/group_file_dir.py) | [meta.alpha_diversity.group_file_dir] |             |             |
 | [distance_matrix](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/beta_diversity/distance_matrix.py) | [meta.beta_diversity.distance_matrix] |             |             |
 | [newick_tree](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/beta_diversity/newick_tree.py) | [meta.beta_diversity.newick_tree] |             |             |
@@ -128,6 +127,7 @@ packages存放目录为：`src\mbio\packages`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|-----|
+| [trans_step](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/assemble/trans_step.py) | [assemble.trans_step] |             |       |
 | [copy_demo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/copy_demo.py) | [meta.copy_demo] |             |         |
 | [export_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/export_otu.py) | [meta.otu.export_otu] |             |       |
 | [pan_core_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |       |
