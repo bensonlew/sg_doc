@@ -99,7 +99,7 @@ files存放目录为：`src\mbio\files`
 
 | 模块名称 | 路径  | 功能说明 | 相关应用|
 | ------- |-------|-------------|---------|
-| [merge_txt.py](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/assembly/merge_txt.py.py) |  [assembly.merge_txt.py] |     |   |  
+| [merge_txt](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/assembly/merge_txt.py.py) |  [assembly.merge_txt.py] |     |   |  
 | [group_file_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/alpha_diversity/group_file_dir.py) | [meta.alpha_diversity.group_file_dir] |             |             |
 | [distance_matrix](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/beta_diversity/distance_matrix.py) | [meta.beta_diversity.distance_matrix] |             |             |
 | [newick_tree](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/files/meta/beta_diversity/newick_tree.py) | [meta.beta_diversity.newick_tree] |             |             |
