@@ -89,7 +89,7 @@ tools存放目录为：`src\mbio\tools`
 | [samples_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/samples_info.py) | [meta.qc.samples_info](/mbio/tools/meta/samples_info) | 用于统计一个fastq_dir/或者fasta_dir的样本信息|             |
 | [sample_check](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/sample_check.py) | [meta.sample_check] |             |             |
 | [phylo_tree](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/phylo/phylo_tree.py) | [phylo.phylo_tree] |             |             |
-| [swissprot](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/swissprot.py) | [swissprot] (mbio/tools/meta/reads_len_info)| Swiss-Prot注释 |             |
+| [swissprot](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/swissprot.py) | [swissprot] (mbio/tools/annotation/swissprot)| Swiss-Prot注释 |             |
 |         |       |             |             |
 
 ## file
