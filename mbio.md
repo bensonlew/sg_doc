@@ -45,7 +45,7 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
-| [stringtie_merge](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/stringtie_merge.py) | [assemble.stringtie_merge](/mbio/tools/assemble/stringtie_merge) | 单个样本组装|   |
+| [stringtie_merge](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/stringtie_merge.py) | [assemble.stringtie_merge](/mbio/tools/assemble/stringtie_merge) | 样本合并|   |
 | [stringtie](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/stringtie.py) | [assemble.stringtie](/mbio/tools/assemble/stringtie) | 单个样本组装|   |
 | [cuffmerge](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/cuffmerge.py) | [assemble.cuffmerge](/mbio/tools/assemble/cuffmerge) | 样本合并|   |
 | [cufflinks](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/cufflinks.py) | [assemble.cufflinks](/mbio/tools/assemble/cufflinks) | 单个样本进行组装|   |
