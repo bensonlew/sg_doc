@@ -89,7 +89,15 @@ tools存放目录为：`src\mbio\tools`
 | [samples_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/qc/samples_info.py) | [meta.qc.samples_info](/mbio/tools/meta/samples_info) | 用于统计一个fastq_dir/或者fasta_dir的样本信息|             |
 | [sample_check](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/meta/sample_check.py) | [meta.sample_check] |             |             |
 | [phylo_tree](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/phylo/phylo_tree.py) | [phylo.phylo_tree] |             |             |
+| [transcript_abstract](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/transcript_abstract.py) | [transcript_abstrac] (mbio/tools/annotation/transcript_abstract)| 提取exons和最长转录本 |             |
+| [merge_annot](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/merge_annot.py) | [merge_annot] (mbio/tools/annotation/merge_annot)| cog、go、kegg注释结果合并 |cog、go、kegg分类及富集         |
+| [blast_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/blast_annotation.py) | [blast_annotation] (mbio/tools/annotation/blast_annotation)|对blast结果进行evalue、score、similarity、identity筛选并进行E-value分布和相似度分布的统计 |         |
 | [swissprot](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/swissprot.py) | [swissprot] (mbio/tools/annotation/swissprot)| Swiss-Prot注释 |             |
+| [string2cog](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/string2cogv9.py) | [string2cog] (mbio/tools/annotation/string2cog)| cog注释及统计 |             |
+| [go_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/go_annotation.py) | [go_annotation] (mbio/tools/annotation/go_annotation)| go注释及统计(xml) |             |
+| [go_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/go_upload.py) | [go_upload] (mbio/tools/annotation/go_upload)| go注释及统计(table) |             |
+| [kegg_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg_annotation.py) | [kegg_annotation] (mbio/tools/annotation/kegg_annotation)| kegg注释及统计(xml) |             |
+| [kegg_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg_upload.py) | [kegg_upload] (mbio/tools/annotation/kegg_upload)| go注释及统计(table) |             |
 |         |       |             |             |
 
 ## file
