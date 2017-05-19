@@ -35,6 +35,7 @@ modules存放目录为：`src\mbio\modules`
 | [otu_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/otu/otu_analysis.py) | [meta.otu.otu_analysis] | 无rst文档 |    |
 | [miseq_qc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/qc/miseq_qc.py)  | [meta.qc.miseq_qc] | 无rst文档 |    |
 | [sample_extract] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/sample_extract/sample_extract.py) | [meta.sample_extract.sample_extract] | 无rst文档 |    |
+| [ref_annotation] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/annotation/ref_annotation.py) | [ref_rna.ref_annotation](/mbio/module/ref_rna/ref_annotation) |  |    |
 |         |       |             |  |
 
 ## tool
@@ -144,3 +145,6 @@ packages存放目录为：`src\mbio\packages`
 | [copy_demo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/copy_demo.py) | [meta.copy_demo] |             |         |
 | [export_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/export_otu.py) | [meta.otu.export_otu] |             |       |
 | [pan_core_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |       |
+| [kegg_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/kegg_annotation.py) | [annotation.kegg_annotation](/mbio/packages/annotation/kegg_annotation) |             |       |
+| [ref_annotation_query](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/ref_annotation_query.py) | [annotation.ref_annotation_query](/mbio/packages/annotation/ref_annotation_query) |             |       |
+| [transcript_gene](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/transcript_gene.py) | [annotation.transcript_gene](/mbio/packages/annotation/transcript_gene) |             |       |
