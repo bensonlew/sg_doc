@@ -132,13 +132,15 @@ Sanger Bioinfo
 	- 代码开发统一使用git库进行代码编写和提交;
 	- 登录[gitlba平台 git.majorbio.com](git.majorbio.com) 进行协作开发，受保护分支需进行merge request代码审核。
 
-**任何开发必须在gitlab上对应一条issue，代码分支上编写进行，编写测试完成提交最后更新时关闭issue。**
-建立分支命名规则如下：
+	**任何开发必须在gitlab上对应一条issue，代码分支上编写进行，编写测试完成提交最后更新时关闭issue。**
+
+	建立分支命名规则如下：
+
 	- 线上bug修复 ： bugfix-xxx
 	- 线上已有功能优化： update-xxx
 	- 新分析新功能： feature-xxx
 	- 流程： 按具体流程命名
-> note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或项目主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
+	> note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或项目主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
 
 * 代码规范
 	- 代码编写需进行[Pep8](https://www.python.org/dev/peps/pep-0008/)检查，可以使用文本编辑器插件自动检查;
