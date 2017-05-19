@@ -127,6 +127,10 @@ files存放目录为：`src\mbio\files`
 | [ctab](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/ref_rna/ctab.py)  |  [ref_rna.ctab]     | ctab格式检查  |组装，rna表达量定量|
 | [summary](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/)  |  [ref_rna.summary]     |   featureCounts 输出的summary文件|ref_rna表达量定量|
 | [bam_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/ref_rna/assembly/bam_dir.py)  |  [ref_rna.assembly.bam_dir] |  只有bam文件的文件夹检查 |  ref-rna, 组装,基因结构等分析  |
+| [anno_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/upload/anno_upload.py)  |  [annotation.anno_upload] |  客户上传kegg/go注释文件 |     |
+| [go_level2](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/go/level2.py)  |  [annotation.go_level2] |  go注释level2文件 |     |
+| [go_list](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/go/go_list.py)  |  [annotation.go_list] |  go注释list文件 |     |
+| [kegg_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/kegg/kegg_table.py)  |  [annotation.kegg_table] |  kegg注释kegg_table文件 |     |
 
 ## package
 
