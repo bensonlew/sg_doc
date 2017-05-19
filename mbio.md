@@ -146,5 +146,5 @@ packages存放目录为：`src\mbio\packages`
 | [export_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/export_otu.py) | [meta.otu.export_otu] |             |       |
 | [pan_core_otu](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/meta/otu/pan_core_otu.py) | [meta.otu.pan_core_otu] |             |       |
 | [kegg_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/kegg_annotation.py) | [annotation.kegg_annotation](/mbio/packages/annotation/kegg_annotation) |             |       |
-| [ref_annotation_query](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/ref_annotation_query.py) | [annotation.ref_annotation_query](/mbio/packages/annotation/ref_annotation_query) |             |       |
+| [ref_annotation_query](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/transcript_gene.py) | [annotation.ref_annotation_query](/mbio/packages/annotation/ref_annotation_query) |             |       |
 | [transcript_gene](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/packages/annotation/transcript_gene.py) | [annotation.transcript_gene](/mbio/packages/annotation/transcript_gene) |             |       |
