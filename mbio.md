@@ -28,10 +28,11 @@ modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |相关应用|
 | ------- |-------|-------------|-----|
+| [ppinetwork_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/protein_regulation/ppinetwork_analysis.py) | [protein_regulation.ppinetwork_analysis] (mbio.modules.protein_regulation/ppinetwork_analysis) | 可以根据一列gene_id，来预测这些基因之间的蛋白质互作关系，并对预测出的网络进行拓扑属性分析| |
 | [refrna_assemble](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/assemble/refrna_assemble.py) | [assemble.refrna_assemble](/mbio/module/assemble/refrna_assemble) | 对所有样本进行组装合并，并对合并后的结果进行信息统计和新转录本预测|   |
 | [alpha_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/alpha_diversity/alpha_diversity.py) | [meta.alpha_diversity.alpha_diversity] | 无rst文档 |    |
 | [beta_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/beta_diversity/beta_diversity.py)  | [meta.beta_diversity.beta_diversity] | 无rst文档 |    |
-| [corr_network_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/otu/corr_network_analysis.py) | [meta.otu.corr_network_analysis] | 无rst文档 |    |
+| [corr_network_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/otu/corr_network_analysis.py) | [meta.otu.corr_network_analysis] | 该module用于与测物种之间的相关性，构建出相关性网络，然后对网络进行拓扑属性分析 |    |
 | [otu_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/otu/otu_analysis.py) | [meta.otu.otu_analysis] | 无rst文档 |    |
 | [miseq_qc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/qc/miseq_qc.py)  | [meta.qc.miseq_qc] | 无rst文档 |    |
 | [sample_extract] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/sample_extract/sample_extract.py) | [meta.sample_extract.sample_extract] | 无rst文档 |    |
@@ -46,6 +47,9 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
+| [ppinetwork_map](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/protein_regulation/ppinetwork_map.py)| [protein_regulation.ppinetwork_map](/mbio/tools/protein_regulation/ppinetwork_map) | 使用STRINGdb这个R包，将要预测的基因ID map到stingID，用于后面的蛋白质互作预测| |
+| [ppinetwork_predict](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/protein_regulation/ppinetwork_predict.py)| [protein_regulation.ppinetwork_predict](/mbio/tools/protein_regulation/ppinetwork_predict) | 根据stingID来预测蛋白质之间的互作关系| |
+| [ppinetwork_topology](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/protein_regulation/ppinetwork_topology.py)| [protein_regulation.ppinetwork_topology](/mbio/tools/protein_regulation/ppinetwork_topology) | 对预测得到的蛋白质互作网络进行拓扑属性的分析| |
 | [new_transcripts](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/new_transcripts.py) | [assemble.new_transcripts](/mbio/tools/assemble/new_transcripts) | 根据class_code,挑选新转录本(i,j,o,u,x)和新基因(u) |   |
 | [gffcompare](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/gffcompare.py) | [assemble.gffcompare](/mbio/tools/assemble/gffcompare) | 对gtf结果进行比较 |   |
 | [stringtie_merge](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/assemble/stringtie_merge.py) | [assemble.stringtie_merge](/mbio/tools/assemble/stringtie_merge) | 样本合并|   |
@@ -101,6 +105,8 @@ tools存放目录为：`src\mbio\tools`
 | [kegg_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/kegg_upload.py) | [kegg_upload] (mbio/tools/annotation/kegg_upload)| go注释及统计(table) |             |
 |[cazy_align](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/cazy_align.py)| [cazy_align](mbio/tools/align/cazy_align)| 碳水化合物活性酶注释比对环节，比对软件hmmscan |             |
 |[fastq_ungz](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/fastq_ungz.py)|[fasq_ungz](mbio/tools/sequence/fastq_ungz)| 解压文件fastq文件|      |
+|[ssu_taxon](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/taxon/ssu_taxon.py)|[ssu_taxon](mbio/tools/taxon/ssu_taxon)|silva库SSU注释| |
+|[human_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/human_anno.py)|[huamn_taxon](mbio/tools/annotation/kegg/human_anno)|humann-0.99注释kegg相对丰度||
 
 ## file
 
