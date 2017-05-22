@@ -103,7 +103,9 @@ tools存放目录为：`src\mbio\tools`
 | [go_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/go/go_upload.py) | [go_upload] (mbio/tools/annotation/go_upload)| go注释及统计(table) |             |
 | [kegg_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/kegg_annotation.py) | [kegg_annotation] (mbio/tools/annotation/kegg_annotation)| kegg注释及统计(xml) |             |
 | [kegg_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/kegg_upload.py) | [kegg_upload] (mbio/tools/annotation/kegg_upload)| go注释及统计(table) |             |
-|         |       |             |             |
+|[ssu_taxon](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/taxon/ssu_taxon.py)|[ssu_taxon](mbio/tools/taxon/ssu_taxon)|silva库SSU注释| |
+|[human_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/human_anno.py)|[huamn_taxon](mbio/tools/annotation/kegg/human_anno)|humann-0.99注释kegg相对丰度||
+|
 
 ## file
 
