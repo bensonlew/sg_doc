@@ -36,7 +36,7 @@ modules存放目录为：`src\mbio\modules`
 | [miseq_qc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/qc/miseq_qc.py)  | [meta.qc.miseq_qc] | 无rst文档 |    |
 | [sample_extract] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/sample_extract/sample_extract.py) | [meta.sample_extract.sample_extract] | 无rst文档 |    |
 | [ref_annotation] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/annotation/ref_annotation.py) | [ref_rna.ref_annotation](/mbio/module/ref_rna/ref_annotation) |  |    |
-|         |       |             |  |
+| [sequence.meta_genomic](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/sequence/meta_genomic.py)|[sequence/meta_genomic](/mbio/module/sequence/meta_genomic) | 宏基因样本解压及碱基质量统计 |  |
 
 ## tool
 
@@ -99,7 +99,8 @@ tools存放目录为：`src\mbio\tools`
 | [go_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/go/go_upload.py) | [go_upload] (mbio/tools/annotation/go_upload)| go注释及统计(table) |             |
 | [kegg_annotation](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/kegg_annotation.py) | [kegg_annotation] (mbio/tools/annotation/kegg_annotation)| kegg注释及统计(xml) |             |
 | [kegg_upload](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/kegg_upload.py) | [kegg_upload] (mbio/tools/annotation/kegg_upload)| go注释及统计(table) |             |
-|         |       |             |             |
+|[cazy_align](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/cazy_align.py)| [cazy_align](mbio/tools/align/cazy_align)| 碳水化合物活性酶注释比对环节，比对软件hmmscan |             |
+|[fastq_ungz](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/fastq_ungz.py)|[fasq_ungz](mbio/tools/sequence/fastq_ungz)| 解压文件fastq文件|      |
 
 ## file
 
@@ -132,6 +133,7 @@ files存放目录为：`src\mbio\files`
 | [go_level2](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/go/level2.py)  |  [annotation.go_level2](/mbio/files/annotation/go_level2)  |  go注释level2文件 |     |
 | [go_list](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/go/go_list.py)  |  [annotation.go_list](/mbio/files/annotation/go_list)  |  go注释list文件 |     |
 | [kegg_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/kegg/kegg_table.py)  |  [annotation.kegg_table](/mbio/files/annotation/kegg_table) |  kegg注释kegg_table文件 |     |
+| [baif_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/files/sequence/baif_dir.py)|[baif_dir](/mbio/files/sequence/baif_dir)| fastq碱基统计结果表的文件夹|      |
 
 ## package
 
