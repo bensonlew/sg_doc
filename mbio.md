@@ -107,6 +107,10 @@ tools存放目录为：`src\mbio\tools`
 |[fastq_ungz](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/fastq_ungz.py)|[fasq_ungz](mbio/tools/sequence/fastq_ungz)| 解压文件fastq文件|      |
 |[ssu_taxon](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/taxon/ssu_taxon.py)|[ssu_taxon](mbio/tools/taxon/ssu_taxon)|silva库SSU注释| |
 |[human_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/annotation/kegg/human_anno.py)|[huamn_taxon](mbio/tools/annotation/kegg/human_anno)|humann-0.99注释kegg相对丰度||
+|[hmmscan](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/hmmscan.py)|[hmmscan](mbio/tools/align/hmmscan)|hmmscan软件比对dbCAN数据库|    |
+|[cat_hmmscanout](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/cat_hmmscanout.py)|[cat_hmmscanout](mbio/tools/align/cat_hmmscanout)|比对合并|   |
+|[cazy_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/annotation/cazy_anno.py)|[cazy_anno](mbio/tools/annotation/cazy_anno)| cazy注释|    |
+
 
 ## file
 
