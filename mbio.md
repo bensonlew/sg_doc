@@ -140,6 +140,7 @@ files存放目录为：`src\mbio\files`
 | [go_list](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/go/go_list.py)  |  [annotation.go_list](/mbio/files/annotation/go_list)  |  go注释list文件 |     |
 | [kegg_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/ref-rna/src/mbio/files/annotation/kegg/kegg_table.py)  |  [annotation.kegg_table](/mbio/files/annotation/kegg_table) |  kegg注释kegg_table文件 |     |
 | [baif_dir](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/files/sequence/baif_dir.py)|[baif_dir](/mbio/files/sequence/baif_dir)| fastq碱基统计结果表的文件夹|      |
+| [profile_table](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/files/sequence/profile_table.py)|[profile_table](/mbio/files/sequence/profile_table)| 宏基因非冗余基因集生成的reads_profile.txt|     |
 
 ## package
 
