@@ -110,6 +110,7 @@ tools存放目录为：`src\mbio\tools`
 |[hmmscan](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/hmmscan.py)|[hmmscan](mbio/tools/align/hmmscan)|hmmscan软件比对dbCAN数据库|    |
 |[cat_hmmscanout](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/cat_hmmscanout.py)|[cat_hmmscanout](mbio/tools/align/cat_hmmscanout)|比对合并|   |
 |[cazy_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/annotation/cazy_anno.py)|[cazy_anno](mbio/tools/annotation/cazy_anno)| cazy注释|    |
+|[star](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/tools/align/star.py)|[star](mbio/tools/align/star)|star比对|    |
 
 
 ## file
