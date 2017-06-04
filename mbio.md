@@ -38,6 +38,7 @@ modules存放目录为：`src\mbio\modules`
 | [sample_extract] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/sample_extract/sample_extract.py) | [meta.sample_extract.sample_extract] | 无rst文档 |    |
 | [ref_annotation] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/annotation/ref_annotation.py) | [ref_rna.ref_annotation](/mbio/module/ref_rna/ref_annotation) |  |    |
 | [sequence.meta_genomic](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/sequence/meta_genomic.py)|[sequence/meta_genomic](/mbio/module/sequence/meta_genomic) | 宏基因样本解压及碱基质量统计 |  |
+| [rna.rnaseq_mapping](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/modules/rna/rnaseq_mapping.py)|[rna/rnaseq_mapping](/mbio/module/rna/rnaseq_mapping) | rna reads比对模块 |  |  |
 
 ## tool
 
