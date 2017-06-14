@@ -39,6 +39,7 @@ modules存放目录为：`src\mbio\modules`
 | [ref_annotation] (http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/annotation/ref_annotation.py) | [ref_rna.ref_annotation](/mbio/module/ref_rna/ref_annotation) |  |    |
 | [sequence.meta_genomic](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/sequence/meta_genomic.py)|[sequence/meta_genomic](/mbio/module/sequence/meta_genomic) | 宏基因样本解压及碱基质量统计 |  |
 | [rna.rnaseq_mapping](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/modules/rna/rnaseq_mapping.py)|[rna/rnaseq_mapping](/mbio/module/rna/rnaseq_mapping) | rna reads比对模块 |  |  |
+| [meta_genomic.qc_and_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/qc_and_stat.py)|[meta_genomic/qc_and_stat](/mbio/module/meta_genomic/qc_and_stat) | 宏基因质控及信息统计 |  |
 
 ## tool
 
@@ -113,7 +114,8 @@ tools存放目录为：`src\mbio\tools`
 |[cazy_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/annotation/cazy_anno.py)|[cazy_anno](mbio/tools/annotation/cazy_anno)| cazy注释|    |
 |[star](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/tools/align/star.py)|[star](mbio/tools/align/star)|star比对|    |
 |[sequence.sickle_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/sickle_stat.py)|[sequence.sickle_stat](mbio/tools/sequence/sickle_stat)| 质控前后序列信息统计 |    |
-
+|[metagen_nr](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_nr.py)|[metagen_nr](mbio/tools/meta_genomic/metagen_nr)| 宏基因获得nr的tax_profile物种分类信息表 |    |
+|[nr_tax_level](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/nr_tax_level.py)|[nr_tax_level](mbio/tools/meta_genomic/nr_tax_level)| 宏基因获得nr注释后的各级物种分类信息丰度表 |    |
 
 ## file
 
