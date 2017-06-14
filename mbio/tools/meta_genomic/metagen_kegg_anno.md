@@ -9,25 +9,24 @@ metagen_kegg_anno
 功能描述
 -----------------------------------
 
-宏基因kegg库比对后注释tool，通过比对后的信息，可以
+宏基因kegg注释tool
 
 调用脚本
 -----------------------------------
 
-nr_profile.py
+meta_kegg_mongo.py
 
 安装路径
 -----------------------------------
 
-`/mnt/ilustre/users/sanger-dev/app/bioinfo/taxon/scripts/`
+`/mnt/ilustre/users/sanger-dev/app/bioinfo/annotation/scripts/`
 
 主要命令及功能模块
 -----------------------------------
 
 ```
-from mbio.packages.annotation.nr_stat import nr_stat
-nr.detail_to_level(detail_file=self.option('taxon_out').prop['path'], out_dir=self.work_dir)
-cmd = "{} {} -i {} -r {} -o {}".format(self.python_path, self.python_script, self.new_query_taxons, self.option('reads_profile_table').prop['path'], self.output_dir)
+    table = xml2table(self.option('kegg_xml').prop['path'], self.work_dir + '/tmp_kegg_table.xls')
+    cmd = '{} {} {} {}'.format(self.python_path, self.python_script, table, self.output_dir)
 
 ```
 
@@ -35,19 +34,19 @@ cmd = "{} {} -i {} -r {} -o {}".format(self.python_path, self.python_script, sel
 -----------------------------------
 
 ```
-     {"name": "taxon_out", "type": "infile", "format": "annotation.nr.nr_taxon"},# 比对到nr库的结果文件query_taxons_detail.xls
-     {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"}  # 样本序列丰度表
+        {"name": "kegg_xml", "type": "infile", "format": "align.blast.blast_xml"},  # 输入的比对结果xml文件
+        {"name": "result_dir", "type": "outfile", "format": "meta_genomic.kegg_dir"}  # 输出结果文件夹
 ```
 
 运行逻辑
 -----------------------------------
 
-首先调用package(nr_stat)生成query_taxon文件(各个reads的注释结果表)，后调用脚本nr_profile.py结合reads_profile_table生成各个样本的分类表
+调用脚本meta_kegg_mongo对xml文件进行注释，通过hit_id去数据库里查找信息生成信息表
 
 资源配置
 -----------------------------------
 
 ```
 self._cpu = 2
-self._memory = "5G"
+self._memory = "10G"
 ```

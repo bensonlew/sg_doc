@@ -116,6 +116,10 @@ tools存放目录为：`src\mbio\tools`
 |[sequence.sickle_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/sickle_stat.py)|[sequence.sickle_stat](mbio/tools/sequence/sickle_stat)| 质控前后序列信息统计 |    |
 |[metagen_nr](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_nr.py)|[metagen_nr](mbio/tools/meta_genomic/metagen_nr)| 宏基因获得nr的tax_profile物种分类信息表 |    |
 |[nr_tax_level](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/nr_tax_level.py)|[nr_tax_level](mbio/tools/meta_genomic/nr_tax_level)| 宏基因获得nr注释后的各级物种分类信息丰度表 |    |
+|[metagen_cog_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_cog_stat.py)|[metagen_cog_stat](mbio/tools/meta_genomic/metagen_cog_stat)| 宏基因获得cog注释后的各样本注释信息丰度表 |    |
+|[metagen_kegg_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_kegg_stat.py)|[metagen_kegg_stat](mbio/tools/meta_genomic/metagen_kegg_stat)| 宏基因kegg注释结果统计tool |    |
+|[metagen_kegg_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_kegg_anno.py)|[metagen_kegg_anno](mbio/tools/meta_genomic/metagen_kegg_anno)| 宏基因kegg注释tool |    |
+|[meta_genomic.cog_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/cog_anno.py)|[meta_genomic.cog_anno](mbio/tools/meta_genomic/cog_anno)| 宏基因cog注释tool |    |
 
 ## file
 
