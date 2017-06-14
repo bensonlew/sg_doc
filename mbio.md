@@ -112,6 +112,7 @@ tools存放目录为：`src\mbio\tools`
 |[cat_hmmscanout](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/align/cat_hmmscanout.py)|[cat_hmmscanout](mbio/tools/align/cat_hmmscanout)|比对合并|   |
 |[cazy_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/annotation/cazy_anno.py)|[cazy_anno](mbio/tools/annotation/cazy_anno)| cazy注释|    |
 |[star](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/tools/align/star.py)|[star](mbio/tools/align/star)|star比对|    |
+|[sequence.sickle_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/sickle_stat.py)|[sequence.sickle_stat](mbio/tools/sequence/sickle_stat)| 质控前后序列信息统计 |    |
 
 
 ## file
