@@ -40,7 +40,7 @@ modules存放目录为：`src\mbio\modules`
 | [sequence.meta_genomic](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/sequence/meta_genomic.py)|[sequence/meta_genomic](/mbio/module/sequence/meta_genomic) | 宏基因样本解压及碱基质量统计 |  |
 | [rna.rnaseq_mapping](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/modules/rna/rnaseq_mapping.py)|[rna/rnaseq_mapping](/mbio/module/rna/rnaseq_mapping) | rna reads比对模块 |  |  |
 | [meta_genomic.qc_and_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/qc_and_stat.py)|[meta_genomic/qc_and_stat](/mbio/module/meta_genomic/qc_and_stat) | 宏基因质控及信息统计 |  |
-
+| [meta_genomic.common_anno_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/common_anno_stat.py)|[meta_genomic.common_anno_stat](/mbio/module/meta_genomic/common_anno_stat) | 宏基因nr/cog/kegg注释部分的丰度统计表模块 |  |
 ## tool
 
 tools存放目录为：`src\mbio\tools`
