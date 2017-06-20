@@ -41,6 +41,7 @@ modules存放目录为：`src\mbio\modules`
 | [rna.rnaseq_mapping](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/ref-rna/src/mbio/modules/rna/rnaseq_mapping.py)|[rna/rnaseq_mapping](/mbio/module/rna/rnaseq_mapping) | rna reads比对模块 |  |  |
 | [meta_genomic.qc_and_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/qc_and_stat.py)|[meta_genomic/qc_and_stat](/mbio/module/meta_genomic/qc_and_stat) | 宏基因质控及信息统计 |  |
 | [meta_genomic.common_anno_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/common_anno_stat.py)|[meta_genomic.common_anno_stat](/mbio/module/meta_genomic/common_anno_stat) | 宏基因nr/cog/kegg注释部分的丰度统计表模块 |  |
+| [meta_genomic.cazy_align_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/cazy_align_anno.py)|[meta_genomic.cazy_align_anno](/mbio/module/meta_genomic/cazy_align_anno) | 宏基因cazy注释部分 | 宏基因流程 |
 ## tool
 
 tools存放目录为：`src\mbio\tools`
@@ -120,6 +121,7 @@ tools存放目录为：`src\mbio\tools`
 |[metagen_kegg_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_kegg_stat.py)|[metagen_kegg_stat](mbio/tools/meta_genomic/metagen_kegg_stat)| 宏基因kegg注释结果统计tool |    |
 |[metagen_kegg_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/metagen_kegg_anno.py)|[metagen_kegg_anno](mbio/tools/meta_genomic/metagen_kegg_anno)| 宏基因kegg注释tool |    |
 |[meta_genomic.cog_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/cog_anno.py)|[meta_genomic.cog_anno](mbio/tools/meta_genomic/cog_anno)| 宏基因cog注释tool |    |
+|[sequence.remove_short_reads](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/remove_short_reads.py)|[sequence.remove_short_reads](mbio/tools/sequence/remove_short_reads)| 去除fastq文件中长度较短的reads | 宏基因流程质控模块（qc_and_stat） |
 
 ## file
 
