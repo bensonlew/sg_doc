@@ -33,3 +33,4 @@
 | reportlab/rlextra | 无 | 无 |pip install rlextra -i https://网站用户名:[密码]@www.reportlab.com/pypi<br>需要先安装pillow: pip install pillow| |
 | h5py| 无 | 无 | pip install h5py | |
 | ImageMagick | app/program/ImageMagick | app/install_packages/ImageMagick | ./configure --prefix=/mnt/ilustre/users/sanger/app/program/ImageMagick<br>make<br> make install| ||
+| parafly-r2013-01-21 | app/program/parafly-r2013-01-21 | app/install_packages/parafly-r2013-01-21.tgz | tar zxf parafly-r2013-01-21.tgz<br>cd parafly-r2013-01-21<br>./configure --prefix=/mnt/ilustre/users/sanger-dev/app/program/parafly-r2013-01-21/bin<br>make install| ||
