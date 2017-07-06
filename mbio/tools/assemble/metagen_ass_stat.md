@@ -53,5 +53,6 @@ Python metagen_stat.py -stat_dir <所有统计结果所在的文件夹> -assembl
 运行逻辑
 -----------------------------------
 
-1、
-运行脚本metagen_stat.py，对序列信息汇总，并根据公式挑出最佳的kmer拼接出来的结果；
+1、运行脚本metagen_stat.py，对序列信息汇总，并根据公式挑出最佳的kmer拼接出来的结果；
+
+2、调用函数step_count,对挑选出的序列进行步长统计
