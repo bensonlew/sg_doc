@@ -46,7 +46,9 @@ self._memory = "2G"
 -----------------------------------
 
 perl get_scaftig.pl <scafseq.file> <输出文件的名称前缀>
+
 perl cut_more.pl <run_get_scaftig的输出文件> <最短contig长度> <输出文件的名称前缀>
+
 perl contig_stat.pl <run_cut_more的输出文件> <最短contig长度> <输出文件的名称全称>
 
 参数设计
