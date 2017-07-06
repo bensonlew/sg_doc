@@ -16,7 +16,9 @@ Path
 -----------------------------------
 
 运行get_scaftig.pl，去N
+
 运行cut_more.pl，去低质量
+
 运行contig_stat.pl，统计序列信息
 
 
