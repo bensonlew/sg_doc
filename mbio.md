@@ -123,6 +123,9 @@ tools存放目录为：`src\mbio\tools`
 |[meta_genomic.cog_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/cog_anno.py)|[meta_genomic.cog_anno](mbio/tools/meta_genomic/cog_anno)| 宏基因cog注释tool |    |
 |[sequence.remove_short_reads](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/sequence/remove_short_reads.py)|[sequence.remove_short_reads](mbio/tools/sequence/remove_short_reads)| 去除fastq文件中长度较短的reads | 宏基因流程质控模块（qc_and_stat） |
 |[soap_denovo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/soap_denovo.py) | [assemble.soap_denovo](/mbio/tools/assemble/soap_denovo)| 宏基因SOAPdenovo2软件组装|   |
+|[get_contig](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/get_contig.py) | [assemble.get_contig](/mbio/tools/assemble/get_contig)| 宏基因对SOAPdenovo2软件组装结果去N去低质量|   |
+|[soap_denovo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/soap_denovo.py) | [assemble.soap_denovo](/mbio/tools/assemble/soap_denovo)| 宏基因SOAPdenovo2软件组装|   |
+|[soap_denovo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/soap_denovo.py) | [assemble.soap_denovo](/mbio/tools/assemble/soap_denovo)| 宏基因SOAPdenovo2软件组装|   |
 
 ## file
 
