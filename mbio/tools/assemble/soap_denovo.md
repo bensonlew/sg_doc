@@ -28,6 +28,7 @@ SOAPdenovo2：http://soap.genomics.org.cn/
 -----------------------------------
 
 self._cpu = 17
+
 self._memory = "45G"
 
 
