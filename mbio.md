@@ -42,6 +42,7 @@ modules存放目录为：`src\mbio\modules`
 | [meta_genomic.qc_and_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/qc_and_stat.py)|[meta_genomic/qc_and_stat](/mbio/module/meta_genomic/qc_and_stat) | 宏基因质控及信息统计 |  |
 | [meta_genomic.common_anno_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/common_anno_stat.py)|[meta_genomic.common_anno_stat](/mbio/module/meta_genomic/common_anno_stat) | 宏基因nr/cog/kegg注释部分的丰度统计表模块 |  |
 | [meta_genomic.cazy_align_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/cazy_align_anno.py)|[meta_genomic.cazy_align_anno](/mbio/module/meta_genomic/cazy_align_anno) | 宏基因cazy注释部分 | 宏基因流程 |
+| [meta_genomic.ssu_align_anno](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/modules/meta_genomic/ssu_align_anno.py)|[meta_genomic.ssu_align_anno](/mbio/module/meta_genomic/ssu_align_anno) | 宏基因ssu注释部分 | 宏基因流程 |
 ## tool
 
 tools存放目录为：`src\mbio\tools`
