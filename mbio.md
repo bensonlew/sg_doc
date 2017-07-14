@@ -126,6 +126,7 @@ tools存放目录为：`src\mbio\tools`
 |[get_contig](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/get_contig.py) | [assemble.get_contig](/mbio/tools/assemble/get_contig)| 宏基因对SOAPdenovo2软件组装结果去N去低质量|   |
 |[metagen_ass_stat](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/metagen_ass_stat.py) | [assemble.metagen_ass_stat](/mbio/tools/assemble/metagen_ass_stat)| 宏基因对统计结果进行汇总，并挑出最佳结果|   |
 |[metagene](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/assemble/metagene.py) | [assemble.metagene](/mbio/tools/assemble/metagene)| 宏基因metagene基因预测|   |
+|[fastq_mt_fasta](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/fastq_mt_fasta.py) | [meta_genomic.fastq_mt_fasta](/mbio/tools/meta_genomic/fastq_mt_fasta)| 宏基因metagene基因预测|   |
 
 ## file
 
