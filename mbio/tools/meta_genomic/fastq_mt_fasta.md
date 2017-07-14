@@ -53,3 +53,11 @@ self._cpu = 10
 self._memory = '15G'
 
 ```
+
+环境变量
+-----------------------------------
+
+```
+self.set_environ(PERLBREW_ROOT=self.config.SOFTWARE_DIR + '/program/perl')
+
+````
