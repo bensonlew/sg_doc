@@ -28,6 +28,8 @@ modules存放目录为：`src\mbio\modules`
 
 | 模块名称 | 路径  | 功能说明 |相关应用|
 | ------- |-------|-------------|-----|
+| [fastq2mongo_dc](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/paternity_test/fastq2mongo_dc.py) | [paternity_test.fastq2mongo_dc] (mbio.modules.paternity_test/fastq2mongo_dc) |实现亲子的fastq转tab的功能，通过类型判断pt or dcpt选择使用哪个流程转tab| |
+| [pt_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/paternity_test/pt_analysis.py) | [paternity_test.pt_analysis] (mbio.modules.paternity_test/pt_analysis) |实现根据父本，母本，胎儿的tab文件，然后进行合并家系，然后在进行分析| |
 | [ppinetwork_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/protein_regulation/ppinetwork_analysis.py) | [protein_regulation.ppinetwork_analysis] (mbio.modules.protein_regulation/ppinetwork_analysis) | 可以根据一列gene_id，来预测这些基因之间的蛋白质互作关系，并对预测出的网络进行拓扑属性分析| |
 | [refrna_assemble](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/assemble/refrna_assemble.py) | [assemble.refrna_assemble](/mbio/module/assemble/refrna_assemble) | 对所有样本进行组装合并，并对合并后的结果进行信息统计和新转录本预测|   |
 | [alpha_diversity](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/modules/meta/alpha_diversity/alpha_diversity.py) | [meta.alpha_diversity.alpha_diversity] | 无rst文档 |    |
