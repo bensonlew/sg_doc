@@ -133,6 +133,14 @@ tools存放目录为：`src\mbio\tools`
 | [data_split](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/data_split.py)|[paternity_test.data_split](/mbio/tools/paternity_test/data_split)|医学流程数据拆分| |
 | [merge_fastq](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/merge_fastq.py)|[paternity_test.merge_fastq](/mbio/tools/paternity_test/merge_fastq)|医学流程fastq合并| |
 | [bam2tab](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/bam2tab.py)|[paternity_test.bam2tab](/mbio/tools/paternity_test/bam2tab)|亲子鉴定流程中bam文件转tab| |
+| [dedup](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/dedup.py)|[paternity_test.dedup](/mbio/tools/paternity_test/dedup)|亲子鉴定流程中父本查重模块| |
+| [family_analysis](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/family_analysis.py)|[paternity_test.family_analysis](/mbio/tools/paternity_test/family_analysis)|亲子鉴定流程中家系表分析计算有效值，无效值等| |
+| [family_merge](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/family_merge.py)|[paternity_test.family_merge](/mbio/tools/paternity_test/family_merge)|亲子鉴定流程中父本，母本，胎儿进行合并家系| |
+| [family2bam](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/family2bam.py)|[paternity_test.family2bam](/mbio/tools/paternity_test/family2bam)|亲子鉴定流程中杂交捕获，fastq转为中间bam文件| |
+| [family_tab](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/family_tab.py)|[paternity_test.family_tab](/mbio/tools/paternity_test/family_tab)|亲子鉴定流程中多重fastq转tab| |
+| [result_info](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/result_info.py)|[paternity_test.result_info](/mbio/tools/paternity_test/result_info)|亲子鉴定流程中完成所有的画图功能| |
+
+
 
 ## file
 
