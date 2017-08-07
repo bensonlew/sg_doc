@@ -130,6 +130,8 @@ tools存放目录为：`src\mbio\tools`
 |[fastq_mt_fasta](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/fastq_mt_fasta.py) | [meta_genomic.fastq_mt_fasta](/mbio/tools/meta_genomic/fastq_mt_fasta)| 宏基因质控后的fastq合并生成fasta文件|   |
 |[add_ssu_result](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/add_ssu_result.py) | [meta_genomic.add_ssu_result](/mbio/tools/meta_genomic/add_ssu_result)| 合并同一样本的ssu注释结果|   |
 |[cat_ssu_result](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/meta_genomic/src/mbio/tools/meta_genomic/cat_ssu_result.py) | [meta_genomic.cat_ssu_result](/mbio/tools/meta_genomic/cat_ssu_result)| 合并不同样本的ssu注释结果|   |
+| [data_split](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/data_split.py)|[paternity_test.data_split](/mbio/tools/paternity_test/data_split)|医学流程数据拆分| |
+| [merge_fastq](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/tools/paternity_test/merge_fastq.py)|[paternity_test.merge_fastq](/mbio/tools/paternity_test/merge_fastq)|医学流程fastq合并| |
 
 ## file
 
