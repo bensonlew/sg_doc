@@ -22,10 +22,32 @@ Sanger Bioinfo
 
 # 开发环境
 
-### 开发架构图
+### 开发架构及流程图
 
-![开发环境架构](img/开发环境架构.png)
+![开发流程图2](img/sanger应用开发流程.png)
 
+
+
+### 生信模块和软件分类规则
+
+生信软件(app/bioinfo)、分析模块(File/tool/module/workflow)存放目录分类如下：
+
+| 类别 | 说明  | App | File| Tool| Module |workflow|
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| sequence | 序列处理 |  |  |  |  |  | 
+|align | 比对、mapping |  |  |  |  |  | 
+|taxon| 物种分类 |  |  |  |  |  | 
+|phylo | 进化 |  |  |  |  |  | 
+|annotation |功能注释 |  |  |  |  |  | 
+|assemble | 拼接组装 |  |  |  |  |  | 
+|statistical | 统计 |  |  |  |  |  | 
+| graphy| 作图 |  |  |  |  |  | 
+|gene_structure | 基因结构 |  |  |  |  |  |  
+|protein_regulation | 蛋白调控 |  |  |  |  |  | 
+|meta | meta独有 |  |  |  |  |  | 
+|rna | rna独有 |  |  |  |  |  | 
+|medical | 医学独有 |  |  |  |  |  | 
+> :wind_chime:note: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
 
 ### 集群使用
 
@@ -140,7 +162,7 @@ Sanger Bioinfo
 
 # 桑格开发工作流
 ![开发流程图1](img/Sanger-workflow.png)
-![开发流程图2](img/sanger应用开发流程.png)
+
 
 ### 流程解析
 *	解析报告PPT要求：
