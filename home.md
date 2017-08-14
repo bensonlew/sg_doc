@@ -22,6 +22,11 @@ Sanger Bioinfo
 
 # 开发环境
 
+### 开发架构图
+
+![开发环境架构](img/开发环境架构.png)
+
+
 ### 集群使用
 
 开发登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
@@ -62,24 +67,7 @@ Sanger Bioinfo
 	||-gene-structure #基因结构相关软件存放目录
 	|||-scripts/
 	```
-> :wind_chime:note: 该部分目录类别如有更改或新增，请对应更新上述列表。
-
-
-* 调试代码
-
-	编写的代码进行调试时将修改的脚本拷到 `~/biocluster`中相应位置，禁止整个文件夹复制，避免开发人员之间代码覆盖，互相影响。
-	`~/workspace` 为测试运行数据结果目录。
-
-	+ Tool调试
-	+ Module调试
-	+ Workflow调试
-	+ 接口调试
-	示例：
-	```
-	python ~/biocluster/bin/webapitest.py post meta/hierarchical_clustering_heatmap -c client01 -n "otu_id;level_id;group_id;group_detail;species_number;method;task_type;submit_location;sample_method;add_Algorithm" -d "586ef2c917b2bf6172bdfba0;9;586ef2c917b2bf6172bdfb6f;group_detail.txt;28;average;reportTask;hierarchical_clustering_heatmap;average;average" -b http://192.168.12.101:8091
-
-	python ~/biocluster/bin/webapitest.py post meta/plot_tree -c client03 -n "otu_id;level_id;color_level_id;group_id;group_detail;task_type;submit_location" -d "5822b620a4e1af5a4ae9a795;8;3;5822b620a4e1af5a4ae9a787;plot_tree.txt;reportTask;plot_tree;" -b http://192.168.12.102:9090
-	```
+> :wind_chime:note: 通用型软件放到生信分类目录中，各产品特有软件程序可放到产品目录（eg.meta,rna,medical）,该部分目录类别如有更改或新增，请对应更新上述列表。
 
 
 * 命令行数据上传
@@ -151,7 +139,8 @@ Sanger Bioinfo
 
 
 # 桑格开发工作流
-![开发流程图](img/Sanger-workflow.png)
+![开发流程图1](img/Sanger-workflow.png)
+![开发流程图2](img/sanger应用开发流程.png)
 
 ### 流程解析
 *	解析报告PPT要求：
@@ -229,6 +218,22 @@ Sanger Bioinfo
 	测试：
 	`python ~/biocluster/bin/webapitest.py post meta/demo_mongodata_copy -c client01 -n "task_id;target_task_id;target_project_sn;target_member_id" -d "tsanger_2639;tsanger_2639_15;10000485_1;shenghe_test" -b http://192.168.12.102:8090`<br>
 	> :wind_chime:note: otu_id,group_id,group_id,env_id, alpha_diversity_id以外的主表ID混用，非标准的主表detail表模式，自行添加修改代码。
+
+* 调试代码
+
+	编写的代码进行调试时将修改的脚本拷到 `~/biocluster`中相应位置，禁止整个文件夹复制，避免开发人员之间代码覆盖，互相影响。
+	`~/workspace` 为测试运行数据结果目录。
+
+	+ Tool调试
+	+ Module调试
+	+ Workflow调试
+	+ 接口调试
+	示例：
+	```
+	python ~/biocluster/bin/webapitest.py post meta/hierarchical_clustering_heatmap -c client01 -n "otu_id;level_id;group_id;group_detail;species_number;method;task_type;submit_location;sample_method;add_Algorithm" -d "586ef2c917b2bf6172bdfba0;9;586ef2c917b2bf6172bdfb6f;group_detail.txt;28;average;reportTask;hierarchical_clustering_heatmap;average;average" -b http://192.168.12.101:8091
+
+	python ~/biocluster/bin/webapitest.py post meta/plot_tree -c client03 -n "otu_id;level_id;color_level_id;group_id;group_detail;task_type;submit_location" -d "5822b620a4e1af5a4ae9a795;8;3;5822b620a4e1af5a4ae9a787;plot_tree.txt;reportTask;plot_tree;" -b http://192.168.12.102:9090
+	```
 
 
 ### Web开发
