@@ -30,8 +30,7 @@ tool:assemble.metagene
 -----------------------------------
 
 ```
-            {"name": "cut_more_scaftig", "type": "infile", "format": "sequence.fasta"},  # 输出文件，去掉小于最短contig长度的序列
-            {"name": "sample_name", "type": "string"},  # 样本的名称
+            {"name": "cut_more_scaftig", "type": "infile", "format": "sequence.fasta_dir"},  # 输入文件夹，去掉小于最短contig长度的序列
             {"name": "min_gene", "type": "string", "default": "100"},  # 输入最短基因长度，如100
             {"name": "out", "type": "outfile", "format": "gene_predict_dir"}, # 输出文件，基因预测输出路径
 #            {"name": "fna", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，样本的核酸序列

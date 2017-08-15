@@ -37,9 +37,10 @@ perl treat_result.pl [idba拼接结果路径] [newbler拼接结果路径] [最�
 -----------------------------------
 
 ```
-            {"name": "idba_contig", "type": "string"},  # 输入idba拼接结果路径（可能需要再给第二次拼接的路径）
-            {"name": "newbler_contig", "type": "string"},  # 输入newbler拼接结果路径
-            {"name": "min_contig", "type": "string", "default": "300"},  # 输入最短contig长度，默认300
+            {"name": "idba_contig", "type": "infile", "format": "sequence.fasta_dir"},  # 输入idba拼接结果路径（可能需要再给第二次拼接的路径）
+            {"name": "newbler_contig", "type": "infile", "format": "sequence.fasta_dir"},  # 输入newbler拼接结果路径
+            {"name": "min_contig", "type": "int", "default": 300},  # 输入最短contig长度，默认300
+            {"name": "result". "type": "outfile", "format": "sequence.fasta_dir"},  #输出fasta结果文件夹
 ```
 
 运行逻辑

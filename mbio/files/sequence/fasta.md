@@ -46,5 +46,5 @@ FASTA : https://en.wikipedia.org/wiki/FASTA_format
 相关方法
 -----------------------------------
 
-``split`` 将一个大序列拆分成数个小序列
+
 
