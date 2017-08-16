@@ -100,7 +100,7 @@ Sanger Bioinfo
 	- 新分析新功能： feature-xxx
 	- 流程产品： 按具体流程命名，作为产品主分支
 	
-	> note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或产品主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
+> note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或产品主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
 
 * 代码规范
 	- 代码编写需进行[Pep8](https://www.python.org/dev/peps/pep-0008/)检查，可以使用文本编辑器插件自动检查;
@@ -110,7 +110,7 @@ Sanger Bioinfo
 
 ### 命令行数据传输
 
-	从服务器上传数据到云平台目录：
+* 从服务器上传数据到云平台目录：
 	```
 	python ~/biocluster/scripts/dataexchange/get_file_list.py -i ~/sg-users/yuguo/testdata -o testdata.list
 	python ~/biocluster/scripts/dataexchange/upload.py -l testdata.list -c FNSBGA -m tsanger
@@ -129,6 +129,7 @@ Sanger Bioinfo
 用户命令包括：sacct, salloc, sattach, sbatch, sbcast, scancel, scontrol, sinfo, smap, squeue,srun, strigger 和 sview.
 命令使用–help选项可以打印命令改命令的概要。需要注意的是命令选项都是大小写区分的。
 
+* 常用命令：
 	`sacct` 用来报告已经完成或正在进行作业或作业步骤的计费信息。
 
 	`salloc`  用来实时分配作业资源。通常用来分配资源并生成一个终端shell。终端执行srun命令开始并行任务。
