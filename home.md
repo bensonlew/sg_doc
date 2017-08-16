@@ -36,6 +36,7 @@ Sanger Bioinfo
 ![平台系统架构图](img/sanger-system.png)
 
 ### 生信代码架构
+![生信代码架构](img/代码结构.png)
 
 ### 生信模块和软件分类规则
 
