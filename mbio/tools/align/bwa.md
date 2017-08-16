@@ -31,31 +31,26 @@ bwa samse -f bwa_single.sam suzhu_genomic.fasta bwa_single.sai clip.sickle.s.fq
 参数设置
 --------
 ```
-{"name": "ref_fasta", "type": "infile", "format": "sequence.fasta"},  # 参考序列
-{"name": "fq_type", "type": "string", "default": ""},  # fq类型，必传
-{"name": "fastq_r", "type": "infile", "format": "sequence.fastq"},  # 右端序列文件
-{"name": "fastq_l", "type": "infile", "format": "sequence.fastq"},  # 左端序列文件
-{"name": "fastq_s", "type": "infile", "format": "sequence.fastq"},  # SE序列文件
-{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastq文件夹
+{"name": "ref_database", "type": "string", "default": ""},  # 宿主参考序列库中对应的物种名，eg：E.coli ,B.taurus
+{"name": "ref_undefined", "type": "infile", "format": "sequence.fasta_dir"},  # 未定义的宿主序列所在文件加，多个宿主cat到一个文件，并作为tool:align.bwa的输入文件
+{"name": "fq_type", "type": "string", "default": "PSE"},  # fq类型，PE、SE、PSE（即PE+SE，单端加双端）
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"}, # 输入质控后的fastq文件夹其中包含list文件
 {"name": "head", "type": "string", "default": "'@RG\\tID:sample\\tLB:rna-seq\\tSM:sample\\tPL:ILLUMINA'"},  # 设置结果头文件
-{"name": "sam", "type": "outfile", "format": "align.bwa.sam"},     # sam格式文件
-{"name": "method", "type": "string", "default": "align"},     # sam格式文件
-{"name": "pipe_type", "type": "string", "default": "AB"} # add "pipe_type" for meta_g's single read by zhujuan
+{"name": "sam", "type": "outfile", "format": "align.bwa.sam_dir"},     # sam格式文件,内含对应list文件
+{"name": "method", "type": "string", "default": "align"},     # sam格式文件，另种模式为index
+###增加一个查看pair-reads是否有误的file工具
 ```
 
 运行逻辑
 -------
-1.对输入的参考序列做判断，新添加的参考序列需先构建index；
+1.宿主序列准备：
+a：参数是已有宿主，则根据宿主名称，直接从宿主database中提取宿主；
+b：参数为未定义宿主时，提供宿主所在位置（多个宿主将cat成一个fasta），构建index。
 
-2.输入文件的导入方式有两种：
-a.只有一个样品时，可以直接提供reads对应的fastq文件；
-b.有一个或多个样品时，必须提供fastq文件夹，且该目录下必须有reads对应list文件：
+2.输入文件必须提供fastq文件夹，且该目录下必须有reads对应list文件（具体内容与"fq_type"相关）下为“PSE”时的格式：
  ```
     HB_H1_sickle_r.fq   HB_H1   r
     HB_H1_sickle_l.fq   HB_H1   l
-    HB_H1_sickle_s.fq   HB_H1
+    HB_H1_sickle_s.fq   HB_H1   s
  ```
-
-2.当"fq_type"是PE模式，list中R1、R2、[S，该选项在"pipe_type"为" meta_g"所特有的]的fastq作为必要输入文件，若SE模式，list中S的fastq作为必要输入文件；
-
-3.根据不同的模式最终生成样品对应的sam格式结果，注意当设置[" meta_g"]时，single reads的bam为samplename_sRead.bam,区分SE的结果，利于后续处理。
+3.最终生成sam格式结果文件夹和list文件。
