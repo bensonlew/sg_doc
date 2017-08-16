@@ -4,7 +4,7 @@ card_align_anno
 Ä£¿éPath
 -----------
 
-**modules.meta_genomic.card_align_anno**
+**modules.annotation.card_align_anno**
 
 ¹¦ÄÜÃèÊö
 -----------------------------------

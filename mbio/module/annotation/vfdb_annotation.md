@@ -4,7 +4,7 @@ vfdb_annotation
 Ä£¿éPath
 -----------
 
-**modules.meta_genomic.vfdb_annotation**
+**modules.annotation.vfdb_annotation**
 
 ¹¦ÄÜÃèÊö
 -----------------------------------

@@ -4,7 +4,7 @@ ardb_annotation
 Ä£¿éPath
 -----------
 
-**modules.meta_genomic.ardb_align_anno**
+**modules.annotation.ardb_align_anno**
 
 ¹¦ÄÜÃèÊö
 -----------------------------------
