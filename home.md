@@ -10,7 +10,7 @@ Sanger Bioinfo
 	+ [平台系统架构](#user-content-平台系统架构)
 	+ [生信代码架构](#user-content-生信代码架构)	
 	+ [生信模块和软件分类规则](#user-content-生信模块和软件分类规则)
-	+ [软件安装](#user-content-软件安装)	
+	+ [软件和数据库](#user-content-软件和数据库)	
 * [开发环境](#user-content-开发环境)
 	+ [开发架构](#user-content-开发架构)
 		+ [开发集群](#user-content-开发集群)
@@ -59,16 +59,19 @@ Sanger Bioinfo
 > :bellhop: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
 
 
-* 软件和数据库
- 	软件和数据库目录统一地址：`/mnt/ilustre/users/sanger-dev/app/`，其中数据库存放在database目录中。
-	各目录存放规则如下：
+### 软件和数据库
+ 
+软件和数据库目录统一地址：`/mnt/ilustre/users/sanger-dev/app/`，其中数据库存放在database目录中。
+	
+* 各目录存放规则如下：
 	- `bioinfo/` 分析软件安装目录，各软件按功能类别（目录类别参照模块和软件分类规则）安装在各个目录中，文件夹以'软件名-版本号'命名，版本号为软件官方版本号，不得使用简单的1、2、3或old、new等版本不清晰字眼；
 	- `database/`	存放分析计算过程中调用的生信数据库文件，包括物种、基因和功能数据库，如用于比对软件的refseq建议预先建好index索引；
 	- `gcc/` 用于编译软件的各版本gcc编译器，根据需要添加版本；
 	- `install_packages/` 软件包下载存放目录，不允许将软件直接安装在此目录中；
 	- `library/`  安装软件时需要的linux库
 	- `program/`	基础软件，编程语言例如python、R、perl等<br>
-	>:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
+
+>:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
 
 
