@@ -17,7 +17,7 @@ vfdb_annotation
 ```
      self.ardb_align = self.add_module("align.meta_diamond")
      self.anno_stat = self.add_tool("annotation.vfdb_anno_stat")
-     self.anno_stat = self.add_tool("annotation.vfdb_anno")
+     self.anno_stat = self.add_module("annotation.vfdb_anno")
      self.anno_stat = self.add_tool("annotation.vvfdb_split_core")
 ```
 
@@ -36,4 +36,4 @@ vfdb_annotation
 1、调用diamond模块拆分氨基酸序列并分别于vfdb核心数据库比对；
 2、调用vfdb_split_core工具分离没比对上核心库的序列，再调用diamond模块比对预测数据库；
 3、调用vfdb_anno工具对核心和预测比对文件分别进行注释；
-4、最后根据reads_profile_table文件以及tool(vfdb_anno_stat)进行注释统计；
+4、根据reads_profile_table文件以及核心和预测注释表，调用tool(vfdb_anno_stat)进行注释统计；
