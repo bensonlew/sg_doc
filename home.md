@@ -33,7 +33,7 @@ Sanger Bioinfo
 # 平台架构
 
 ### 平台系统架构
-![平台系统架构图](img/)
+![平台系统架构图](img/sanger-system.png)
 
 ### 生信代码架构
 
