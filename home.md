@@ -12,8 +12,11 @@ Sanger Bioinfo
 	+ [生信模块和软件分类规则](#user-content-生信模块和软件分类规则)
 	+ [软件安装](#user-content-软件安装)	
 * [开发环境](#user-content-开发环境)
-	+ [集群使用](#user-content-集群使用)
+	+ [开发架构](#user-content-开发架构)
+		+ [开发集群](#user-content-开发集群)
 	+ [协作开发](#user-content-协作开发)
+		+ [Gitlab](#user-content-Gitlab)
+		+ [代码规范](#user-content-代码规范)
 	+ [命令行数据传输](#user-content-命令行数据传输)
 	+ [Slurm任务提交](#user-content-Slurm任务提交)
 * [生信开发](#user-content-生信开发)
@@ -53,30 +56,31 @@ Sanger Bioinfo
 |meta | meta独有 |  |  |  |  |  | 
 |rna | rna独有 |  |  |  |  |  | 
 |medical | 医学独有 |  |  |  |  |  | 
-> :wind_chime:note: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
+> :bellhop: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
 
 
-### 软件安装
+### 软件和数据库
 
-	软件安装目录统一地址：`/mnt/ilustre/users/sanger-dev/app/`
+软件和数据库目录统一地址：`/mnt/ilustre/users/sanger-dev/app/`
+
 	- `bioinfo/` 分析软件安装目录，各软件按功能类别（目录类别参照模块和软件分类规则）安装在各个目录中，文件夹以'软件名-版本号'命名，版本号为软件官方版本号，不得使用简单的1、2、3或old、new等版本不清晰字眼；
 	- `database/`	存放分析计算过程中调用的生信数据库文件，包括物种、基因和功能数据库，如用于比对软件的refseq建议预先建好index索引；
-	- `gcc/` 各版本gcc编译器，根据需要添加版本
+	- `gcc/` 用于编译软件的各版本gcc编译器，根据需要添加版本；
 	- `install_packages/` 软件包下载存放目录，不允许将软件直接安装在此目录中；
 	- `library/`  安装软件时需要的linux库
 	- `program/`	基础软件，编程语言例如python、R、perl等<br>
-	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
-	`bioinfo/`生信软件类别目录，；
+>:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
 
-> :wind_chime:note: 通用型软件放到生信分类目录中，各产品特有软件程序可放到产品目录（eg.meta,rna,medical）,该部分目录类别如有更改或新增，请对应更新上述列表。
 
 
 
 # 开发环境
 
-### 集群使用
+### 开发架构
 ![开发环境架构](img/开发环境架构.png)
+
+* 开发集群
 
 开发登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
 开发节点对应web地址www.tsg.com
@@ -85,7 +89,7 @@ Sanger Bioinfo
 
 ![平台开发工作流程图](img/平台开发工作流程图.png)
 
-* Git & gitlab
+* Gitlab
 	- 代码开发统一使用gitlab平台进行管理，本地电脑必须通过git获取代码后在git库中编写和提交代码;
 	- 登录[gitlba平台 git.majorbio.com](git.majorbio.com) 进行协作开发，受保护分支需进行merge request代码审核。
 
@@ -157,7 +161,7 @@ Sanger Bioinfo
 
 
 
-# 桑格开发工作流
+# 生信开发
 ![开发流程图1](img/Sanger-workflow.png)
 
 
