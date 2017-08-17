@@ -6,10 +6,20 @@ Sanger Bioinfo
 > ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:scroll:  Biocluster 教程](/biocluster)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
 
 
+* [平台架构](#user-content-平台架构)
+	+ [平台系统架构](#user-content-平台系统架构)
+	+ [生信代码架构](#user-content-生信代码架构)	
+	+ [生信模块和软件分类规则](#user-content-生信模块和软件分类规则)
+	+ [软件和数据库](#user-content-软件和数据库)	
 * [开发环境](#user-content-开发环境)
-	+ [集群使用](#user-content-集群使用)
-	+ [协作编程](#user-content-协作编程)
-* [桑格开发工作流](#user-content-桑格开发工作流)
+	+ [开发架构](#user-content-开发架构)
+		+ [开发集群](#user-content-开发集群)
+	+ [协作开发](#user-content-协作开发)
+		+ [Gitlab](#user-content-Gitlab)
+		+ [代码规范](#user-content-代码规范)
+	+ [命令行数据传输](#user-content-命令行数据传输)
+	+ [Slurm任务提交](#user-content-Slurm任务提交)
+* [生信开发](#user-content-生信开发)
 	+ [流程解析](#user-content-流程解析)
 	+ [产品设计](#user-content-产品设计)
 	+ [模块开发](#user-content-模块开发)
@@ -20,13 +30,68 @@ Sanger Bioinfo
 * [软件工具](#user-content-软件工具)
 
 
+# 平台架构
+
+<<<<<<< HEAD
+### 集群使用
+=======
+### 平台系统架构
+![平台系统架构图](img/sanger-system.png)
+
+### 生信代码架构
+![生信代码架构](img/代码结构.png)
+
+### 生信模块和软件分类规则
+
+生信软件(app/bioinfo)、分析模块(File/tool/module/workflow)存放目录分类如下：
+
+| 类别 | 说明  | App | File| Tool| Module |workflow|
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+|sequence | 序列处理 |  |  |  |  |  | 
+|align | 比对、mapping |  |  |  |  |  | 
+|taxon| 物种分类 |  |  |  |  |  | 
+|phylo | 进化 |  |  |  |  |  | 
+|annotation |功能注释 |  |  |  |  |  | 
+|assemble | 拼接组装 |  |  |  |  |  | 
+|statistical | 统计 |  |  |  |  |  | 
+|graphy| 作图 |  |  |  |  |  | 
+|gene_structure | 基因结构 |  |  |  |  |  |  
+|protein_regulation | 蛋白调控 |  |  |  |  |  | 
+|meta | meta独有 |  |  |  |  |  | 
+|rna | rna独有 |  |  |  |  |  | 
+|medical | 医学独有 |  |  |  |  |  | 
+> :bellhop: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
+
+
+### 软件和数据库
+ 
+软件和数据库目录统一地址：`/mnt/ilustre/users/sanger-dev/app/`，其中数据库存放在database目录中。
+	
+* 各目录存放规则如下：
+	- `bioinfo/` 分析软件安装目录，各软件按功能类别（目录类别参照模块和软件分类规则）安装在各个目录中，文件夹以'软件名-版本号'命名，版本号为软件官方版本号，不得使用简单的1、2、3或old、new等版本不清晰字眼；
+	- `database/`	存放分析计算过程中调用的生信数据库文件，包括物种、基因和功能数据库，如用于比对软件的refseq建议预先建好index索引；
+	- `gcc/` 用于编译软件的各版本gcc编译器，根据需要添加版本；
+	- `install_packages/` 软件包下载存放目录，不允许将软件直接安装在此目录中；
+	- `library/`  安装软件时需要的linux库
+	- `program/`	基础软件，编程语言例如python、R、perl等<br>
+
+>:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
+
+
+
+
 # 开发环境
 
-### 集群使用
+### 开发架构
+![开发环境架构](img/开发环境架构.png)
+
+* 开发集群
+>>>>>>> 07f426a6c8d45da06c5a9fc56ed162da00e4a163
 
 开发登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
 开发节点对应web地址www.tsg.com
 
+<<<<<<< HEAD
 * 开发架构及流程图
 
 ![开发流程图2](img/sanger应用开发流程.png)
@@ -55,47 +120,36 @@ Sanger Bioinfo
 
 
 * 软件安装
+=======
+### 协作开发
+>>>>>>> 07f426a6c8d45da06c5a9fc56ed162da00e4a163
 
-	安装主目录目录：`/mnt/ilustre/users/sanger-dev/app/`
-	- `bioinfo/` 分析软件安装目录，其中通用型软件按功能类别安装在各个目录中，其他按产品类型安装在各自目录中，安装文件夹以'软件名-版本号'命名
-	- `database/`	存放分析计算过程中软件需调用的生信数据库文件
-	- `gcc/` 各版本gcc编译器，根据需要添加版本
-	- `install_packages/` 软件包安装目录
-	- `library/`  安装软件时需要的linux库
-	- `program/`	基础软件，编程语言等<br>
-	:bellhop: 安装要求开发人员{-必须-}记录下安装信息，在[APP软件库](AppInstallList)中添加记录, 管理员会基于记录信息安装配置测试机与正式机。
+![平台开发工作流程图](img/平台开发工作流程.png)
 
-	`bioinfo/`生信软件类别目录结构：
-	```
-	||-seq/ #与序列相关的软件
-	|||-scripts/ #每个script目录表示我们自己编写的脚本存放的目录
-	|||-fastx_toolkit_0.0.14
-	||-meta/ #meta分析相关的软件存放目录
-	|||-scripts/
-	||-rna/ #rna分析相关的软件存放目录
-	|||-scripts/
-	||-phylogenetic/ #进化分析相关的软件存放目录
-	|||-scripts/
-	||-taxon/ #用于物种分类的软件存放目录
-	|||-scripts/
-	||-align/ #用于比对的软件存放目录
-	|||-scripts/
-	||-plot #用于画图可视化的软件存放目录
-	|||-scripts/
-	||-statistical #与统计相关的软件存放目录
-	|||-scripts/
-	||-annotation
-	|||-scripts/
-	||-gene-structure #基因结构相关软件存放目录
-	|||-scripts/
-	```
-> :wind_chime:note: 通用型软件放到生信分类目录中，各产品特有软件程序可放到产品目录（eg.meta,rna,medical）,该部分目录类别如有更改或新增，请对应更新上述列表。
+* Gitlab
+	- 代码开发统一使用gitlab平台进行管理，本地电脑必须通过git获取代码后在git库中编写和提交代码;
+	- 登录[gitlba平台 git.majorbio.com](git.majorbio.com) 进行协作开发，受保护分支需进行merge request代码审核。
+
+	**任何开发必须在gitlab上对应一条issue，基于issue建立分支编写进行，编写测试完成提交最后更新时关闭issue。**
+
+	建立分支命名规则如下：
+
+	- 线上bug修复 ： bugfix-xxx
+	- 线上已有功能优化： update-xxx
+	- 新分析新功能： feature-xxx
+	- 流程产品： 按具体流程命名，作为产品主分支
+	
+> note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或产品主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
+
+* 代码规范
+	- 代码编写需进行[Pep8](https://www.python.org/dev/peps/pep-0008/)检查，可以使用文本编辑器插件自动检查;
+	- 注释信息简洁明晰;
 
 
-* 命令行数据上传
 
-	从服务器上传数据到云平台目录。
-	示例如下：
+### 命令行数据传输
+
+* 从服务器上传数据到云平台目录：
 	```
 	python ~/biocluster/scripts/dataexchange/get_file_list.py -i ~/sg-users/yuguo/testdata -o testdata.list
 	python ~/biocluster/scripts/dataexchange/upload.py -l testdata.list -c FNSBGA -m tsanger
@@ -104,11 +158,17 @@ Sanger Bioinfo
 	python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NWKBVB
 	```
 
-* Slurm任务提交
+	从平台目录下载任务文件夹：
+	```
+	python ~/biocluster/scripts/dataexchange/download.py -c "KQUTSF|e0cac412c4956c0879f2025b51d2024b" -t ./target/ -m tsg
 
-	用户命令包括：sacct, salloc, sattach, sbatch, sbcast, scancel, scontrol, sinfo, smap, squeue,srun, strigger 和 sview.
-	命令使用–help选项可以打印命令改命令的概要。需要注意的是命令选项都是大小写区分的。
+	```
 
+### Slurm任务提交
+用户命令包括：sacct, salloc, sattach, sbatch, sbcast, scancel, scontrol, sinfo, smap, squeue,srun, strigger 和 sview.
+命令使用–help选项可以打印命令改命令的概要。需要注意的是命令选项都是大小写区分的。
+
+* 常用命令：
 	`sacct` 用来报告已经完成或正在进行作业或作业步骤的计费信息。
 
 	`salloc`  用来实时分配作业资源。通常用来分配资源并生成一个终端shell。终端执行srun命令开始并行任务。
@@ -136,31 +196,9 @@ Sanger Bioinfo
 	`sview` 为获取或更新Slurm管理的作业、分区、节点的状态信息。
 
 
-### 协作编程
-
-* Git & gitlab
-	- 代码开发统一使用git库进行代码编写和提交;
-	- 登录[gitlba平台 git.majorbio.com](git.majorbio.com) 进行协作开发，受保护分支需进行merge request代码审核。
-
-	**任何开发必须在gitlab上对应一条issue，代码分支上编写进行，编写测试完成提交最后更新时关闭issue。**
-
-	建立分支命名规则如下：
-
-	- 线上bug修复 ： bugfix-xxx
-	- 线上已有功能优化： update-xxx
-	- 新分析新功能： feature-xxx
-	- 流程： 按具体流程命名
-	
-	> note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或项目主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
-
-* 代码规范
-	- 代码编写需进行[Pep8](https://www.python.org/dev/peps/pep-0008/)检查，可以使用文本编辑器插件自动检查;
-	- 注释信息简洁明晰;
 
 
-
-
-# 桑格开发工作流
+# 生信开发
 ![开发流程图1](img/Sanger-workflow.png)
 
 
