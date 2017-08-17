@@ -24,7 +24,7 @@ SOAPdenovo2：http://soap.genomics.org.cn/
 资源配置
 -----------------------------------
 
-self._cpu = 17
+self._cpu = 16
 
 self._memory = "option{mem}"
 
