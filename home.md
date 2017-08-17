@@ -32,9 +32,6 @@ Sanger Bioinfo
 
 # 平台架构
 
-<<<<<<< HEAD
-### 集群使用
-=======
 ### 平台系统架构
 ![平台系统架构图](img/sanger-system.png)
 
@@ -86,12 +83,10 @@ Sanger Bioinfo
 ![开发环境架构](img/开发环境架构.png)
 
 * 开发集群
->>>>>>> 07f426a6c8d45da06c5a9fc56ed162da00e4a163
 
 开发登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
 开发节点对应web地址www.tsg.com
 
-<<<<<<< HEAD
 * 开发架构及流程图
 
 ![开发流程图2](img/sanger应用开发流程.png)
@@ -122,7 +117,6 @@ Sanger Bioinfo
 * 软件安装
 =======
 ### 协作开发
->>>>>>> 07f426a6c8d45da06c5a9fc56ed162da00e4a163
 
 ![平台开发工作流程图](img/平台开发工作流程.png)
 
