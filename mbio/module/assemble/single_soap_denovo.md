@@ -39,12 +39,10 @@ tool:assemble.soap_denovo,assemble.get_contig
 
 运行逻辑
 -----------------------------------
-1、对所有的样本单独运行stringtie/cufflinks进行拼接；
+1、对各样本单独运行SOAPdenovo2进行拼接；
 
-2、运行stringtie_merge/cuffmerge对拼接后的结果进行合并，产生merged.gtf文件；
+2、去Ns，按最短contig长度进行筛选；
 
-3、用merged.gtf运行软件gffcompare进行比对；
+3、综合结果进行比较，筛选kmer；
 
-4、根据class_code,运行new_transcripts挑选出新转录本和新基因的gtf文件和fa文件；
-
-5、统计信息：class_code分布信息，序列长度分布信息
+4、得到的kmer做长度分布统计；

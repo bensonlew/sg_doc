@@ -19,7 +19,7 @@ Path
 使用程序
 -----------------------------------
 
-get_scaftig.pl, cut_more.pl, contig_stat.pl
+get_scaftig.pl, cut_more.pl
 
 资源配置
 -----------------------------------
@@ -45,7 +45,6 @@ perl contig_stat.pl [run_cut_more的输出文件] [最短contig长度] [输出�
             {"name": "min_contig", "type": "string", "default": "500"},  # 输入最短contig长度，默认500
             {"name": "scaftig", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，scaffold去掉N后的序列
             {"name": "cut_more_scaftig", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，去掉小于最短contig长度的序列
-            {"name": "scaftig_stat", "type": "outfile", "format": "sequence.profile_table"},  # 输出文件，对组装后的序列进行信息统计
 ```
 
 
