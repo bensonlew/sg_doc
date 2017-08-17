@@ -36,7 +36,7 @@ tool:assemble.metagen_ass_stat
             {"name": "min_contig", "type": "string", "default": "500"},  # 输入最短contig长度，默认500
             {"name": "scafSeq", "type": "outfile", "format": "sequence.fasta"},  # 输出文件,sample.scafSeq
             {"name": "scaftig", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，scaffold去掉N后的序列
-            {"name": "cut_more_scaftig", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，去掉小于最短contig长度的序列
+            {"name": "cut_more_scaftig_dir", "type": "outfile", "format": "sequence.fasta_dir"},  # 输出文件，去掉小于最短contig长度的序列路径
    ```
 
 
