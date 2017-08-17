@@ -44,4 +44,4 @@ tool:assemble.metagen_ass_stat
 -----------------------------------
 1、进行SOAPdenovo2拼接；
 
-2、汇总结果，kmer筛选，做长度分布图；
+2、汇总结果，kmer筛选，做长度分布统计；
