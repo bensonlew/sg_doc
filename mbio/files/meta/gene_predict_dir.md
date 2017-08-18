@@ -23,12 +23,12 @@ Path
 -----------------------------------
 
 ::
- ./
- ../
- fasta1.fasta
- fasta2.fa
- fasta3.fasta
- fasta4.faa
+
+ file_name	name
+ fasta1.fasta	name1
+ fasta2.fa	name2
+ fasta3.fasta	name3
+ fasta4.faa	name4
                                                                  
 属性及其含义
 -----------------------------------
