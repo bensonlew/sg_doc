@@ -24,7 +24,7 @@ Path
 资源配置
 -----------------------------------
 
-self._cpu = 10   #需测试
+self._cpu = 10
 
 self._memory = "120G"
 
@@ -44,7 +44,9 @@ extract-paired-reads.py
             {"name": "fastq1", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.l.fastq
             {"name": "fastq2", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.r.fastq
             {"name": "fastqs", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.s.fastq
-            {"name": "kmer_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # 输出文件，去kmer后的文件夹
+            {"name": "filt_fastq1", "type": "infile", "format": "sequence.fastq"},  # 输出文件,sample.filt.l.fastq
+            {"name": "filt_fastq2", "type": "infile", "format": "sequence.fastq"},  # 输出文件,sample.filt.r.fastq
+            {"name": "filt_fastqs", "type": "infile", "format": "sequence.fastq"},  # 输出文件,sample.filt.s.fastq
 ```
 
 

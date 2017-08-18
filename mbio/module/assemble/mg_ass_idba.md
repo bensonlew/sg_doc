@@ -10,29 +10,28 @@ Path
 功能和用途描述
 -----------------------------------
 
-宏基因组运用idba_ud进行单个样本多个kmer连续拼接
+宏基因组运用idba_ud对样本多个kmer连续拼接
 
 主要命令及功能模块
 -----------------------------------
 
-module：assemble.idba
-tool: assemble.map_reads,assemble.cat_reads,assemble.cut_length,
-assemble.newbler,assemble.sort_newbler_result,assemble.metagen_ass_stat
+tool: assemble.idba, align.bowtie2, sequence.extract_fastq, sequence.cat_reads, assemble.rm_kmer, sequence.cut_length,
+assemble.newbler, assemble.sort_idba_result, assemble.contig_stat, sequence.length_distribute
 
 参数设计
 -----------------------------------
 
 ```
             {"name": "QC_dir", "type": "infile", "format": "sequence.fastq_dir"},  # 输入文件，质控后的文件夹
-            {"name": "quantity", "type": "int", "default": "10"},  #合同测序含量
+            {"name": "quantity", "type": "int", "default": "10"},  #clean reads碱基含量
             {"name": "sample_type", "type": "int", "default": "1"},  #样品类型
-            {"name": "sample_threshold", "type": "int", "default": "10"},  #样品数量限定值，判断去kmer标准之一
             {"name": "quantity_threshold", "type": "int"，"default": "20"},  #测序量限定值，判断去kmer/拆分reads标准之一
-            {"name": "overall_quantity_threshold", "type": "int", "default": "400"},  #总测序量限定值，判断去kmer标准之一
-            {”name“: "method","type": "string"},  #拼接方法选择[simple|multiple|triple]
-            {"name": "min_contig", "type": "string", "default": "300"},  # 输入最短contig长度，默认300
-            {"name": "contig","type": "outfile","format":"sequence.fasta"},  #输出文件，sample.contig.fa
-
+            {"name": "overall_quantity_threshold", "type": "int", "default": "200"},  #总测序量限定值，判断去kmer标准之一
+            {”name“: "method","type": "string"},  #拼接方法选择[simple|multiple]
+            {"name": "min_contig", "type": "string", "default": "300"},  # 输出最短contig长度，默认300
+            {"name": "contig","type": "outfile", "format": "sequence.fasta_dir"},  #输出文件路径，sample.contig.fa
+            {"name": "contig_stat", "type": "outfile", "format": "sequence.profile_table"},  #输出contig质量统计结果表
+            {"name": "length_distribute", "type": "outfile", "format": "sequence.profile_table_dir"},  #输出长度分布表
 ```
 
 运行逻辑

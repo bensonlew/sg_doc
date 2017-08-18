@@ -26,7 +26,7 @@ runAssembly
 
 self._cpu = 5
 
-self._memory = "10G"
+self._memory = "option{mem}"
 
 主要命令及功能模块
 -----------------------------------
@@ -39,13 +39,14 @@ runAssembly -o [输出路径] -force -cpu [cpu个数] -mi [相似度] -ml [比�
 ```
             {"name": "contig", "type": "infile", "format": "sequence.fasta"},  # 输入fasta文件
             {"name": "cpu", "type": "int", "default": 5},  # 拼接线程数，默认5
+            {“name”: "mem", "type": "int", "default": 10},  # 拼接使用内存，默认10
             {"name": "mi", "type": "int", "default": 98},  # 拼接相似度0-100，默认98
             {”name“: "ml", "type": "int", "default": 40},  # 拼接比对长度，默认40
             {”name“: "all_length","type": "int", "default": 300},  # 拼接结果最小contig长度
             {"name": "large_length","type": "int", "default": 1000},  # 拼接结果认为是长contig的长度
-            {"name": "output", "type": "string", "format": "sequence.fasta_dir"},  # 输出拼接结果路径
+            {"name": "output", "type": "string"},  # 输出拼接结果路径
 ```
 
 运行逻辑
 -----------------------------------
-1、拼接contig；
+1、newbler拼接contig；

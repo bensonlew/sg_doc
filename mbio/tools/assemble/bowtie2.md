@@ -5,7 +5,7 @@
 Path
 -----------
 
-**assemble.map_reads**
+**align.bowtie2**
 
 程序安装路径
 -----------------------------------
@@ -15,12 +15,12 @@ Path
 功能和用途描述
 -----------------------------------
 
-宏基因组装之序列处理，去"N"得到contig，长度筛选，质量统计。
+将reads与参考fasta序列用bowtie2进行比对。
 
 使用程序
 -----------------------------------
 
-bowtie2, choose_AlignSeq_bysam.pl
+bowtie2_build, bowtie2
 
 资源配置
 -----------------------------------
@@ -33,19 +33,17 @@ self._memory = "20G"
 -----------------------------------
 bowtie2_build [method]
 
-perl choose_AlignSeq_bysam.pl [samfile] [fq1,fq2|fqs] [输出文件名前缀]
+bowtie2 [method]
 
 参数设计
 -----------------------------------
 
 ```
-            {"name": "contig", "type": "infile", "format": "sequence.fasta"},  # 输入文件,sample.contig.fa
+            {"name": "ref_fasta", "type": "infile", "format": "sequence.fasta"},  # 输入文件,sample.contig.fa
             {"name": "fastq1", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.l.fastq
             {"name": "fastq2", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.r.fastq
             {"name": "fastqs", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.s.fastq
-            {"name": "unmap1", "type": "outfile", "format": "sequence.fastq"},  # 输出文件,sample.unmap.l.fastq
-            {"name": "unmap2", "type": "outile", "format": "sequence.fastq"},  # 输出文件,sample.unmap.r.fastq
-            {"name": "unmaps", "type": "outfile", "format": "sequence.fastq"},  # 输出文件,sample.unmap.s.fastq
+            {"name": "sam_file", "type": "outfile", "format": "align.bwa.sam_dir"},  # 输出文件,map结果的sam路径
 ```
 
 
@@ -54,5 +52,3 @@ perl choose_AlignSeq_bysam.pl [samfile] [fq1,fq2|fqs] [输出文件名前缀]
 1、建立contig比对索引；
 
 2、将clean reads进行比对；
-
-3、根据比对结果挑选未map的reads；

@@ -37,9 +37,10 @@ perl split_length.pl [fasta] [长度标准] [输出名称前缀]
 -----------------------------------
 
 ```
-            {"name": "contig", "type": "infile", "format": "sequence.fasta"},  # 输入文件,sample.contig.fa
+            {"name": "contig", "type": "infile", "format": "sequence.fasta_dir"},  # 输入contig文件路径
             {"name": "cut_length", "type": "float", "default": "1000"},  # 拆分序列长度标准，默认1000
-            {"name": "cut_len_fa", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，两个
+            {"name": "cut_contig", "type": "outfile", "format": "sequence.fasta_dir"},  # 输出contig文件路径
+            {"name": "short_contig", "type": "outfile", "format": "sequence.fasta"},  #输出供newbler拼接使用的contig文件
 ```
 
 

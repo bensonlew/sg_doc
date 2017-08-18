@@ -19,7 +19,7 @@ Path
 
 module:assemble.single_soap_denovo
 
-tool:assemble.metagen_ass_stat
+tool:assemble.contig_stat, sequence.length_distribute
 
 参数设计
 -----------------------------------
