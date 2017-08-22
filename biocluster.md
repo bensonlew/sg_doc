@@ -7,8 +7,6 @@ author：郭权
 * [事件驱动编程](/biocluster/Event_Oriented)
 * [Module/Workflow开发](/biocluster/Moudule_Workflow)
 * [Tool/Agent开发](/biocluster/Tool_Agent)
-* [Web服务](/biocluster/web)
-* [WPM相关基础](/biocluster/wpm)
 * [运行和测试](/biocluster/Run_Test)
 
 概述
