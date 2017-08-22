@@ -1,8 +1,6 @@
 Biocluster教程系列
 ==================
-
-> 学无止境,持续更新中...
-> 欢迎大家积极补充教程和经验文档~
+author：郭权
 
 * [概述](#user-content-概述)
 * [基础](/biocluster/Basic)

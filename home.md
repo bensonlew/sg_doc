@@ -3,8 +3,8 @@ Sanger Bioinfo
 
 >                
 > ## *Welcome to a Sanger !*                   
-> ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:scroll:  Biocluster 教程](/biocluster)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
-
+> ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
+> ### [:scroll:  Biocluster 教程2016V1版](/biocluster) |[:scroll:  Biocluster 教程2017V2版](/SOP/模块开发)
 
 * [平台架构](#user-content-平台架构)
 	+ [平台系统架构](#user-content-平台系统架构)
