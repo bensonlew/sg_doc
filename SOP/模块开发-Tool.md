@@ -18,33 +18,32 @@
 ##### ToolAgent编写
 	
 1. 初始化实例，初始化父类，设置参数
-
-'''
-class UsearchOtuAgent(Agent):
-    """
-    Usearch：uparse
-    version v7
-    author：yuguo
-    last_modify:2015.11.03
-    """
-    def __init__(self, parent=None):
-        super(UsearchOtuAgent, self).__init__(parent)
-        options = [
-            # 输入fasta文件，序列名称格式为'>sampleID_seqID'.
-            {'name': 'fasta', 'type': 'infile', 'format': 'sequence.fasta'},
-            # 相似性值，范围0-1.
-            {'name': 'identity', 'type': 'float', 'default': 0.97},
-            {'name': 'otu_table', 'type': 'outfile',
-                'format': 'meta.otu.otu_table'},  # 输出结果otu表
-            {'name': 'otu_rep', 'type': 'outfile',
-                'format': 'sequence.fasta'},  # 输出结果otu代表序列
-            {'name': 'otu_seqids', 'type': 'outfile',
-                'format': 'meta.otu.otu_seqids'},  # 输出结果otu中包含序列列表
-            {'name': 'otu_biom', 'type': 'outfile',
-                'format': 'meta.otu.biom'}  # 输出结果biom格式otu表
-        ]
-        self.add_option(options)
-'''
+    '''
+    class UsearchOtuAgent(Agent):
+        """
+        Usearch：uparse
+        version v7
+        author：yuguo
+        last_modify:2015.11.03
+        """
+        def __init__(self, parent=None):
+            super(UsearchOtuAgent, self).__init__(parent)
+            options = [
+                # 输入fasta文件，序列名称格式为'>sampleID_seqID'.
+                {'name': 'fasta', 'type': 'infile', 'format': 'sequence.fasta'},
+                # 相似性值，范围0-1.
+                {'name': 'identity', 'type': 'float', 'default': 0.97},
+                {'name': 'otu_table', 'type': 'outfile',
+                    'format': 'meta.otu.otu_table'},  # 输出结果otu表
+                {'name': 'otu_rep', 'type': 'outfile',
+                    'format': 'sequence.fasta'},  # 输出结果otu代表序列
+                {'name': 'otu_seqids', 'type': 'outfile',
+                    'format': 'meta.otu.otu_seqids'},  # 输出结果otu中包含序列列表
+                {'name': 'otu_biom', 'type': 'outfile',
+                    'format': 'meta.otu.biom'}  # 输出结果biom格式otu表
+            ]
+            self.add_option(options)
+    '''
 
 2. 检查参数设置
 
