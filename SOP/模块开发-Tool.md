@@ -19,38 +19,38 @@
 	
 1. 初始化实例，初始化父类，设置参数
 
-    '''
-    class UsearchOtuAgent(Agent):
-        """
-        Usearch：uparse
-        version v7
-        author：yuguo
-        last_modify:2015.11.03
-        """
-        def __init__(self, parent=None):
-            super(UsearchOtuAgent, self).__init__(parent)
-            options = [
-                # 输入fasta文件，序列名称格式为'>sampleID_seqID'.
-                {'name': 'fasta', 'type': 'infile', 'format': 'sequence.fasta'},
-                # 相似性值，范围0-1.
-                {'name': 'identity', 'type': 'float', 'default': 0.97},
-                {'name': 'otu_table', 'type': 'outfile',
-                    'format': 'meta.otu.otu_table'},  # 输出结果otu表
-                {'name': 'otu_rep', 'type': 'outfile',
-                    'format': 'sequence.fasta'},  # 输出结果otu代表序列
-                {'name': 'otu_seqids', 'type': 'outfile',
-                    'format': 'meta.otu.otu_seqids'},  # 输出结果otu中包含序列列表
-                {'name': 'otu_biom', 'type': 'outfile',
-                    'format': 'meta.otu.biom'}  # 输出结果biom格式otu表
-            ]
-            self.add_option(options)
-    '''
+```
+class UsearchOtuAgent(Agent):
+    """
+    Usearch：uparse
+    version v7
+    author：yuguo
+    last_modify:2015.11.03
+    """
+    def __init__(self, parent=None):
+        super(UsearchOtuAgent, self).__init__(parent)
+        options = [
+            # 输入fasta文件，序列名称格式为'>sampleID_seqID'.
+            {'name': 'fasta', 'type': 'infile', 'format': 'sequence.fasta'},
+            # 相似性值，范围0-1.
+            {'name': 'identity', 'type': 'float', 'default': 0.97},
+            {'name': 'otu_table', 'type': 'outfile',
+                'format': 'meta.otu.otu_table'},  # 输出结果otu表
+            {'name': 'otu_rep', 'type': 'outfile',
+                'format': 'sequence.fasta'},  # 输出结果otu代表序列
+            {'name': 'otu_seqids', 'type': 'outfile',
+                'format': 'meta.otu.otu_seqids'},  # 输出结果otu中包含序列列表
+            {'name': 'otu_biom', 'type': 'outfile',
+                'format': 'meta.otu.biom'}  # 输出结果biom格式otu表
+        ]
+        self.add_option(options)
+```
 
 2. 检查参数设置
 
 在模块开始运行前，检查参数是否符合运行要求，将错误产生在运行开始前。
 
-'''
+```
 def check_options(self):
     """
     检查参数设置
@@ -60,7 +60,7 @@ def check_options(self):
     if self.option("identity") < 0 or self.option("identity") > 1:
         raise OptionError("identity值必须在0-1范围内.")
     return True
-'''
+```
 
 3. 设置所需使用资源
 
@@ -68,7 +68,7 @@ def check_options(self):
 
 生信计算中，一般资源的需求随着输入文件大小和计算方法改变。所以一般这个值应该是一个动态的值。所以我们可能需要在set_resource中给出一定的算法来动态计算资源使用量
 
-'''
+```
 def set_resource(self):
     """
     设置所需资源，需在之类中重写此方法 self._cpu ,self._memory
@@ -80,13 +80,13 @@ def set_resource(self):
     total = int(total * 10)
     self._memory = "{}G".format(total)
 
-'''
+```
 
 4. 设置结果目录，触发结束事件
 
 设置结果目录有两种规则方式，一种是绝对文件路径：`add_relpath_rules`,一种是模式匹配：`add_regexp_rules`
 
-'''
+```
     def end(self):
         result_dir = self.add_upload_dir(self.output_dir)
         result_dir.add_relpath_rules([
@@ -97,7 +97,7 @@ def set_resource(self):
             ["otu_table.xls", "meta.otu.otu_table", "OTU表"]
         ])
         super(UsearchOtuAgent, self).end()
-'''
+```
 
 
 ### Tool
