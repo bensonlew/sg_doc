@@ -18,6 +18,7 @@
 ##### ToolAgent编写
 	
 1. 初始化实例，初始化父类，设置参数
+
     '''
     class UsearchOtuAgent(Agent):
         """
