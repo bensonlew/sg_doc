@@ -17,7 +17,7 @@
 
 ##### ToolAgent编写
 	
-1. 初始化实例，初始化父类，设置参数
+###### 1. 初始化实例，初始化父类，设置参数
 
 ```
 class UsearchOtuAgent(Agent):
@@ -46,7 +46,7 @@ class UsearchOtuAgent(Agent):
         self.add_option(options)
 ```
 
-2. 检查参数设置
+###### 2. 检查参数设置
 
 在模块开始运行前，检查参数是否符合运行要求，将错误产生在运行开始前。
 
@@ -62,7 +62,7 @@ def check_options(self):
     return True
 ```
 
-3. 设置所需使用资源
+###### 3. 设置所需使用资源
 
 计算任务开始运行前，需要先告诉集群系统需要多少资源来运行该任务。这个数字越准确，那么集群的资源利用率也越高。这个数值不准确，可能导致集群死机或者资源空置。
 
@@ -82,7 +82,7 @@ def set_resource(self):
 
 ```
 
-4. 设置结果目录，触发结束事件
+###### 4. 设置结果目录，触发结束事件
 
 设置结果目录有两种规则方式，一种是绝对文件路径：`add_relpath_rules`,一种是模式匹配：`add_regexp_rules`
 
@@ -118,7 +118,7 @@ def set_resource(self):
 
 #### Tool编写：
 
-1. 初始化实例，初始化父类，加载config，设置环境变量
+###### 1. 初始化实例，初始化父类，加载config，设置环境变量
 
 调用的软件命令以及路径从app目录开发，通过Tool的set_environ方法来动态设置环境变量满足其下Command命令的运行要求。
 ```
@@ -134,9 +134,9 @@ class DistanceCalcTool(Tool):
         self.biom = self.biom_otu_table()  # 传入otu表需要转化为biom格式
 ```
 
-2. 编写运行方法，调用程序添加到command运行
+###### 2. 编写运行方法，调用程序添加到command运行
 
-运行程序有2种方式：
+* 编写运行程序有2种方式：
 
 	- 自定义编写处理函数方法，放在tool的函数中（自能自己调用），或放在src/mbio/packages目录下（方便其他模块调用），在Tool主线程中运行，注意方法尽可能简洁，运行时间必须非常短，否则会造成主进程阻塞。
 
@@ -154,10 +154,9 @@ class DistanceCalcTool(Tool):
 			* 130使用Ctrl-C终止的命令
 			* 255规范外的退出状态	
 
-	- add_command添加命令,run运行命令,wait暂停当前线程等待命令跑完
+* add_command添加命令,run运行命令,wait暂停当前线程等待命令跑完
 
-		注意判断和捕获所有错误或异常情况，使用set_error返回错误信息，程序退出。
-
+    注意判断和捕获所有错误或异常情况，使用set_error返回错误信息，程序退出。
 	```
 	def run_beta_diversity(self):
 	    """
@@ -188,7 +187,7 @@ class DistanceCalcTool(Tool):
 	        self.set_error('运行qiime:beta_diversity.py出错')
 	```
 
-- linkfile链接文件，option设置输出参数路径，end结束发送finish状态
+###### 3. linkfile链接文件，option设置输出参数路径，end结束发送finish状态
 
 	最后命令完成后，别忘了将最终结果放置在output_dir目录下，如果you下游模块还需要设置输出参数文件对象的路径。
 	```
@@ -208,7 +207,7 @@ class DistanceCalcTool(Tool):
 	```
 
 
-3. run触发command运行
+###### 4. run触发command运行
 
 运行command前必须先触发父类run运行起来开启actor并建立线程。
 ```
