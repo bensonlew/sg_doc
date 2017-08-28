@@ -3,7 +3,7 @@ Sanger Bioinfo
 
 >                
 > ## *Welcome to a Sanger !*                   
-> ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:scroll:  Biocluster 教程](/biocluster)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md)             
+> ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md) |[:scroll:  Biocluster 教程](/biocluster)            
 
 
 * [平台架构](#user-content-平台架构)
@@ -23,6 +23,9 @@ Sanger Bioinfo
 	+ [流程解析](#user-content-流程解析)
 	+ [产品设计](#user-content-产品设计)
 	+ [模块开发](#user-content-模块开发)
+		+ [Tool开发](/SOP/模块开发之Tool开发)
+		+ [Module开发](/SOP/模块开发之Module开发)
+		+ [File开发](/SOP/模块开发之File开发)
 	+ [Web开发](#user-content-web开发)
 	+ [测试发布](#user-content-测试发布)
     + [工具开发](#user-content-工具开发)
@@ -42,21 +45,21 @@ Sanger Bioinfo
 
 生信软件(app/bioinfo)、分析模块(File/tool/module/workflow)存放目录分类如下：
 
-| 类别 | 说明  | App | File| Tool| Module |workflow|
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-|sequence | 序列处理 |  |  |  |  |  | 
-|align | 比对、mapping |  |  |  |  |  | 
-|taxon| 物种分类 |  |  |  |  |  | 
-|phylo | 进化 |  |  |  |  |  | 
-|annotation |功能注释 |  |  |  |  |  | 
-|assemble | 拼接组装 |  |  |  |  |  | 
-|statistical | 统计 |  |  |  |  |  | 
-|graphy| 作图 |  |  |  |  |  | 
-|gene_structure | 基因结构 |  |  |  |  |  |  
-|protein_regulation | 蛋白调控 |  |  |  |  |  | 
-|meta | meta独有 |  |  |  |  |  | 
-|rna | rna独有 |  |  |  |  |  | 
-|medical | 医学独有 |  |  |  |  |  | 
+| 类别 | 说明  |
+| ---- | ---- | 
+|sequence | 序列处理 |
+|align | 比对、mapping |
+|taxon| 物种分类 |
+|phylo | 进化 |
+|annotation |功能注释 |
+|assemble | 拼接组装 |
+|statistical | 统计 |
+|graphy| 作图 |
+|gene_structure | 基因结构 |
+|protein_regulation | 蛋白调控 |
+|meta | meta独有 |
+|rna | rna独有 |
+|medical | 医学独有 |
 > :bellhop: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
 
 
@@ -87,26 +90,6 @@ Sanger Bioinfo
 开发登录节点： `192.168.12.102` 用户：`sanger-dev`，用户目录使用`~/sg-users`中个人目录,非个人目录中不要随意存放文件或删除文件
 开发节点对应web地址www.tsg.com
 
-* 生信模块和软件分类规则
-
-生信软件(app/bioinfo)、分析模块(File/tool/module/workflow)存放目录分类如下：
-
-| 类别 | 说明  | App | File| Tool| Module |workflow|
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| sequence | 序列处理 |  |  |  |  |  | 
-|align | 比对、mapping |  |  |  |  |  | 
-|taxon| 物种分类 |  |  |  |  |  | 
-|phylo | 进化 |  |  |  |  |  | 
-|annotation |功能注释 |  |  |  |  |  | 
-|assemble | 拼接组装 |  |  |  |  |  | 
-|statistical | 统计 |  |  |  |  |  | 
-| graphy| 作图 |  |  |  |  |  | 
-|gene_structure | 基因结构 |  |  |  |  |  |  
-|protein_regulation | 蛋白调控 |  |  |  |  |  | 
-|meta | meta独有 |  |  |  |  |  | 
-|rna | rna独有 |  |  |  |  |  | 
-|medical | 医学独有 |  |  |  |  |  | 
-> :wind_chime:note: 为避免分类文件夹混乱和歧义，如有无法归类的类别需向经理申请建立新的大类目录。
 
 ### 协作开发
 
@@ -237,7 +220,7 @@ Sanger Bioinfo
 
 ### 模块开发
 
-生信模块包括： workflow、module、Tool、File
+生信模块包括： workflow、module、Tool、File、Package
 
 **注意事项：**
 * 环境变量设置

@@ -41,7 +41,7 @@ SOAPdenovo2-63mer all -s <配置文件（需自己生成）> -o <输出文件的
             {"name": "fastq2", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.r.fastq
             {"name": "fastqs", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.s.fastq
             {"name": "max_rd_len", "type": "string"},  # read最大读长
-            {“name”: "mem", "type": "int", "default": 100},  # 拼接使用内存
+            {"name": "mem", "type": "int", "default": 100},  # 拼接使用内存
             {"name": "insert_size", "type": "string"},  # 平均插入片段长度
             {"name": "reverse_seq", "type": "string", "default": "0"},   # 配置文件的其他参数
             {"name": "asm_flags", "type": "string", "default": "3"},  # 配置文件的其他参数

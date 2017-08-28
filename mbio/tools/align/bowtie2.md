@@ -25,7 +25,7 @@ bowtie2_build, bowtie2
 资源配置
 -----------------------------------
 
-self._cpu = 8
+self._cpu = 6
 
 self._memory = "20G"
 
