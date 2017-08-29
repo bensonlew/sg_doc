@@ -1,7 +1,7 @@
-È¥ËŞÖ÷
+å»å®¿ä¸»
 ===========
 
-Moudle ËµÃ÷
+Moudle è¯´æ˜
 -----------------------------------
 
 PATH
@@ -9,16 +9,16 @@ PATH
 
 **meta.remove_host**
 
-³ÌĞò¼°°²×°Â·¾¶
+ç¨‹åºåŠå®‰è£…è·¯å¾„
 ------------
 
 /app/bioinfo/align/bwa-0.7.9a/bwa
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 --------
-½«reads±È¶ÔËŞÖ÷DNAĞòÁĞ£¬²¢È¥³ı±È¶ÔÏàËÆĞÔ¸ßµÄÎÛÈ¾reads¡£
+å°†readsæ¯”å¯¹å®¿ä¸»DNAåºåˆ—ï¼Œå¹¶å»é™¤æ¯”å¯¹ç›¸ä¼¼æ€§é«˜çš„æ±¡æŸ“readsã€‚
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
 tool:align.bwa
@@ -26,20 +26,20 @@ tool:sequece.fastq_extract
 tool:sequence.fastq_stat
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # ÊäÈëÖÊ¿ØºóµÄfastqÎÄ¼ş¼ĞÆäÖĞ°üº¬listÎÄ¼ş
-{"name": "ref_database", "type": "string", "default": ""},  # ËŞÖ÷²Î¿¼ĞòÁĞ¿âÖĞ¶ÔÓ¦µÄÎïÖÖÃû£¬eg£ºE.coli ,B.taurus
-{"name": "ref_undefined", "type": "infile", "format": "sequence.fasta_dir"},  # Î´¶¨ÒåµÄËŞÖ÷ĞòÁĞËùÔÚÎÄ¼ş¼Ğ£¬¶à¸öËŞÖ÷catµ½Ò»¸öÎÄ¼ş£¬²¢×÷Îªtool:align.bwaµÄÊäÈëÎÄ¼ş
-{"name": "fq_type", "type": "string", "default": "PSE"},  # fqÀàĞÍ£¬PE¡¢SE¡¢PSE£¨¼´PE+SE£¬µ¥¶Ë¼ÓË«¶Ë£©
-{"name": "result_fq_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # È¥ËŞÖ÷½á¹ûÎÄ¼ş¼Ğ£¬ÄÚº­¸÷ÑùÆ½fqÎÄ¼şºÍ¶ÔÓ¦listÎÄ¼ş
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # è¾“å…¥è´¨æ§åçš„fastqæ–‡ä»¶å¤¹å…¶ä¸­åŒ…å«listæ–‡ä»¶
+{"name": "ref_database", "type": "string", "default": ""},  # å®¿ä¸»å‚è€ƒåºåˆ—åº“ä¸­å¯¹åº”çš„ç‰©ç§åï¼Œegï¼šE.coli ,B.taurus
+{"name": "ref_undefined", "type": "infile", "format": "sequence.fasta_dir"},  # æœªå®šä¹‰çš„å®¿ä¸»åºåˆ—æ‰€åœ¨æ–‡ä»¶å¤¹ï¼Œå¤šä¸ªå®¿ä¸»catåˆ°ä¸€ä¸ªæ–‡ä»¶ï¼Œå¹¶ä½œä¸ºtool:align.bwaçš„è¾“å…¥æ–‡ä»¶
+{"name": "fq_type", "type": "string", "default": "PSE"},  # fqç±»å‹ï¼ŒPEã€SEã€PSEï¼ˆå³PE+SEï¼Œå•ç«¯åŠ åŒç«¯ï¼‰
+{"name": "result_fq_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # å»å®¿ä¸»ç»“æœæ–‡ä»¶å¤¹ï¼Œå†…æ¶µå„æ ·å¹³fqæ–‡ä»¶å’Œå¯¹åº”listæ–‡ä»¶
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-1.µ±"fastq_dir"ºÍ"ref_database"/"ref_undefined"Á½¸ö²ÎÊı¶¼Âú×ãÊ±£¬µ÷ÓÃ[align.bwa] toolÈ¥×öËŞÖ÷mapping£»
+1.å½“"fastq_dir"å’Œ"ref_database"/"ref_undefined"ä¸¤ä¸ªå‚æ•°éƒ½æ»¡è¶³æ—¶ï¼Œè°ƒç”¨[align.bwa] toolå»åšå®¿ä¸»mappingï¼›
 
-2.ÀûÓÃmapping½á¹û£¬µ÷ÓÃ[sequece.fastq_extract] toolÈ¥³ıÊôÓÚËŞÖ÷µÄĞòÁĞ£»
+2.åˆ©ç”¨mappingç»“æœï¼Œè°ƒç”¨[sequece.fastq_extract] toolå»é™¤å±äºå®¿ä¸»çš„åºåˆ—ï¼›
 
-3.[sequence.fastq_stat] toolÍ³¼ÆÈ¥ËŞÖ÷ºóµÄÊı¾İĞÅÏ¢¡£
+3.[sequence.fastq_stat] toolç»Ÿè®¡å»å®¿ä¸»åçš„æ•°æ®ä¿¡æ¯ã€‚
