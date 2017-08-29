@@ -6,7 +6,7 @@
     * [概述](biocluster)
     * [基础](/biocluster/Basic)
     * [事件驱动编程](/biocluster/Event_Oriented)
-    * [Module/Workflow开发](/biocluster/Moudule_Workflow)
+    * [Module/Workflow开发](/biocluster/Module_Workflow)
     * [Tool/Agent开发](/biocluster/Tool_Agent)
     * [运行和测试](/biocluster/Run_Test)
 
