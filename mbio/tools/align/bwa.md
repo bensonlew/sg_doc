@@ -54,3 +54,5 @@ b：参数为未定义宿主时，提供宿主所在位置（多个宿主将cat成一个fasta），构建index。
     HB_H1_sickle_s.fq   HB_H1   s
  ```
 3.最终生成sam格式结果文件夹和list文件。
+
+# test by yuguo
