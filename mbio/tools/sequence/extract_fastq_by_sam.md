@@ -30,8 +30,8 @@ PATH
 
 运行逻辑
 -------
-1.首先确定"fq_type"类型：
+1.首先确定"fq_type"类型。
 
 2.当传入"sam"参数时，根据"extract_type"参数提取map/unmap的序列，并统计fastq信息。
 
-3.最终生成生成相关fq文件夹，其中含fq对应的'list.txt'和样品对应fq统计文件'stat.list.txt''。
+3.最终生成生成相关fq文件夹，其中含fq对应的'list.txt'和样品对应fq统计文件'stat.list.txt'。
