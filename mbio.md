@@ -53,6 +53,7 @@ tools存放目录为：`src\mbio\tools`
 
 | 模块名称 | 路径  | 功能说明  |相关应用|
 | ------- |-------|-------------|---------|
+| [bwa](/mbio/tools/align/bwa)||||
 | [ppinetwork_map](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/protein_regulation/ppinetwork_map.py)| [protein_regulation.ppinetwork_map](/mbio/tools/protein_regulation/ppinetwork_map) | 使用STRINGdb这个R包，将要预测的基因ID map到stingID，用于后面的蛋白质互作预测| |
 | [ppinetwork_predict](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/protein_regulation/ppinetwork_predict.py)| [protein_regulation.ppinetwork_predict](/mbio/tools/protein_regulation/ppinetwork_predict) | 根据stingID来预测蛋白质之间的互作关系| |
 | [ppinetwork_topology](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/tree/master/src/mbio/tools/protein_regulation/ppinetwork_topology.py)| [protein_regulation.ppinetwork_topology](/mbio/tools/protein_regulation/ppinetwork_topology) | 对预测得到的蛋白质互作网络进行拓扑属性的分析| |

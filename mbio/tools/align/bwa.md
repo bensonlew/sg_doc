@@ -1,7 +1,7 @@
-bwa±È¶Ô
+bwaæ¯”å¯¹
 ===========
 
-Tool ËµÃ÷
+Tool è¯´æ˜
 -----------------------------------
 
 PATH
@@ -9,16 +9,16 @@ PATH
 
 **align.bwa**
 
-³ÌĞò¼°°²×°Â·¾¶
+ç¨‹åºåŠå®‰è£…è·¯å¾„
 ------------
 
 /app/bioinfo/align/bwa-0.7.9a/bwa
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 --------
-½«reads±È¶ÔËŞÖ÷DNAĞòÁĞ
+å°†readsæ¯”å¯¹å®¿ä¸»DNAåºåˆ—
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
 bwa aln -f bwa_pair.1.sai -t 6 suzhu_genomic.fasta clip.sickle.1.fq ;
@@ -28,34 +28,31 @@ bwa aln -f bwa_single.sai -t 6 suzhu_genomic.fasta clip.sickle.s.fq ;
 bwa samse -f bwa_single.sam suzhu_genomic.fasta bwa_single.sai clip.sickle.s.fq
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "ref_fasta", "type": "infile", "format": "sequence.fasta"},  # ²Î¿¼ĞòÁĞ
-{"name": "fq_type", "type": "string", "default": ""},  # fqÀàĞÍ£¬±Ø´«
-{"name": "fastq_r", "type": "infile", "format": "sequence.fastq"},  # ÓÒ¶ËĞòÁĞÎÄ¼ş
-{"name": "fastq_l", "type": "infile", "format": "sequence.fastq"},  # ×ó¶ËĞòÁĞÎÄ¼ş
-{"name": "fastq_s", "type": "infile", "format": "sequence.fastq"},  # SEĞòÁĞÎÄ¼ş
-{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqÎÄ¼ş¼Ğ
-{"name": "head", "type": "string", "default": "'@RG\\tID:sample\\tLB:rna-seq\\tSM:sample\\tPL:ILLUMINA'"},  # ÉèÖÃ½á¹ûÍ·ÎÄ¼ş
-{"name": "sam", "type": "outfile", "format": "align.bwa.sam"},     # sam¸ñÊ½ÎÄ¼ş
-{"name": "method", "type": "string", "default": "align"},     # sam¸ñÊ½ÎÄ¼ş
-{"name": "pipe_type", "type": "string", "default": "AB"} # add "pipe_type" for meta_g's single read by zhujuan
+{"name": "ref_database", "type": "string", "default": ""},  # å®¿ä¸»å‚è€ƒåºåˆ—åº“ä¸­å¯¹åº”çš„ç‰©ç§åï¼Œegï¼šE.coli ,B.taurus
+{"name": "ref_undefined", "type": "infile", "format": "sequence.fasta_dir"},  # æœªå®šä¹‰çš„å®¿ä¸»åºåˆ—æ‰€åœ¨æ–‡ä»¶åŠ ï¼Œå¤šä¸ªå®¿ä¸»catåˆ°ä¸€ä¸ªæ–‡ä»¶ï¼Œå¹¶ä½œä¸ºtool:align.bwaçš„è¾“å…¥æ–‡ä»¶
+{"name": "fq_type", "type": "string", "default": "PSE"},  # fqç±»å‹ï¼ŒPEã€SEã€PSEï¼ˆå³PE+SEï¼Œå•ç«¯åŠ åŒç«¯ï¼‰
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"}, # è¾“å…¥è´¨æ§åçš„fastqæ–‡ä»¶å¤¹å…¶ä¸­åŒ…å«listæ–‡ä»¶
+{"name": "head", "type": "string", "default": "'@RG\\tID:sample\\tLB:rna-seq\\tSM:sample\\tPL:ILLUMINA'"},  # è®¾ç½®ç»“æœå¤´æ–‡ä»¶
+{"name": "sam", "type": "outfile", "format": "align.bwa.sam_dir"},     # samæ ¼å¼æ–‡ä»¶,å†…å«å¯¹åº”listæ–‡ä»¶
+{"name": "method", "type": "string", "default": "align"},     # samæ ¼å¼æ–‡ä»¶ï¼Œå¦ç§æ¨¡å¼ä¸ºindex
+###å¢åŠ ä¸€ä¸ªæŸ¥çœ‹pair-readsæ˜¯å¦æœ‰è¯¯çš„fileå·¥å…·
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-1.¶ÔÊäÈëµÄ²Î¿¼ĞòÁĞ×öÅĞ¶Ï£¬ĞÂÌí¼ÓµÄ²Î¿¼ĞòÁĞĞèÏÈ¹¹½¨index£»
+1.å®¿ä¸»åºåˆ—å‡†å¤‡ï¼š
+aï¼šå‚æ•°æ˜¯å·²æœ‰å®¿ä¸»ï¼Œåˆ™æ ¹æ®å®¿ä¸»åç§°ï¼Œç›´æ¥ä»å®¿ä¸»databaseä¸­æå–å®¿ä¸»ï¼›
+bï¼šå‚æ•°ä¸ºæœªå®šä¹‰å®¿ä¸»æ—¶ï¼Œæä¾›å®¿ä¸»æ‰€åœ¨ä½ç½®ï¼ˆå¤šä¸ªå®¿ä¸»å°†catæˆä¸€ä¸ªfastaï¼‰ï¼Œæ„å»ºindexã€‚
 
-2.ÊäÈëÎÄ¼şµÄµ¼Èë·½Ê½ÓĞÁ½ÖÖ£º
-a.Ö»ÓĞÒ»¸öÑùÆ·Ê±£¬¿ÉÒÔÖ±½ÓÌá¹©reads¶ÔÓ¦µÄfastqÎÄ¼ş£»
-b.ÓĞÒ»¸ö»ò¶à¸öÑùÆ·Ê±£¬±ØĞëÌá¹©fastqÎÄ¼ş¼Ğ£¬ÇÒ¸ÃÄ¿Â¼ÏÂ±ØĞëÓĞreads¶ÔÓ¦listÎÄ¼ş£º
+2.è¾“å…¥æ–‡ä»¶å¿…é¡»æä¾›fastqæ–‡ä»¶å¤¹ï¼Œä¸”è¯¥ç›®å½•ä¸‹å¿…é¡»æœ‰readså¯¹åº”listæ–‡ä»¶ï¼ˆå…·ä½“å†…å®¹ä¸"fq_type"ç›¸å…³ï¼‰ä¸‹ä¸ºâ€œPSEâ€æ—¶çš„æ ¼å¼ï¼š
  ```
     HB_H1_sickle_r.fq   HB_H1   r
     HB_H1_sickle_l.fq   HB_H1   l
-    HB_H1_sickle_s.fq   HB_H1
+    HB_H1_sickle_s.fq   HB_H1   s
  ```
+3.æœ€ç»ˆç”Ÿæˆsamæ ¼å¼ç»“æœæ–‡ä»¶å¤¹å’Œlistæ–‡ä»¶ã€‚
 
-2.µ±"fq_type"ÊÇPEÄ£Ê½£¬listÖĞR1¡¢R2¡¢[S£¬¸ÃÑ¡ÏîÔÚ"pipe_type"Îª" meta_g"ËùÌØÓĞµÄ]µÄfastq×÷Îª±ØÒªÊäÈëÎÄ¼ş£¬ÈôSEÄ£Ê½£¬listÖĞSµÄfastq×÷Îª±ØÒªÊäÈëÎÄ¼ş£»
-
-3.¸ù¾İ²»Í¬µÄÄ£Ê½×îÖÕÉú³ÉÑùÆ·¶ÔÓ¦µÄsam¸ñÊ½½á¹û£¬×¢Òâµ±ÉèÖÃ[" meta_g"]Ê±£¬single readsµÄbamÎªsamplename_sRead.bam,Çø·ÖSEµÄ½á¹û£¬ÀûÓÚºóĞø´¦Àí¡£
+# test by yuguo
