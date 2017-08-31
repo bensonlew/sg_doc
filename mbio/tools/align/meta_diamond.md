@@ -1,63 +1,64 @@
 diamond(modify)
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **tools.align.diamond**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-diamondÈí¼ş±È¶Ô
+diamondè½¯ä»¶æ¯”å¯¹
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
-             ####diamond index´´½¨
+             ####diamond indexåˆ›å»º
              cmd = os.path.join(self.cmd_path, "makedb")
              self.db_path = os.path.join(self.work_dir, 'diamond')
              cmd += " makedb -in {} -d {}".format(self.option("reference").prop['path'], db_name)
-             ###diamond±È¶Ô
+             ###diamondæ¯”å¯¹
             cmd = os.path.join(self.cmd_path, "diamond")
             cmd += " {} -q {} -d {} -o {} -e {} -f {} -p {}".format(
             self.blast_type, self.option("query").prop['path'], db, outputfile,
             self.option("evalue"), outfmt, self.option("num_threads"))
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
 
-            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # ÊäÈëÎÄ¼ş
-            {"name": "query_type", "type": "string"£¬"default": "prot"},  # ÊäÈëµÄ²éÑ¯ĞòÁĞµÄ¸ñÊ½£¬Îªnucl»òÕßprot
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # è¾“å…¥æ–‡ä»¶
+            {"name": "query_type", "type": "string"ï¼Œ"default": "prot"},  # è¾“å…¥çš„æŸ¥è¯¢åºåˆ—çš„æ ¼å¼ï¼Œä¸ºnuclæˆ–è€…prot
             {"name": "database", "type": "string", "default": "nr"},
-            # ±È¶ÔÊı¾İ¿â nt nr string swissprot kegg customer_mode ardb card vfdb
-            {"name": "outfmt", "type": "int", "default": 5},  # Êä³ö¸ñÊ½£¬Ö»Îª5
+            # æ¯”å¯¹æ•°æ®åº“ nt nr string swissprot kegg customer_mode ardb card vfdb
+            {"name": "outfmt", "type": "int", "default": 5},  # è¾“å‡ºæ ¼å¼ï¼Œåªä¸º5
             {"name": "blast", "type": "string","default": "blastp"},#blastp or blastx
-            {"name": "identity", "type": "float", "default": 0.0},  #Ò»ÖÂĞÔãĞÖµ
-            {"name": "coverage", "type": "float"£¬"default": 0.0},  # ¸²¸Ç¶ÈãĞÖµ
-            {"name": "evalue", "type": "float", "default": 1e-5},  # evalueÖµ
-            {"name": "num_threads", "type": "int", "default": 10},  # cpuÊı
-            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # ²Î¿¼ĞòÁĞ  Ñ¡ÔñcustomerÊ±ÆôÓÃ
-            {"name": "outxml", "type": "outfile", "format": "align.blast.blast_xml"},  # Êä³ö¸ñÊ½Îª5Ê±Êä³ö
-            {"name": "outtable", "type": "outfile", "format": "align.blast.blast_table"},  # Êä³ö¸ñÊ½Îª6Ê±Êä³ö
-            {"name": "sensitive", "type": "int", "default": 0} #fastÄ£Ê½
+            {"name": "identity", "type": "float", "default": 0.0},  #ä¸€è‡´æ€§é˜ˆå€¼
+            {"name": "coverage", "type": "float"ï¼Œ"default": 0.0},  # è¦†ç›–åº¦é˜ˆå€¼
+            {"name": "evalue", "type": "float", "default": 1e-5},  # evalueå€¼
+            {"name": "num_threads", "type": "int", "default": 10},  # cpuæ•°
+            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # å‚è€ƒåºåˆ—  é€‰æ‹©customeræ—¶å¯ç”¨
+            {"name": "outxml", "type": "outfile", "format": "align.blast.blast_xml"},  # è¾“å‡ºæ ¼å¼ä¸º5æ—¶è¾“å‡º
+            {"name": "outtable", "type": "outfile", "format": "align.blast.blast_table"},  # è¾“å‡ºæ ¼å¼ä¸º6æ—¶è¾“å‡º
+            {"name": "sensitive", "type": "int", "default": 0} #fastæ¨¡å¼
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-´«Èëfasta¸ñÊ½µÄ°±»ùËáĞòÁĞÎÄ¼ş£¬ÈôÃ»ÓĞÏàÓ¦indexÔòdb²ÎÊıÑ¡Ôñcustomer_mode£¬¸ù¾İreference´´½¨index£¬
-ÈôÊÇ³£ÓÃÊı¾İ¿â£¬Í¨¹ı²ÎÊıÑ¡Ôñ±È¶ÔÏàÓ¦Êı¾İ¿â£¬²¢½«½á¹û·ÅÔÚÖ¸¶¨ÎÄ¼ş¼ĞÖĞ¡£
+ä¼ å…¥fastaæ ¼å¼çš„æ°¨åŸºé…¸åºåˆ—æ–‡ä»¶ï¼Œè‹¥æ²¡æœ‰ç›¸åº”indexåˆ™dbå‚æ•°é€‰æ‹©customer_modeï¼Œæ ¹æ®referenceåˆ›å»ºindexï¼Œ
+è‹¥æ˜¯å¸¸ç”¨æ•°æ®åº“ï¼Œé€šè¿‡å‚æ•°é€‰æ‹©æ¯”å¯¹ç›¸åº”æ•°æ®åº“ï¼Œå¹¶å°†ç»“æœæ”¾åœ¨æŒ‡å®šæ–‡ä»¶å¤¹ä¸­ã€‚
 
 
-×ÊÔ´ÅäÖÃ
+èµ„æºé…ç½®
 -----------------------------------
 
 ```
 self._cpu = 10
 self._memory = "20G"
+
 ```
