@@ -4,7 +4,7 @@ Sanger Bioinfo
 >                
 > ## *Welcome to a Sanger !*                   
 > ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md) |[:scroll:  Biocluster 教程](/biocluster)            
-> ###[平台功能开发文档](/devdoc)
+> ### [平台功能开发文档](/devdoc)
 
 * [平台架构](#user-content-平台架构)
 	+ [平台系统架构](#user-content-平台系统架构)
