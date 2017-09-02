@@ -28,11 +28,13 @@ self.add_tool("unigene_profile")
 ```
 {"name": "gene_predict","type": "infile","format": "uniGene.genepre_dir"},#
 提供GenePredict结果的文件夹
-{"name": "identity","type":"float","default":0.95},##给出cdhit的参数identity
+{"name": "cd_identity","type":"float","default":0.95},##给出cdhit的参数identity
+{"name": "soap_identity","type":"float","default":0.95},##给出soap2的参数identity
 {"name":"coverage","type":"float","default":0.9},##给出cdhit的参数coverage
 {"name":"table","type":"int","default":11}, ##给出transeq参数table，11为bacteria。
 {"name":"fafile","type":"outfile","format":"sequence.fasta"},
 {"name":"faafile","type":"outfile","format":"sequence.fastaa"}
+{"name":"statistics","type":"outfile","format":"sequence.profile_table"}
 
 ```
 
