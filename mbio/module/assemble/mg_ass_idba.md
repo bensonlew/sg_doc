@@ -27,7 +27,7 @@ assemble.newbler, assemble.sort_idba_result, assemble.contig_stat, sequence.leng
             {"name": "sample_type", "type": "int", "default": "1"},  #样品类型
             {"name": "quantity_threshold", "type": "int"，"default": "20"},  #测序量限定值，判断去kmer/拆分reads标准之一
             {"name": "overall_quantity_threshold", "type": "int", "default": "200"},  #总测序量限定值，判断去kmer标准之一
-            {”name“: "method","type": "string"},  #拼接方法选择[simple|multiple]
+            {”name“: "method","type": "string"},  #拼接方法选择[simple_assemble|multiple_assemble]
             {"name": "min_contig", "type": "string", "default": "300"},  # 输出最短contig长度，默认300
             {"name": "contig","type": "outfile", "format": "sequence.fasta_dir"},  #输出文件路径，sample.contig.fa
             {"name": "contig_stat", "type": "outfile", "format": "sequence.profile_table"},  #输出contig质量统计结果表
