@@ -34,3 +34,4 @@
 | h5py| 无 | 无 | pip install h5py | |
 | ImageMagick | app/program/ImageMagick | app/install_packages/ImageMagick | ./configure --prefix=/mnt/ilustre/users/sanger/app/program/ImageMagick<br>make<br> make install| ||
 | parafly-r2013-01-21 | app/program/parafly-r2013-01-21 | app/install_packages/parafly-r2013-01-21.tgz | tar zxf parafly-r2013-01-21.tgz<br>cd parafly-r2013-01-21<br>./configure --prefix=/mnt/ilustre/users/sanger-dev/app/program/parafly-r2013-01-21/bin<br>make install| ||
+| histat| app/bioinfo/align/hisat2/| app/install_packages/hisat2-2.1.0-Linux_x86_64.zip | <br>wget ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/downloads/hisat2-2.1.0-Linux_x86_64.zip<br>unzip hisat2-2.1.0-Linux_x86_64.zip| ||
