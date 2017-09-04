@@ -7,7 +7,7 @@ Tool 说明
 PATH
 ---------
 
-**statistical.corr_heatmap**
+**statistical.pearsons_correlation**
 
 功能描述
 --------
@@ -30,7 +30,7 @@ pearsonsCorrelation.py abundance_table env_table pearsons_correlation pearsons_p
 参数设置
 --------
 ```
-{"name": "abundtable", "type": "infile", "format": "abund_table"},##物种/功能丰度表格
+{"name": "otutable", "type": "infile", "format": "abund_table"},##物种/功能丰度表格
 {"name": "level", "type": "string", "default": "对应数据库"},##选择分析的水平
 {"name": "envtable", "type": "infile", "format": "group_table"},##环境因子表
 {"name": "envlabs", "type": "string", "default": ""},##环境因子标签
@@ -48,4 +48,3 @@ pearsonsCorrelation.py abundance_table env_table pearsons_correlation pearsons_p
 
 2.选择做相关性的分析方法和是否作聚类分析，计算得出相应结果，作为画图的输入；
 
-3.最终调用R实现相关性heatmap作图。
