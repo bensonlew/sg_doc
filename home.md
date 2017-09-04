@@ -4,13 +4,13 @@ Sanger Bioinfo
 >                
 > ## *Welcome to a Sanger !*                   
 > ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md) |[:scroll:  Biocluster 教程](/biocluster)            
-
+> ### [:memo:平台功能开发文档](/devdoc/doc)
 
 * [平台架构](#user-content-平台架构)
 	+ [平台系统架构](#user-content-平台系统架构)
-	+ [生信代码架构](#user-content-生信代码架构)	
+	+ [生信代码架构](#user-content-生信代码架构)
 	+ [生信模块和软件分类规则](#user-content-生信模块和软件分类规则)
-	+ [软件和数据库](#user-content-软件和数据库)	
+	+ [软件和数据库](#user-content-软件和数据库)
 * [开发环境](#user-content-开发环境)
 	+ [开发架构](#user-content-开发架构)
 		+ [开发集群](#user-content-开发集群)
@@ -46,7 +46,7 @@ Sanger Bioinfo
 生信软件(app/bioinfo)、分析模块(File/tool/module/workflow)存放目录分类如下：
 
 | 类别 | 说明  |
-| ---- | ---- | 
+| ---- | ---- |
 |sequence | 序列处理 |
 |align | 比对、mapping |
 |taxon| 物种分类 |
@@ -64,9 +64,9 @@ Sanger Bioinfo
 
 
 ### 软件和数据库
- 
+
 软件和数据库目录统一地址：`/mnt/ilustre/users/sanger-dev/app/`，其中数据库存放在database目录中。
-	
+
 * 各目录存放规则如下：
 	- `bioinfo/` 分析软件安装目录，各软件按功能类别（目录类别参照模块和软件分类规则）安装在各个目录中，文件夹以'软件名-版本号'命名，版本号为软件官方版本号，不得使用简单的1、2、3或old、new等版本不清晰字眼；
 	- `database/`	存放分析计算过程中调用的生信数据库文件，包括物种、基因和功能数据库，如用于比对软件的refseq建议预先建好index索引；
@@ -107,7 +107,7 @@ Sanger Bioinfo
 	- 线上已有功能优化： update-xxx
 	- 新分析新功能： feature-xxx
 	- 流程产品： 按具体流程命名，作为产品主分支
-	
+
 > note: 注意经常commit代码，与他人开发相关时需要经常push以便于相互更新，master或产品主分支上代码有更新时，注意将最新代码并入当前开发的分支，保持开发代码环境的最新，避免后续冲突或问题过多。
 
 * 代码规范

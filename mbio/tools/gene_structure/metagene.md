@@ -5,7 +5,7 @@
 Path
 -----------
 
-**assemble.metagene**
+**gene_structure.metagene**
 
 程序安装路径
 -----------------------------------
