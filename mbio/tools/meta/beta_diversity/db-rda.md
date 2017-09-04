@@ -17,12 +17,8 @@ PATH
 调用程序
 -----------------------------------
 
-qiime/compare_categories.py: http://www.qiime.org/
+/bioinfo/statistical/scripts/pearsonsCorrelation.py
 
-安装路径
------------------------------------
-
-`/mnt/ilustre/users/sanger/app/qiime  # qiime软件安装路径`
 
 
 
@@ -30,14 +26,14 @@ qiime/compare_categories.py: http://www.qiime.org/
 -----------------------------------
 
 ```
-compare_categories.py [options] {--method METHOD -i/--input_dm INPUT_DM -m/--mapping_file MAPPING_FILE -c/--categories CATEGORIES -o/--output_dir OUTPUT_DIR}  # 此处没有环境因子的导入，输出文件也没有表格
+/bioinfo/statistical/scripts/pearsonsCorrelation.py
 ```
 
 参数设计
 -----------------------------------
 
 ```
-{"name": "abundtable", "type": "infile", "format": "abund_table"},##物种/功能丰度表格
+{"name": "otutable", "type": "infile", "format": "abund_table"},##物种/功能丰度表格
 {"name": "method", "type": "string", "default": "bray_curtis"},
 {"name": "level", "type": "string", "default": ""},
 {"name": "dis_matrix", "type": "infile", "format": "meta.beta_diversity.distance_matrix"},
@@ -48,5 +44,5 @@ compare_categories.py [options] {--method METHOD -i/--input_dm INPUT_DM -m/--map
 运行逻辑
 -----------------------------------
 
-先通过距离算法和abundtable获得距离矩阵，根据距离矩阵和环境因子表调用compare_categories.py进行计算db-RDA。
+先通过距离算法和otutable获得距离矩阵，根据距离矩阵和环境因子表调用pearsonsCorrelation.py进行计算db-RDA。
 
