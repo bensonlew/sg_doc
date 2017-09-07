@@ -1,23 +1,23 @@
 unigene_profile
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **tools.metaGenomic.uni_gene.mapGeneSet.unigene_profile**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
-Éú³É·ÇÈßÓà»ùÒò¼¯·á¶È±í
+ç”Ÿæˆéå†—ä½™åŸºå› é›†ä¸°åº¦è¡¨
 
 
-µ÷ÓÃ³ÌĞò
+è°ƒç”¨ç¨‹åº
 -----------------------------------
 
 prepare_profile.pl,
 gene_profile.pl
 
-°²×°Â·¾¶
+å®‰è£…è·¯å¾„
 -----------------------------------
 
 `bioinfo/statistical/scripts/prepare_profile.pl `
@@ -25,7 +25,7 @@ gene_profile.pl
 
 
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
@@ -33,25 +33,25 @@ perl prepare_profile.pl
 perl gene_profile.pl
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-            {"name": "map_dir","type":"outfile","format":"uniGene.build_dir"},##map½á¹û
-            {"name": "fafile","type": "infile","format":"sequence.fasta"},#·ÇÈßÓà»ùÒò¼¯fastaÎÄ¼ş
-            {"name":"insertsize","type":"string","default":""},#²åÈëÆ¬¶ÎÎÄ¼ş
-            {"name":"rpkm_abundance","type":"outfile","format":"sequence.profile_table"},#RPKM·á¶È
-            {"name":"reads_abundance","type":"outfile","format":"sequence.profile_table"},#reads·á¶È
+            {"name": "map_dir","type":"outfile","format":"uniGene.build_dir"},##mapç»“æœ
+            {"name": "fafile","type": "infile","format":"sequence.fasta"},#éå†—ä½™åŸºå› é›†fastaæ–‡ä»¶
+            {"name":"insertsize","type":"string","default":""},#æ’å…¥ç‰‡æ®µæ–‡ä»¶
+            {"name":"rpkm_abundance","type":"outfile","format":"sequence.profile_table"},#RPKMä¸°åº¦
+            {"name":"reads_abundance","type":"outfile","format":"sequence.profile_table"},#readsä¸°åº¦
 
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-¸ù¾İmap½á¹û¼ÆËã¸÷·ÇÈßÓà»ùÒò¼¯µÄ·á¶È
+æ ¹æ®mapç»“æœè®¡ç®—å„éå†—ä½™åŸºå› é›†çš„ä¸°åº¦
 
 
-×ÊÔ´ÅäÖÃ
+èµ„æºé…ç½®
 -----------------------------------
 
 ```
