@@ -1,37 +1,37 @@
 uni_gene
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **modules.clusterc.uni_gene**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-·ÇÈßÓà»ùÒò¼¯¹¹½¨¼°·á¶È±íÉú³É
+éå†—ä½™åŸºå› é›†æ„å»ºåŠä¸°åº¦è¡¨ç”Ÿæˆ
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
-self.add_module("cluster¡£cdhit_unigene")
+self.add_module("clusterã€‚cdhit_unigene")
 self.add_module("align.mapGeneSet")
 
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-            {"name":"gene_tmp_fa","type":"infile","format":"sequence.fasta"},#Êä³ö¸ÄÃû²¢ºÏ²¢µÄĞòÁĞ
-            {"name": "number","type":"int","default":0},#ÇĞ·ÖÎª¼¸·İ£¬Ä¬ÈÏ0±íÊ¾°´ÎÄ¼ş´óĞ¡×Ô¶¯¼ÆËã£¬Ö¸¶¨Ä³¸öÕûÊıÊ±Ôò°´Ö¸¶¨ÊıÁ¿·Ö¸î
-            {"name":"uni_fasta","type":"outfile","format":"sequence.fasta"},#·ÇÈßÓà»ùÒò¼¯ºËËáĞòÁĞ
-            {"name":"uni_fastaa","type":"outfile","format":"sequence.fasta"},#·ÇÈßÓà»ùÒò¼¯µ°°×ĞòÁĞ
-            {"name": "cdhit_identity","type":"float","default":0.95},##¸ø³öcdhitµÄ²ÎÊıidentity
-            {"name":"cdhit_coverage","type":"float","default":0.9},##¸ø³öcdhitµÄ²ÎÊıcoverage
-            {"name":"insertsize","type":"string","default":""},#²åÈëÆ¬¶ÎÎÄ¼ş
-            {"name": "QC_dir","type":"infile","format":"sequence.fastq_dir"},##qcºóreadsÎÄ¼ş¼Ğ
+            {"name":"gene_tmp_fa","type":"infile","format":"sequence.fasta"},#è¾“å‡ºæ”¹åå¹¶åˆå¹¶çš„åºåˆ—
+            {"name": "number","type":"int","default":0},#åˆ‡åˆ†ä¸ºå‡ ä»½ï¼Œé»˜è®¤0è¡¨ç¤ºæŒ‰æ–‡ä»¶å¤§å°è‡ªåŠ¨è®¡ç®—ï¼ŒæŒ‡å®šæŸä¸ªæ•´æ•°æ—¶åˆ™æŒ‰æŒ‡å®šæ•°é‡åˆ†å‰²
+            {"name":"uni_fasta","type":"outfile","format":"sequence.fasta"},#éå†—ä½™åŸºå› é›†æ ¸é…¸åºåˆ—
+            {"name":"uni_fastaa","type":"outfile","format":"sequence.fasta"},#éå†—ä½™åŸºå› é›†è›‹ç™½åºåˆ—
+            {"name": "cdhit_identity","type":"float","default":0.95},##ç»™å‡ºcdhitçš„å‚æ•°identity
+            {"name":"cdhit_coverage","type":"float","default":0.9},##ç»™å‡ºcdhitçš„å‚æ•°coverage
+            {"name":"insertsize","type":"string","default":""},#æ’å…¥ç‰‡æ®µæ–‡ä»¶
+            {"name": "QC_dir","type":"infile","format":"sequence.fastq_dir"},##qcåreadsæ–‡ä»¶å¤¹
             {"name": "reads_abundance","type":"outfile","format":"sequence.profile_table"},##reads_abundance
             {"name": "rpkm_abundance","type":"outfile","format":"sequence.profile_table"},##rpkm_abundance
             {"name": "seed","type":"int","default":35}, ##align the initial n bps as a seed means whole lengths of read
@@ -43,10 +43,10 @@ self.add_module("align.mapGeneSet")
 
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-1¡¢cd-hitÉú³É·ÇÈßÓà»ùÒò¼¯
-2¡¢Í³¼ÆÈ¥ÈßÓàÇ°ºó»ùÒòµÄÊı¾İ
-3¡¢SOAPaligner mapping¸ßÖÊÁ¿readsµ½·ÇÈßÓà»ùÒò¼¯ÉÏ
-4¡¢Éú³É·ÇÈßÓà»ùÒò±í
+1ã€cd-hitç”Ÿæˆéå†—ä½™åŸºå› é›†
+2ã€ç»Ÿè®¡å»å†—ä½™å‰ååŸºå› çš„æ•°æ®
+3ã€SOAPaligner mappingé«˜è´¨é‡readsåˆ°éå†—ä½™åŸºå› é›†ä¸Š
+4ã€ç”Ÿæˆéå†—ä½™åŸºå› è¡¨

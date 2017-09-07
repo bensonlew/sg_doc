@@ -17,17 +17,9 @@ PATH
 调用程序
 -----------------------------------
 
-/bioinfo/statistical/scripts/pearsonsCorrelation.py
+package:beta_diversity.dbrda_r.py
 
 
-
-
-主要命令及功能模块
------------------------------------
-
-```
-/bioinfo/statistical/scripts/pearsonsCorrelation.py
-```
 
 参数设计
 -----------------------------------
@@ -44,5 +36,5 @@ PATH
 运行逻辑
 -----------------------------------
 
-先通过距离算法和otutable获得距离矩阵，根据距离矩阵和环境因子表调用pearsonsCorrelation.py进行计算db-RDA。
+先通过距离算法和otutable获得距离矩阵，根据距离矩阵和环境因子表调用beta_diversity.dbrda_r进行计算db-RDA。
 

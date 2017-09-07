@@ -1,17 +1,17 @@
 cdhit_para
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **modules.cluster.cdhit_para**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-ĞòÁĞ½øĞĞÏà»¥±È½ÏÈ¥ÈßÓà¼°ÄÚ²¿È¥ÈßÓà
+åºåˆ—è¿›è¡Œç›¸äº’æ¯”è¾ƒå»å†—ä½™åŠå†…éƒ¨å»å†—ä½™
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
@@ -21,20 +21,20 @@ self.add_tool('cluster.cdhit_compare_single.py")
 
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
             {"name": "first", "type": "int", "default": ""},
             {"name": "last", "type": "int", "default": ""},
-            {"name": "in_dir", "type": "infile", "format": "uniGene.build_dir"},  # ÊäÈëÎÄ¼ş¼Ğ
-            {"name": "identity","type":"float","default":0.95},##¸ø³öcdhitµÄ²ÎÊıidentity
-            {"name":"coverage","type":"float","default":0.9},##¸ø³öcdhitµÄ²ÎÊıcoverage
+            {"name": "in_dir", "type": "infile", "format": "uniGene.build_dir"},  # è¾“å…¥æ–‡ä»¶å¤¹
+            {"name": "identity","type":"float","default":0.95},##ç»™å‡ºcdhitçš„å‚æ•°identity
+            {"name":"coverage","type":"float","default":0.9},##ç»™å‡ºcdhitçš„å‚æ•°coverage
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-1¡¢¶à¸öÎÄ¼şÓëµÚÒ»¸öÎÄ¼ş½øĞĞ×Ô±È
-2¡¢µÚ¶ş¸öÎÄ¼ş×Ô±Èºó½øĞĞ»¥±È
+1ã€å¤šä¸ªæ–‡ä»¶ä¸ç¬¬ä¸€ä¸ªæ–‡ä»¶è¿›è¡Œè‡ªæ¯”
+2ã€ç¬¬äºŒä¸ªæ–‡ä»¶è‡ªæ¯”åè¿›è¡Œäº’æ¯”
 
