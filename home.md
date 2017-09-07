@@ -126,27 +126,27 @@ Sanger Bioinfo
 
 * tsg分支代码更新方式
 
-在sanger-dev开发机上会每天晚上会自动定时拉取远程tsg分支更新，并将biocluser下的mbio目录替换为tsg中mbio目录；
+	在sanger-dev开发机上会每天晚上会自动定时拉取远程tsg分支更新，并将biocluser下的mbio目录替换为tsg中mbio目录；
 
-> note: 注意当天临时修改将会在当晚被刷新恢复，注意通过commit记录修改，及时合并到tsg分支。
+	> note: 注意当天临时修改将会在当晚被刷新恢复，注意通过commit记录修改，及时合并到tsg分支。
 
 * 首次从远程拉取tsg分支到本地
 
-``` git checkout -b tsg origin/tsg```
+	``` git checkout -b tsg origin/tsg```
 
 
 * 开发过程中与同组成员共享代码
 
-切换到开发所在功能分支、修改代码并commit，拉取所在功能分支最新代码，推送当前功能分支更新到远程；
+	切换到开发所在功能分支、修改代码并commit，拉取所在功能分支最新代码，推送当前功能分支更新到远程；
 
 
 * 开发完成一个模块或功能或bug后调试
 
-完成上一步后，切换到tsg分支，在本地将你的功能分支merge到tsg分支并推送到远程，将修改的代码拖到sanger-dev的biocluster目录进行调试，如果是公共模块注意有没有流程正在使用，是否会有影响，如有需主动与该流程开发组进行沟通处理冲突；
+	完成上一步后，切换到tsg分支，在本地将你的功能分支merge到tsg分支并推送到远程，将修改的代码拖到sanger-dev的biocluster目录进行调试，如果是公共模块注意有没有流程正在使用，是否会有影响，如有需主动与该流程开发组进行沟通处理冲突；
 
 * 调试完成推送给经理审核安排tsg测试
 	
-完成修改提交你的功能分支后，在gitlab上发起mergerequest将你的功能分支merge到tsg并指定给你的经理进行审核，经理安排人员开展tsg测试。
+	完成修改提交你的功能分支后，在gitlab上发起mergerequest将你的功能分支merge到tsg并指定给你的经理进行审核，经理安排人员开展tsg测试。
 
 * 代码规范
 	
