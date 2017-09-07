@@ -1,29 +1,29 @@
 soap_aligner
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **tools.align.soap_aligner**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
-Ã¿¸öÑùÆ·µÄclean reads mappongµ½·ÇÈßÓà»ùÒò¼¯ÉÏ
+æ¯ä¸ªæ ·å“çš„clean reads mappongåˆ°éå†—ä½™åŸºå› é›†ä¸Š
 
 
-µ÷ÓÃ³ÌĞò
+è°ƒç”¨ç¨‹åº
 -----------------------------------
 
 soap2
 
-°²×°Â·¾¶
+å®‰è£…è·¯å¾„
 -----------------------------------
 
-`/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/soap2.21release  # soapalign2Èí¼ş°²×°Â·¾¶`
+`/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/soap2.21release  # soapalign2è½¯ä»¶å®‰è£…è·¯å¾„`
 
 
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
@@ -31,17 +31,17 @@ soap2 -a 1.fq -b 2.fq -D index -o soap.pair.pe -2 soap.pair.se -r 1 -l 35 -M 4 -
 soap2 -a s.fq -D index -o single.se -r 1 -l 35 -M 4 -S -p 6 -v 20 -c 0.95 -m 295 -x 495 2
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-            {"name": "sample","type":"string"},#sampleµÄÃû³Æ
-            {"name": "insertSize","type":"int"},#²åÈëÆ¬¶Î³¤¶È
-            {"name": "index","type":"infile","format":"uniGene.build_dir"},##build_geneÉú³ÉµÄË÷ÒıÎÄ¼ş,Ö®ºóÒª²¹ÉÏ
-            {"name": "fq_r","type":"infile","format":"sequence.fastq"},##ÓÒ¶ËfastqÎÄ¼ş
-            {"name": "fq_l","type":"infile","format":"sequence.fastq"},##×ó¶ËfastqÎÄ¼ş
-            {"name": "fq_s","type":"infile","format":"sequence.fastq"},##µ¥¶ËfastqÎÄ¼ş
-            {"name": "map_dir","type":"outfile","format":"uniGene.build_dir"},##map½á¹û
+            {"name": "sample","type":"string"},#sampleçš„åç§°
+            {"name": "insertSize","type":"int"},#æ’å…¥ç‰‡æ®µé•¿åº¦
+            {"name": "index","type":"infile","format":"uniGene.build_dir"},##build_geneç”Ÿæˆçš„ç´¢å¼•æ–‡ä»¶,ä¹‹åè¦è¡¥ä¸Š
+            {"name": "fq_r","type":"infile","format":"sequence.fastq"},##å³ç«¯fastqæ–‡ä»¶
+            {"name": "fq_l","type":"infile","format":"sequence.fastq"},##å·¦ç«¯fastqæ–‡ä»¶
+            {"name": "fq_s","type":"infile","format":"sequence.fastq"},##å•ç«¯fastqæ–‡ä»¶
+            {"name": "map_dir","type":"outfile","format":"uniGene.build_dir"},##mapç»“æœ
             {"name": "repeat","type":"int","default":1}, ##how to report repeat hits, 0=none, 1=random one, 2=all
             {"name": "seed","type":"int","default":35}, ##align the initial n bps as a seed means whole lengths of read
             {"name": "mode","type":"int","default":4}, ##match mode for each read or the seed part of read, which shouldn't contain more than 2 mismatches: 0 for exact mathc only; 1 for 1 mismatch; 2 for 2 mismatch; 4 for find the best hits
@@ -51,13 +51,13 @@ soap2 -a s.fq -D index -o single.se -r 1 -l 35 -M 4 -S -p 6 -v 20 -c 0.95 -m 295
 
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-Í¨¹ıSOAPaligner½«clean reads mappingµ½·ÇÈßÓà»ùÒò¼¯
+é€šè¿‡SOAPalignerå°†clean reads mappingåˆ°éå†—ä½™åŸºå› é›†
 
 
-×ÊÔ´ÅäÖÃ
+èµ„æºé…ç½®
 -----------------------------------
 
 ```

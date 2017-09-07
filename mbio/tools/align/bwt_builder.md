@@ -1,51 +1,51 @@
 bwt_build
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **tools.align.bwt_build**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
-2bwt-builderÉú³ÉË÷Òı
+2bwt-builderç”Ÿæˆç´¢å¼•
 
 
-µ÷ÓÃ³ÌĞò
+è°ƒç”¨ç¨‹åº
 -----------------------------------
 2bwt-builder
 
-°²×°Â·¾¶
+å®‰è£…è·¯å¾„
 -----------------------------------
 
-`/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/soap2.21release  # soapalign2Èí¼ş°²×°Â·¾¶`
+`/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/soap2.21release  # soapalign2è½¯ä»¶å®‰è£…è·¯å¾„`
 
 
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
 2bwt-builder fasta_file
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-                   {"name": "fafile","type": "infile","format":"sequence.fasta"},#·ÇÈßÓà»ùÒò¼¯fastaÎÄ¼ş
-                   {"name": "build_dir","type": "outfile","format":"uniGene.build_dir"} ##Êä³öµÄË÷ÒıÎÄ¼ş¼Ğ
+                   {"name": "fafile","type": "infile","format":"sequence.fasta"},#éå†—ä½™åŸºå› é›†fastaæ–‡ä»¶
+                   {"name": "build_dir","type": "outfile","format":"uniGene.build_dir"} ##è¾“å‡ºçš„ç´¢å¼•æ–‡ä»¶å¤¹
 
 
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-ÊäÈë·ÇÈßÓà»ùÒò¼¯¹¹½¨Ë÷Òı
+è¾“å…¥éå†—ä½™åŸºå› é›†æ„å»ºç´¢å¼•
 
 
-×ÊÔ´ÅäÖÃ
+èµ„æºé…ç½®
 -----------------------------------
 
 ```

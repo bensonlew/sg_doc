@@ -1,17 +1,17 @@
 mapGeneSet
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **modules.align.mapGeneSet**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-SOAPaligner mapping¸ßÖÊÁ¿readsµ½·ÇÈßÓà»ùÒò¼¯ÉÏ
+SOAPaligner mappingé«˜è´¨é‡readsåˆ°éå†—ä½™åŸºå› é›†ä¸Š
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
@@ -21,13 +21,13 @@ self.add_tool(statistical.unigene_profile")
 
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-            {"name":"fafile","type":"infile","format":"sequence.fasta"},#·ÇÈßÓà»ùÒò¼¯
-            {"name":"insertsize","type":"string","default":""},#²åÈëÆ¬¶ÎÎÄ¼ş
-            {"name": "QC_dir","type":"infile","format":"sequence.fastq_dir"},##qcºófastqÎÄ¼ş¼Ğ
+            {"name":"fafile","type":"infile","format":"sequence.fasta"},#éå†—ä½™åŸºå› é›†
+            {"name":"insertsize","type":"string","default":""},#æ’å…¥ç‰‡æ®µæ–‡ä»¶
+            {"name": "QC_dir","type":"infile","format":"sequence.fastq_dir"},##qcåfastqæ–‡ä»¶å¤¹
             {"name": "fq_type", "type": "string","default": "PE"},  # PE OR SE
             {"name": "reads_abundance","type":"outfile","format":"sequence.profile_table"},##reads_abundance
             {"name": "rpkm_abundance","type":"outfile","format":"sequence.profile_table"},##rpkm_abundance
@@ -41,9 +41,9 @@ self.add_tool(statistical.unigene_profile")
 
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-1¡¢2bwt-builderÉú³ÉË÷Òı
-2¡¢SOAPaligner½øĞĞmapping
-3¡¢½øĞĞ²»Í¬µÄ·á¶È±í
+1ã€2bwt-builderç”Ÿæˆç´¢å¼•
+2ã€SOAPalignerè¿›è¡Œmapping
+3ã€è¿›è¡Œä¸åŒçš„ä¸°åº¦è¡¨
