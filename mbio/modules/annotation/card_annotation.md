@@ -1,37 +1,40 @@
 card_annotation
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
-**modules.annotation.card_align_anno**
+**modules.annotation.card_annotation**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-ºê»ùÒòcard×¢ÊÍÄ£¿é£¨°üÀ¨±È¶ÔºÍ×¢ÊÍºÍÍ³¼Æ£©
+å®åŸºå› cardæ³¨é‡Šæ¨¡å—ï¼ˆåŒ…æ‹¬æ¯”å¯¹å’Œæ³¨é‡Šï¼‰
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
------------------------------------
-
-```
-     self.ardb_align_anno = self.add_module("annotation.card_align_anno")
-     self.anno_stat = self.add_tool("annotation.card_anno_stat")
-```
-
-²ÎÊıÉè¼Æ
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
-            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # ÊäÈëÎÄ¼ş
+     self.card_align = self.add_module("align.diamond")
+     self.anno = self.add_tool("annotation.card_anno")
+     self.hmmscan = self.add_tool("align.cat_hmmscanout")
+     self.anno = self.add_tool("annotation.card_anno_stat")
+```
+
+å‚æ•°è®¾è®¡
+-----------------------------------
+
+```
+			{"name": "query", "type": "infile", "format": "sequence.fasta"},  # éå†—ä½™åŸºå› é›†çš„è¾“å‡º
             {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"},  # gene_profile.reads_number.txt
-            {"name": "card_out_dir", "type": "outfile", "format": "meta_genomic.annotation_dir"}
+            {"name": "card_profile", "type": "outfile", "format": "sequence.profile_table"},
+            {"name": "card_category_profile", "type": "outfile", "format": "sequence.profile_table"}
+            {"name": "card_ARO_gene_number", "type": "outfile", "format": "card_ARO_gene_talle}
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-1¡¢²ğ·Ö°±»ùËáfastaÎÄ¼ş£»
-2¡¢µ÷ÓÃdiamond¹¤¾ß¶Ô²ğ·ÖÍêµÄfastqÎÄ¼ş½øĞĞcardÊı¾İ¿â±È¶Ô£»
-3¡¢Êä³öxmlÎÄ¼şµ÷ÓÃtool(card_anno)½øĞĞ·Ö±ğ×¢ÊÍ£¬²¢ÓÃtool(cat_hmmscanout)ºÏ²¢£»
-4¡¢×îºó¸ù¾İreads_profile_tableÎÄ¼şÒÔ¼°tool(card_anno_stat)½øĞĞ×¢ÊÍÍ³¼Æ£»
+1ã€è°ƒç”¨meta_diamondæ¨¡å—å¯¹è¾“å…¥çš„fastaæ–‡ä»¶è¿›è¡Œcardæ•°æ®åº“æ¯”å¯¹ï¼›
+2ã€è¾“å‡ºxmlæ–‡ä»¶è°ƒç”¨tool(card_anno)è¿›è¡Œåˆ†åˆ«æ³¨é‡Š
+3ã€å°†æ³¨é‡Šæ–‡ä»¶æ›´æ”¹æ ¹æ®reads_profile_tableæ–‡ä»¶ä»¥åŠtool(card_anno_stat)è¿›è¡Œæ³¨é‡Šç»Ÿè®¡ï¼›
