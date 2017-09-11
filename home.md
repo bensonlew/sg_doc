@@ -464,7 +464,7 @@ Sanger Bioinfo
 
 * Mongo
 	- [mongo数据表设计基本规则.pptx](/learn/mongo数据表设计基本规则.pptx)
-	- [demo编写](/learn/demo编写.md)
+	- [demo编写](/learn/demo编写)
 
 * MySQL
 
