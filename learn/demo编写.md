@@ -1,5 +1,5 @@
-### demo设置
-### demo拉取
+>demo设置
+>demo拉取
 
 ### demo设置
 
@@ -19,7 +19,7 @@ demo设置与取消在sanger@majorbio账号下
   * [demo初始化接口](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/webroot/mainapp/controllers/submit/demo_init.py)
   * [demo初始化workflow](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/src/mbio/workflows/copy_demo/demo_init.py)
 
-### 拉取demo
+### demo拉取
 
 * 拉取demo的时候前端会新建一个项目，在项目里新建一个任务，项目名称为这个demo的项目名称加上拉取的年月日，拉取的demo的任务表的is_demo为0，项目表的is_demo为1，可以根据这个状态区分出是否是拉取的demo
 
