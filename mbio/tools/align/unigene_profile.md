@@ -48,7 +48,7 @@ perl gene_profile.pl
 运行逻辑
 -----------------------------------
 
-根据map结果计算各样品非冗余基因集的丰度，生成7个文件（基因长度文件、reads丰度文件、reads相对丰度文件、RPKM丰度文件、TPM丰度文件、reads/length丰度文件、reads/length相对丰度文件）
+根据map结果计算各样品非冗余基因集的丰度，生成9个文件（基因长度文件、reads丰度文件、reads相对丰度文件、RPKM丰度文件、TPM丰度文件、reads/length丰度文件、reads/length相对丰度文件，top100的reads丰度文件，top100的reads相对丰度文件）
 
 
 资源配置
