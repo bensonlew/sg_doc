@@ -15,7 +15,7 @@ demo设置与取消在sanger@majorbio账号下
 
 
 * demo初始化:
-  * 若为有参RNA项目，在将任务设置为demo的时候，前端修改mysql的is_demo状态的同时，将参数传到接口[demo_init](SangerBiocluster\webroot\mainapp\controllers\submit\demo_init.py)，进行demo的备份和备份删除
+  * 若为有参RNA项目，在将任务设置为demo的时候，前端修改mysql的is_demo状态的同时，将参数传到接口[demo_init](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/webroot/mainapp/controllers/submit/demo_init.py)，进行demo的备份和备份删除
 
 
 拉取的demo的任务表的is_demo为0，项目表的is_demo为
