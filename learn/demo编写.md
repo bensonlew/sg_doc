@@ -17,15 +17,17 @@ demo设置与取消在sanger@majorbio账号下
 
 
 * demo初始化:
-  * 若为有参RNA项目，在将任务设置为demo的时候，前端修改mysql的is_demo状态的同时，将参数传到接口[demo_init](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/webroot/mainapp/controllers/submit/demo_init.py)，进行demo的备份和备份删除
-  * [demo初始化接口](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/webroot/mainapp/controllers/submit/demo_init.py)
-  * [demo初始化workflow](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/src/mbio/workflows/copy_demo/demo_init.py)
+  * 若为有参RNA项目，在将任务设置为demo的时候，前端修改mysql的is_demo状态的同时，将参数传到接口[demo_init](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/webroot/mainapp/controllers/submit/demo_init.py)，进行demo的备份和备份删除
+  * [demo初始化接口](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/webroot/mainapp/controllers/submit/demo_init.py)
+  * [demo初始化workflow](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/workflows/copy_demo/demo_init.py)
 
 ### demo拉取
 
-* 拉取demo的时候前端会新建一个项目，在项目里新建一个任务，项目名称为这个demo的项目名称加上拉取的年月日，拉取的demo的任务表的is_demo为0，项目表的is_demo为1，可以根据这个状态区分出是否是拉取的demo
+![demo拉取](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/wikis/img/demo拉取.png)
+
+* 拉取demo的时候前端会新建一个项目，在项目里新建一个任务，项目名称为这个demo的项目名称加上拉取的年月日，拉取的demo的任务表的is_demo为0，项目表的is_demo为1，可以根据这个状态区分出是否是拉取的demo；若项目是有参RNA，前端会提示这个demo的有效期只有一个月
 
 * 在拉取demo时，前端将参数传到接口demo_mongodata_copy，若为有参rna项目，在拉取demo的同时，底层会再备份一份demo，保持mongo数据库备份的demo不变
-* [demo拉取接口]()
-* [demo拉取workflow]()
-* [demo复制package]()
+* [demo拉取接口](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/webroot/mainapp/controllers/instant/meta/demo_mongodata_copy.py)
+* [demo拉取workflow](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/workflows/copy_demo/copy_demo.py)
+* [demo复制package](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/packages/rna/refrna_copy_demo.py)
