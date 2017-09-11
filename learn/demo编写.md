@@ -5,6 +5,7 @@
 ### demo设置
 
 demo设置与取消在sanger@majorbio账号下
+
 ![demo设置](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/wikis/img/demo设置.png)
 
 * 将任务设置为demo基准任务：
