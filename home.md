@@ -145,11 +145,11 @@ Sanger Bioinfo
 	完成上一步后，切换到tsg分支，在本地将你的功能分支merge到tsg分支并推送到远程，将修改的代码拖到sanger-dev的biocluster目录进行调试，如果是公共模块注意有没有流程正在使用，是否会有影响，如有需主动与该流程开发组进行沟通处理冲突；
 
 * 调试完成推送给经理审核安排tsg测试
-	
+
 	完成修改提交你的功能分支后，在gitlab上发起mergerequest将你的功能分支merge到tsg并指定给你的经理进行审核，经理安排人员开展tsg测试。
 
 * 代码规范
-	
+
 	- 代码编写需进行[Pep8](https://www.python.org/dev/peps/pep-0008/)检查，可以使用文本编辑器插件自动检查;
 	- 注释信息简洁明晰;
 
@@ -464,6 +464,7 @@ Sanger Bioinfo
 
 * Mongo
 	- [mongo数据表设计基本规则.pptx](/learn/mongo数据表设计基本规则.pptx)
+	- [demo编写](/learn/demo编写.md)
 
 * MySQL
 
