@@ -56,7 +56,7 @@ perl gene_profile.pl
 
 ```
 self._cpu = 1
-self._memory = '7：G'
+self._memory = '7G'
 
 测试命令
 -----------------------------------
