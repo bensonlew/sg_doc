@@ -66,6 +66,7 @@ soap2 -a s.fq -D index -o single.se -r 1 -l 35 -M 4 -S -p 6 -v 20 -c 0.95 -m 295
 self._cpu = 15
 self._memory = '20G'
 
+
 测试命令
 -----------------------------------
 from mbio.workflows.single import SingleWorkflow
