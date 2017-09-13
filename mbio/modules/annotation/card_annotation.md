@@ -34,12 +34,12 @@ card_annotation
 
 运行逻辑
 -----------------------------------
-
+```
 1、拆分序列；
 2、调用diamond模块分别对拆分的fasta文件进行card数据库比对，得到xml文件；
 2、输入比对xml结果的文件夹，调用tool(card_anno)对xml文件转化成table并合并为一张表，然后注释结果；
 3、最后根据注释结果和reads_profile_table丰度文件，调用tool(card_anno_stat)进行注释丰度统计；
-
+```
 
 可能存在的问题
 -----------------------------------
@@ -48,6 +48,7 @@ card_annotation
 
 测试命令
 -----------------------------------
+```
 from mbio.workflows.single import SingleWorkflow
 from biocluster.wsheet import Sheet
 
@@ -67,7 +68,7 @@ wf = SingleWorkflow(wsheet)
 wf.run()
 
 测试结果路径：/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/card/Single_card_module
-
+```
 
 
 测试结果
