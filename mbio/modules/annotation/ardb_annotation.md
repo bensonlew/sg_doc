@@ -1,37 +1,75 @@
 ardb_annotation
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
-**modules.annotation.ardb_align_anno**
+**modules.annotation.ardb_annotation**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-ºê»ùÒòardb×¢ÊÍÄ£¿é£¨°üÀ¨±È¶ÔºÍ×¢ÊÍºÍÍ³¼Æ£©
+å®åŸºå› ardbæ³¨é‡Šæ¨¡å—ï¼ˆåŒ…æ‹¬æ¯”å¯¹ã€æ³¨é‡Šå’Œä¸°åº¦ç»Ÿè®¡ï¼‰
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
------------------------------------
 
-```
-     self.ardb_align_anno = self.add_module("annotation.ardb_align_anno")
-     self.anno_stat = self.add_tool("annotation.ardb_anno_stat")
-```
-
-²ÎÊıÉè¼Æ
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
-            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # ÊäÈëÎÄ¼ş
-            {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"},  # gene_profile.reads_number.txt
-            {"name": "ardb_out_dir", "type": "outfile", "format": "meta_genomic.annotation_dir"}
+        self.split_fasta = self.add_tool("sequence.split_fasta")
+        self.ardb_align_tools = []
+        self.ardb_anno_tool = self.add_tool("annotation.ardb_anno")
+        self.ardb_anno_stat_tool = self.add_tool("annotation.ardb_anno_stat")
 ```
 
-ÔËĞĞÂß¼­
+å‚æ•°è®¾è®¡
 -----------------------------------
 
-1¡¢²ğ·Ö°±»ùËáfastaÎÄ¼ş£»
-2¡¢µ÷ÓÃdiamond¹¤¾ß¶Ô²ğ·ÖÍêµÄfastqÎÄ¼ş½øĞĞardbÊı¾İ¿â±È¶Ô£»
-3¡¢Êä³öxmlÎÄ¼şµ÷ÓÃtool(ardb_anno)½øĞĞ·Ö±ğ×¢ÊÍ£¬²¢ÓÃtool(cat_hmmscanout)ºÏ²¢£»
-4¡¢×îºó¸ù¾İreads_profile_tableÎÄ¼şÒÔ¼°tool(ardb_anno_stat)½øĞĞ×¢ÊÍÍ³¼Æ£»
+```
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # è¾“å…¥æ–‡ä»¶
+            {"name": "lines", "type": "int", "default": 100000},  # å°†fastaåºåˆ—æ‹†åˆ†æ­¤è¡Œæ•°çš„å¤šä¸ªæ–‡ä»¶
+            {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"},#åŸºå› ä¸°åº¦è¡¨
+            {"name": "evalue", "type": "float", "default": 1e-5},  # evalueå€¼
+            {"name": "ardb_result_dir", "type": "outfile", "format": "annotation.mg_anno_dir"}  # è®¾ç½®ç»“æœæ–‡ä»¶åé¢è¦ç”¨
+```
+
+è¿è¡Œé€»è¾‘
+-----------------------------------
+
+1ã€æ‹†åˆ†åºåˆ—ï¼›
+2ã€è°ƒç”¨diamondæ¨¡å—åˆ†åˆ«å¯¹æ‹†åˆ†çš„fastaæ–‡ä»¶è¿›è¡Œardbæ•°æ®åº“æ¯”å¯¹ï¼Œå¾—åˆ°xmlæ–‡ä»¶ï¼›
+2ã€è¾“å…¥æ¯”å¯¹xmlç»“æœçš„æ–‡ä»¶å¤¹ï¼Œè°ƒç”¨tool(ardb_anno)å¯¹xmlæ–‡ä»¶è½¬åŒ–æˆtableå¹¶åˆå¹¶ä¸ºä¸€å¼ è¡¨ï¼Œç„¶åæ³¨é‡Šç»“æœï¼›
+3ã€æœ€åæ ¹æ®æ³¨é‡Šç»“æœå’Œreads_profile_tableä¸°åº¦æ–‡ä»¶ï¼Œè°ƒç”¨tool(ardb_anno_stat)è¿›è¡Œæ³¨é‡Šä¸°åº¦ç»Ÿè®¡ï¼›
+
+
+å¯èƒ½å­˜åœ¨çš„é—®é¢˜
+-----------------------------------
+æš‚æ— 
+
+
+æµ‹è¯•å‘½ä»¤
+-----------------------------------
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
+
+data = {
+       "id": "ardb_annotation_module",
+       "type": "module",
+       "name": "annotation.ardb_annotation",
+       "options": {
+            "query": "/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/gao.gene.uniGeneset.faa",
+            "lines":100000,
+            "reads_profile_table":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/gene_profile.reads_number.total.txt"
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+
+æµ‹è¯•ç»“æœè·¯å¾„ï¼š/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/ardb/Single_ardb_annotation_module
+
+
+
+æµ‹è¯•ç»“æœ
+-----------------------------------
