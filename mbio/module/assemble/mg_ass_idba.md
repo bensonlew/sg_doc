@@ -51,3 +51,14 @@ assemble.newbler, assemble.sort_idba_result, assemble.contig_stat, sequence.leng
 7、整理所有的拼接结果；
 
 8、组装结果汇总，长度分布图。
+
+测试命令
+-----------------------------------
+python /mnt/ilustre/users/sanger-dev/sg-users/guhaidong/idba_module_m.py
+
+模块测试的结果路径:
+
+/mnt/ilustre/users/sanger-dev/workspace/20170913/Single_idba_module_simple
+
+测试结果
+-----------------------------------
