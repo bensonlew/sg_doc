@@ -34,24 +34,23 @@ cd-hit-est -i gene.geneset.tmp.fa.div-n -o gene.geneset.tmp.fa.div-n/o -c 0.95 -
 -----------------------------------
 
 ```
-
-            {"name": "query","type":"infile","format":"sequence.fasta"},#输入fasta文件
-            {"name": "qunum","type":"int","default":""},#fasta编号
-            {"name": "identity","type":"float","default":0.95},##给出cdhit的参数identity
-            {"name":"coverage","type":"float","default":0.9},##给出cdhit的参数coverage
-            {"name": "memory_limit", "type": "int", "default":0},  # 内存大小，0为无限制
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # 输入fasta文件
+            {"name": "qunum", "type": "int", "default": 0},  # fasta编号
+            {"name": "identity", "type": "float", "default": 0.95},  ##给出cdhit的参数identity
+            {"name": "coverage", "type": "float", "default": 0.9},  # 给出cdhit的参数coverage
+            {"name": "memory_limit", "type": "int", "default": 0},  # 内存大小，0为无限制
             {"name": "method", "type": "int", "default": 0},  # 1为全局比对，0为局部比对
             {"name": "direction", "type": "int", "default": 1},  # 1为双向比对，0为单向比对
             {"name": "num_threads", "type": "int", "default": 8},  # cpu数
             {"name": "select", "type": "int", "default": 1},  # 1为聚类到最相似的类中，0为聚类到第一个符合阈值的类
-            {"name": "compare","type":"outfile","format":"uniGene.build_dir"},##比对结果文件夹
+            {"name": "compare", "type": "string", "default": ""},  # 比对结果输出路径
 
 ```
 
 运行逻辑
 -----------------------------------
 
-根据设置的覆盖度、相似性进行内部序列去冗余
+根据设置的覆盖度、相似性进行序列文件内部去冗余，得到去冗余后的fasta文件及聚类信息
 
 资源配置
 -----------------------------------
@@ -59,3 +58,30 @@ cd-hit-est -i gene.geneset.tmp.fa.div-n -o gene.geneset.tmp.fa.div-n/o -c 0.95 -
 ```
 self._cpu = 8
 self._memory = '10G'
+
+
+测试命令
+-----------------------------------
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
+
+data = {
+       "id": "compare_single_test",
+       "type": "tool",
+       "name": "cluster.cdhit_compare_single",
+       "options": {
+           "query": "/mnt/ilustre/users/sanger-dev/sg-users/zouxuan/compare_single/gene.uniGeneset.fa.div-0",
+           "qunum":0,
+           "compare":"/mnt/ilustre/users/sanger-dev/sg-users/zouxuan/fasta"
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+
+模块测试的结果路径:
+/mnt/ilustre/users/sanger-dev/workspace/20170911/Single_compare_single_test
+
+测试结果
+-----------------------------------

@@ -4,12 +4,12 @@ cdhit_split_fasta
 模块Path
 -----------
 
-**tools.metaGenomic.uni_gene.cdhit_unigen.cdhit_split_fasta**
+**tools.sequence.cdhit_split_fasta**
 
 功能描述
 -----------------------------------
 
-fasta文件切分
+将fasta序列从长到短切割为指定份数的序列
 
 调用程序
 -----------------------------------
@@ -34,15 +34,15 @@ cd-hit-div -i gene.geneset.tmp.fa -o gene.geneset.tmp.fa.div -div n
 -----------------------------------
 
 ```
-{"name":"gene_tmp_fa","type":"infile","format":"sequence.fasta"},#合并序列
-{"name": "number","type":"int","default": ""},#切分为几份
+{"name":"gene_tmp_fa","type":"infile","format":"sequence.fasta"},#输入序列
+{"name": "number","type":"int","default": 1},#切分为几份
 {"name":"ou_dir","type":"string","default":""}#输出路径
 ```
 
 运行逻辑
 -----------------------------------
 
-读取预测的基因文件夹，并在序列前加上样品合并输出为一个fasta文件
+输入一个fasta文件，指定切割份数n，将fasta序列从长到短切割为n个文件并放在指定目录下
 
 资源配置
 -----------------------------------
@@ -52,3 +52,25 @@ self._cpu = 2
 self._memory = '3G'
 ```
 
+测试命令
+-----------------------------------
+data = {
+       "id": "split_fasta_zoux_test",
+       "type": "tool",
+       "name": "sequence.cdhit_split_fasta",
+       "options": {
+           "gene_tmp_fa": "/mnt/ilustre/users/sanger-dev/sg-users/zouxuan/gene.uniGeneset.fa",
+           "number":7,
+           "ou_dir" : "/mnt/ilustre/users/sanger-dev/sg-users/zouxuan/fasta"
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+
+模块测试的结果路径:
+/mnt/ilustre/users/sanger-dev/workspace/20170911/Single_split_fasta_zoux_test
+
+测试结果
+-----------------------------------
