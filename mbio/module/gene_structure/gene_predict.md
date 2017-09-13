@@ -45,3 +45,13 @@ tool:assemble.metagene
 
 2、对预测结果进行统计，绘图；
 
+测试命令
+-----------------------------------
+python /mnt/ilustre/users/sanger-dev/sg-users/guhaidong/metagene_module2.py
+
+模块测试的结果路径
+-----------------------------------
+/mnt/ilustre/users/sanger-dev/workspace/20170913/Single_module_metagene
+
+测试结果
+-----------------------------------
