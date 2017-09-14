@@ -2,14 +2,17 @@
 
 >demo拉取
 
+>demo复制编写
+
 ### demo设置
 
-demo设置与取消在sanger@majorbio账号下
+demo设置与取消在sanger@majorbio.com账号下
+
 
 ![demo设置](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/wikis/img/demo设置.png)
 
 * 将任务设置为demo基准任务：
-  * 提交参数到前端，前端修改mysql数据库里的项目表和任务表，将项目表的is_demo改为1，任务表的is_demo改为1  #项目表的is_demo为0时，表明这个项目不是demo，为1时这个项目是demo，会在页面上项目名称后加Demo标签；任务表的is_demo同任务表
+  * 提交参数到前端，前端修改mysql数据库里的项目表和任务表，将项目表的is_demo改为1，任务表的is_demo改为1  #项目表的is_demo为0时，表明这个项目不是demo，为1时这个项目是demo，会在页面上项目名称后加Demo标签；任务表同项目表
 
 
 * 取消设置为demo：
@@ -20,6 +23,9 @@ demo设置与取消在sanger@majorbio账号下
   * 若为有参RNA项目，在将任务设置为demo的时候，前端修改mysql的is_demo状态的同时，将参数传到接口[demo_init](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/webroot/mainapp/controllers/submit/demo_init.py)，进行demo的备份和备份删除
   * [demo初始化接口](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/webroot/mainapp/controllers/submit/demo_init.py)
   * [demo初始化workflow](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/workflows/copy_demo/demo_init.py)
+  * [demo初始化package-rna复制demo](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/packages/rna/refrna_copy_demo.py)
+  * [demo初始化package-rna删除demo备份](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/packages/rna/refrna_copy_delete.py)
+
 
 ### demo拉取
 
@@ -29,10 +35,12 @@ demo设置与取消在sanger@majorbio账号下
 
 * 在拉取demo时，前端将参数传到接口demo_mongodata_copy，若为有参rna项目，在拉取demo的同时，底层会再备份一份demo，保持mongo数据库备份的demo不变
 * [demo拉取接口](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/webroot/mainapp/controllers/instant/meta/demo_mongodata_copy.py)
-* [demo拉取workflow](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/workflows/copy_demo/copy_demo.py)
-* [demo复制package](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/packages/rna/refrna_copy_demo.py)
+* [demo拉取workflow-多样性](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/workflows/copy_demo/copy_demo.py)
+* [demo拉取workflow-有参RNA](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/workflows/copy_demo/refrna_copy_demo.py)
+* [demo复制package-多样性](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/packages/meta/copy_demo.py)
+* [demo复制package-有参RNA](http://git.majorbio.com/sanger_bioinfo/SangerBiocluster/blob/master/src/mbio/packages/rna/refrna_copy_demo.py)
 
-### demo的复制
+### demo复制编写
 
 * demo复制用的是gevent的异步I/O模式
 

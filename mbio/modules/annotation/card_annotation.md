@@ -9,32 +9,67 @@ card_annotation
 功能描述
 -----------------------------------
 
-宏基因card注释模块（包括比对和注释）
+宏基因card注释模块（包括比对、注释和丰度统计）
 
 主要命令及功能模块
 -----------------------------------
 
 ```
-     self.card_align = self.add_module("align.diamond")
-     self.anno = self.add_tool("annotation.card_anno")
-     self.hmmscan = self.add_tool("align.cat_hmmscanout")
-     self.anno = self.add_tool("annotation.card_anno_stat")
+        self.split_fasta = self.add_tool("sequence.split_fasta")
+        self.card_align_tools = []
+        self.card_anno_tool = self.add_tool("annotation.card_anno")
+        self.card_anno_stat_tool = self.add_tool("annotation.card_anno_stat")
 ```
 
 参数设计
 -----------------------------------
 
 ```
-			{"name": "query", "type": "infile", "format": "sequence.fasta"},  # 非冗余基因集的输出
-            {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"},  # gene_profile.reads_number.txt
-            {"name": "card_profile", "type": "outfile", "format": "sequence.profile_table"},
-            {"name": "card_category_profile", "type": "outfile", "format": "sequence.profile_table"}
-            {"name": "card_ARO_gene_number", "type": "outfile", "format": "card_ARO_gene_talle}
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # 输入文件
+            {"name": "lines", "type": "int", "default": 100000},  # 将fasta序列拆分此行数的多个文件
+            {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"},  # 基因丰度表
+            {"name": "evalue", "type": "float", "default": 1e-5},  # evalue值
+            {"name": "card_result_dir", "type": "outfile", "format": "annotation.mg_anno_dir"}  # 设置结果文件后面要用
 ```
 
 运行逻辑
 -----------------------------------
+```
+1、拆分序列；
+2、调用diamond模块分别对拆分的fasta文件进行card数据库比对，得到xml文件；
+2、输入比对xml结果的文件夹，调用tool(card_anno)对xml文件转化成table并合并为一张表，然后注释结果；
+3、最后根据注释结果和reads_profile_table丰度文件，调用tool(card_anno_stat)进行注释丰度统计；
+```
 
-1、调用meta_diamond模块对输入的fasta文件进行card数据库比对；
-2、输出xml文件调用tool(card_anno)进行分别注释
-3、将注释文件更改根据reads_profile_table文件以及tool(card_anno_stat)进行注释统计；
+可能存在的问题
+-----------------------------------
+暂无
+
+
+测试命令
+-----------------------------------
+```
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
+
+data = {
+       "id": "card_module",
+       "type": "module",
+       "name": "annotation.card_annotation",
+       "options": {
+            "query":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/gao.gene.uniGeneset.faa",
+            "lines":500000,
+            "reads_profile_table":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/gene_profile.reads_number.total.txt"
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+
+测试结果路径：/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/card/Single_card_module
+```
+
+
+测试结果
+-----------------------------------
