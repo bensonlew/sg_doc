@@ -45,3 +45,14 @@ tool:assemble.contig_stat, sequence.length_distribute
 1、进行SOAPdenovo2拼接；
 
 2、汇总结果，kmer筛选，做长度分布统计；
+
+测试命令
+-----------------------------------
+python /mnt/ilustre/users/sanger-dev/sg-users/guhaidong/soapdenovo_module2.py
+
+模块测试的结果路径:
+-----------------------------------
+/mnt/ilustre/users/sanger-dev/workspace/20170913/Single_module_soapdenovo_test
+
+测试结果
+-----------------------------------
