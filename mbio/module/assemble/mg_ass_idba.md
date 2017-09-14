@@ -57,7 +57,7 @@ assemble.newbler, assemble.sort_idba_result, assemble.contig_stat, sequence.leng
 python /mnt/ilustre/users/sanger-dev/sg-users/guhaidong/idba_module_m.py
 
 模块测试的结果路径:
-
+-----------------------------------
 /mnt/ilustre/users/sanger-dev/workspace/20170913/Single_idba_module_simple
 
 测试结果
