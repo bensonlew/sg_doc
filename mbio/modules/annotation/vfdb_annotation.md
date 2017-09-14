@@ -1,17 +1,17 @@
 vfdb_annotation
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
 **modules.annotation.vfdb_annotation**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-ºê»ùÒòvfdb×¢ÊÍÄ£¿é
+å®åŸºå› vfdbæ³¨é‡Šæ¨¡å—
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
@@ -21,19 +21,55 @@ vfdb_annotation
      self.anno_stat = self.add_tool("annotation.vvfdb_split_core")
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # ÊäÈëÎÄ¼ş
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # è¾“å…¥æ–‡ä»¶
             {"name": "reads_profile_table", "type": "infile", "format": "sequence.profile_table"},  # gene_profile.reads_number.txt
             {"name": "vfdb_out_dir", "type": "outfile", "format": "meta_genomic.annotation_dir"}
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
+```
 
-1¡¢µ÷ÓÃdiamondÄ£¿é²ğ·Ö°±»ùËáĞòÁĞ²¢·Ö±ğÓÚvfdbºËĞÄÊı¾İ¿â±È¶Ô£»
-2¡¢µ÷ÓÃvfdb_split_core¹¤¾ß·ÖÀëÃ»±È¶ÔÉÏºËĞÄ¿âµÄĞòÁĞ£¬ÔÙµ÷ÓÃdiamondÄ£¿é±È¶ÔÔ¤²âÊı¾İ¿â£»
-3¡¢µ÷ÓÃvfdb_anno¹¤¾ß¶ÔºËĞÄºÍÔ¤²â±È¶ÔÎÄ¼ş·Ö±ğ½øĞĞ×¢ÊÍ£»
-4¡¢¸ù¾İreads_profile_tableÎÄ¼şÒÔ¼°ºËĞÄºÍÔ¤²â×¢ÊÍ±í£¬µ÷ÓÃtool(vfdb_anno_stat)½øĞĞ×¢ÊÍÍ³¼Æ£»
+1ã€è°ƒç”¨diamondæ¨¡å—æ‹†åˆ†æ°¨åŸºé…¸åºåˆ—å¹¶åˆ†åˆ«äºvfdbæ ¸å¿ƒæ•°æ®åº“æ¯”å¯¹ï¼›
+2ã€è°ƒç”¨vfdb_split_coreå·¥å…·åˆ†ç¦»æ²¡æ¯”å¯¹ä¸Šæ ¸å¿ƒåº“çš„åºåˆ—ï¼Œå†è°ƒç”¨diamondæ¨¡å—æ¯”å¯¹é¢„æµ‹æ•°æ®åº“ï¼›
+3ã€è°ƒç”¨vfdb_annoå·¥å…·å¯¹æ ¸å¿ƒå’Œé¢„æµ‹æ¯”å¯¹æ–‡ä»¶åˆ†åˆ«è¿›è¡Œæ³¨é‡Šï¼›
+4ã€æ ¹æ®reads_profile_tableæ–‡ä»¶ä»¥åŠæ ¸å¿ƒå’Œé¢„æµ‹æ³¨é‡Šè¡¨ï¼Œè°ƒç”¨tool(vfdb_anno_stat)è¿›è¡Œæ³¨é‡Šç»Ÿè®¡ï¼›
+```
+
+
+å¯èƒ½å­˜åœ¨çš„é—®é¢˜
+-----------------------------------
+æš‚æ— 
+
+
+æµ‹è¯•å‘½ä»¤
+-----------------------------------
+```
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
+
+data = {
+       "id": "vfdb_module",
+       "type": "module",
+       "name": "annotation.vfdb_annotation",
+       "options": {
+           "query": "/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/gao.gene.uniGeneset.faa",
+           "lines":1000000, 
+           "reads_profile_table":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/gene_profile.reads_number.total.txt"
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+
+æµ‹è¯•ç»“æœè·¯å¾„ï¼š/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/vfdb/Single_vfdb_module
+```
+
+
+æµ‹è¯•ç»“æœ
+-----------------------------------

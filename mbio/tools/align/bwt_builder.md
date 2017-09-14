@@ -50,6 +50,8 @@ bwt_build
 self._cpu = 10
 self._memory = '5G'
 
+```
+
 测试命令
 -----------------------------------
 from mbio.workflows.single import SingleWorkflow
