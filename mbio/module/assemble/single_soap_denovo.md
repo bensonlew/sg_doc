@@ -24,6 +24,7 @@ tool:assemble.soap_denovo,assemble.get_contig
             {"name": "fastq1", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.l.fastq
             {"name": "fastq2", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.r.fastq
             {"name": "fastqs", "type": "infile", "format": "sequence.fastq"},  # 输入文件,sample.sickle.s.fastq
+            {“name”: "sample_name", "type": "string"},  # 样品名称
             {"name": "mem", "type": "int", "default": 100}, # 拼接内存
             {"name": "max_rd_len", "type": "string"},  # read最大读长
             {"name": "insert_size", "type": "string"},  # 平均插入片段长度
