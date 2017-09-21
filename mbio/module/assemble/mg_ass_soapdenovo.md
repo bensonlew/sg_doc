@@ -25,18 +25,19 @@ tool:assemble.contig_stat, sequence.length_distribute
 -----------------------------------
 
 ```
+            {“name”: "data_id", "type": "string"},  # 主表任务ID
             {"name": "QC_dir", "type": "infile", "format": "sequence.fastq_dir"},  # 输入文件，质控后的文件夹
-            {"name": "quantity", "type": "int", "default": "10"},  #合同测序含量
-            {"name": "sample_type", "type": "int", "default": "1"},  #样品类型
-            {"name": "reads_stat", "type": "string"},  # read最大读长,质控后的统计文件
-            {"name": "insert_size", "type": "string"},  # 平均插入片段长度
+            # {"name": "quantity", "type": "int", "default": "10"},  #合同测序含量
+            # {"name": "sample_type", "type": "int", "default": "1"},  #样品类型
+            # {"name": "reads_stat", "type": "string"},  # read最大读长,质控后的统计文件
+            # {"name": "insert_size", "type": "string"},  # 平均插入片段长度
             {"name": "reverse_seq", "type": "string", "default": "0"},  # 配置文件的其他参数
             {"name": "asm_flags", "type": "string", "default": "3"},  # 配置文件的其他参数
             {"name": "rank", "type": "string", "default": "1"},  # 配置文件的其他参数
             {"name": "min_contig", "type": "string", "default": "500"},  # 输入最短contig长度，默认500
-            {"name": "scafSeq", "type": "outfile", "format": "sequence.fasta"},  # 输出文件,sample.scafSeq
-            {"name": "scaftig", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，scaffold去掉N后的序列
-            {"name": "cut_more_scaftig_dir", "type": "outfile", "format": "sequence.fasta_dir"},  # 输出文件，去掉小于最短contig长度的序列路径
+            # {"name": "scafSeq", "type": "outfile", "format": "sequence.fasta"},  # 输出文件,sample.scafSeq
+            # {"name": "scaftig", "type": "outfile", "format": "sequence.fasta"},  # 输出文件，scaffold去掉N后的序列
+            {"name": "contig", "type": "outfile", "format": "sequence.fasta_dir"},  # 输出文件，去掉小于最短contig长度的序列路径
    ```
 
 
