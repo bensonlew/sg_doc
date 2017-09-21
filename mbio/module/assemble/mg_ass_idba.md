@@ -15,23 +15,24 @@ Path
 主要命令及功能模块
 -----------------------------------
 
-tool: assemble.idba, align.bowtie2, sequence.extract_fastq, sequence.cat_reads, assemble.rm_kmer, sequence.cut_length,
+tool: assemble.idba, assemble.megahit, align.bowtie2, sequence.extract_fastq_by_sam, sequence.cat_reads, assemble.rm_kmer, sequence.cut_length,
 assemble.newbler, assemble.sort_idba_result, assemble.contig_stat, sequence.length_distribute
 
 参数设计
 -----------------------------------
 
 ```
+            {"name": "data_id", "type": "string"},  # 样品集数据表任务ID
             {"name": "QC_dir", "type": "infile", "format": "sequence.fastq_dir"},  # 输入文件，质控后的文件夹
-            {"name": "quantity", "type": "int", "default": "10"},  #clean reads碱基含量
-            {"name": "sample_type", "type": "int", "default": "1"},  #样品类型
-            {"name": "quantity_threshold", "type": "int"，"default": "20"},  #测序量限定值，判断去kmer/拆分reads标准之一
-            {"name": "overall_quantity_threshold", "type": "int", "default": "200"},  #总测序量限定值，判断去kmer标准之一
-            {”name“: "method","type": "string"},  #拼接方法选择[simple_assemble|multiple_assemble]
-            {"name": "min_contig", "type": "string", "default": "300"},  # 输出最短contig长度，默认300
+            {"name": "assemble_tool", "type": "string", "default": "idba"},  # 拼接工具选择，idba or megahit
+            {"name": "method", "type": "string"},  # 拼接方法选择，simple or multiple
+            # {"name": "quantity", "type": "int", "default": "10"},  #clean reads碱基含量
+            # {"name": "sample_type", "type": "int", "default": "1"},  #样品类型
+            # {"name": "quantity_threshold", "type": "int"，"default": "20"},  #测序量限定值，判断去kmer/拆分reads标准之一
+            # {"name": "overall_quantity_threshold", "type": "int", "default": "200"},  #总测序量限定值，判断去kmer标准之一
+            {"name": "min_contig", "type": "int", "default": 300},  # 输出最短contig长度，默认300
             {"name": "contig","type": "outfile", "format": "sequence.fasta_dir"},  #输出文件路径，sample.contig.fa
             {"name": "contig_stat", "type": "outfile", "format": "sequence.profile_table"},  #输出contig质量统计结果表
-            {"name": "length_distribute", "type": "outfile", "format": "sequence.profile_table_dir"},  #输出长度分布表
 ```
 
 运行逻辑
