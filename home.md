@@ -166,7 +166,6 @@ Sanger Bioinfo
   python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
 
   ```
-
   + 先生成list文件（可编辑list中文件是否加锁），再上传文件。
 
   ```
