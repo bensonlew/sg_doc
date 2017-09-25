@@ -167,7 +167,7 @@ Sanger Bioinfo
 
   ```
 
-   - 先生成list文件（可编辑list中文件是否加锁），再上传文件。
+                - 先生成list文件（可编辑list中文件是否加锁），再上传文件。
 
   ```
 
@@ -175,7 +175,7 @@ Sanger Bioinfo
   python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
 
   ```
-   - 只生成文件路径,可自行传输文件到桑格集群的磁盘位置：现在数据库中传入信息但不上传文件，再复制到相应文件夹内。（速度快）
+               - 只生成文件路径,可自行传输文件到桑格集群的磁盘位置：现在数据库中传入信息但不上传文件，再复制到相应文件夹内。（速度快）
 
   ```
   python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange -f T
