@@ -185,12 +185,12 @@ Sanger Bioinfo
 
 > note: -i为所要上传文件所在路径（只能是文件夹），-l为生成list文件，-c为上传验证码（一定要加引号），-m为选择平台 -f 只生成路径不上传文件
 
-	从平台目录下载任务文件夹：
+* 从平台目录下载任务文件夹：
 
-	```
-	python ~/biocluster/scripts/dataexchange/download.py -c "KQUTSF|e0cac412c4956c0879f2025b51d2024b" -t ./target/ -m tsg
+  ```
+  python ~/biocluster/scripts/dataexchange/download.py -c "KQUTSF|e0cac412c4956c0879f2025b51d2024b" -t ./target/ -m tsg
 
-	```
+  ```
 
 ### Slurm任务提交
 用户命令包括：sacct, salloc, sattach, sbatch, sbcast, scancel, scontrol, sinfo, smap, squeue,srun, strigger 和 sview.
