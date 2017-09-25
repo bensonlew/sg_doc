@@ -318,6 +318,7 @@ Sanger Bioinfo
 	+ Workflow调试
 	+ 接口调试
 	示例：
+
 	```
 	python ~/biocluster/bin/webapitest.py post meta/hierarchical_clustering_heatmap -c client01 -n "otu_id;level_id;group_id;group_detail;species_number;method;task_type;submit_location;sample_method;add_Algorithm" -d "586ef2c917b2bf6172bdfba0;9;586ef2c917b2bf6172bdfb6f;group_detail.txt;28;average;reportTask;hierarchical_clustering_heatmap;average;average" -b http://192.168.12.101:8091
 
