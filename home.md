@@ -160,11 +160,12 @@ Sanger Bioinfo
 * 从服务器上传数据到云平台目录：
 
   - 直接生成list文件并上传文件。
-	```
 
-	python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
+  ```
 
-	```
+  python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
+
+  ```
 
   - 先生成list文件（可编辑list中文件是否加锁），再上传文件。
 
@@ -174,13 +175,13 @@ Sanger Bioinfo
   python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
 
   ```
-	- 只生成文件路径,可自行传输文件到桑格集群的磁盘位置：现在数据库中传入信息但不上传文件，再复制到相应文件夹内。（速度快）
+  - 只生成文件路径,可自行传输文件到桑格集群的磁盘位置：现在数据库中传入信息但不上传文件，再复制到相应文件夹内。（速度快）
 
   ```
   python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange -f T
   再将文件复制到任务的磁盘路径中，文件就能使用了。 
 
-	```
+  ```
 
 > note: -i为所要上传文件所在路径（只能是文件夹），-l为生成list文件，-c为上传验证码（一定要加引号），-m为选择平台 -f 只生成路径不上传文件
 
