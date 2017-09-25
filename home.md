@@ -322,6 +322,7 @@ Sanger Bioinfo
 	python ~/biocluster/bin/webapitest.py post meta/hierarchical_clustering_heatmap -c client01 -n "otu_id;level_id;group_id;group_detail;species_number;method;task_type;submit_location;sample_method;add_Algorithm" -d "586ef2c917b2bf6172bdfba0;9;586ef2c917b2bf6172bdfb6f;group_detail.txt;28;average;reportTask;hierarchical_clustering_heatmap;average;average" -b http://192.168.12.101:8091
 
 	python ~/biocluster/bin/webapitest.py post meta/plot_tree -c client03 -n "otu_id;level_id;color_level_id;group_id;group_detail;task_type;submit_location" -d "5822b620a4e1af5a4ae9a795;8;3;5822b620a4e1af5a4ae9a787;plot_tree.txt;reportTask;plot_tree;" -b http://192.168.12.102:9090
+
 	```
 
 
