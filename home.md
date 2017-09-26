@@ -4,7 +4,6 @@ Sanger Bioinfo
 >                
 > ## *Welcome to a Sanger !*                   
 > ### [:flags: 生信模块库](/mbio)  |  [:eye_in_speech_bubble: 可视化模板库](/charts)  |  [:dagger: APP软件库](AppInstallList)  |  [:key2: MD书写帮助](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/user/markdown.md) |[:scroll:  Biocluster 教程](/biocluster)            
-> ### [:memo:平台功能开发文档](/devdoc/doc)
 
 * [平台架构](#user-content-平台架构)
 	+ [平台系统架构](#user-content-平台系统架构)
@@ -160,19 +159,40 @@ Sanger Bioinfo
 ### 命令行数据传输
 
 * 从服务器上传数据到云平台目录：
-	```
-	python ~/biocluster/scripts/dataexchange/get_file_list.py -i ~/sg-users/yuguo/testdata -o testdata.list
-	python ~/biocluster/scripts/dataexchange/upload.py -l testdata.list -c FNSBGA -m tsanger
 
-	python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NSOUKH -m tsanger
-	python ~/biocluster/scripts/dataexchange/upload.py -l file.list -c NWKBVB
-	```
+    - 直接生成list文件并上传文件。
 
-	从平台目录下载任务文件夹：
-	```
-	python ~/biocluster/scripts/dataexchange/download.py -c "KQUTSF|e0cac412c4956c0879f2025b51d2024b" -t ./target/ -m tsg
+    ```
 
-	```
+    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
+
+    ```
+
+    - 先生成list文件（可编辑list中文件是否加锁），再上传文件。
+
+    ```
+
+    python ~/biocluster/scripts/dataexchange/v2/get_file_list.py -i ~/sg-users/liuwentian/tot/tot2 -l test.list
+    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
+
+    ```
+
+    - 只生成文件路径,可自行传输文件到桑格集群的磁盘位置：现在数据库中传入信息但不上传文件，再复制到相应文件夹内。（速度快）
+
+    ```
+    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange -f T
+    再将文件复制到任务的磁盘路径中，文件就能使用了。 
+
+    ```
+
+> note: -i为所要上传文件所在路径（只能是文件夹），-l为生成list文件，-c为上传验证码（一定要加引号），-m为选择平台 -f 只生成路径不上传文件
+
+* 从平台目录下载任务文件夹：
+
+    ```
+    python ~/biocluster/scripts/dataexchange/download.py -c "KQUTSF|e0cac412c4956c0879f2025b51d2024b" -t ./target/ -m tsg
+
+    ```
 
 ### Slurm任务提交
 用户命令包括：sacct, salloc, sattach, sbatch, sbcast, scancel, scontrol, sinfo, smap, squeue,srun, strigger 和 sview.
@@ -299,10 +319,12 @@ Sanger Bioinfo
 	+ Workflow调试
 	+ 接口调试
 	示例：
+
 	```
 	python ~/biocluster/bin/webapitest.py post meta/hierarchical_clustering_heatmap -c client01 -n "otu_id;level_id;group_id;group_detail;species_number;method;task_type;submit_location;sample_method;add_Algorithm" -d "586ef2c917b2bf6172bdfba0;9;586ef2c917b2bf6172bdfb6f;group_detail.txt;28;average;reportTask;hierarchical_clustering_heatmap;average;average" -b http://192.168.12.101:8091
 
 	python ~/biocluster/bin/webapitest.py post meta/plot_tree -c client03 -n "otu_id;level_id;color_level_id;group_id;group_detail;task_type;submit_location" -d "5822b620a4e1af5a4ae9a795;8;3;5822b620a4e1af5a4ae9a787;plot_tree.txt;reportTask;plot_tree;" -b http://192.168.12.102:9090
+
 	```
 
 
