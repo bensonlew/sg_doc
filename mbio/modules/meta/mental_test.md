@@ -1,46 +1,59 @@
-(Partial) Mantel Test·ÖÎö
+(Partial) Mantel Teståˆ†æ
 ===========
 
-Moudle ËµÃ÷
------------------------------------
 
-PATH
+æ¨¡å—PATH
 ---------
 
 **statistical.mantel_test**
 
-¹¦ÄÜÃèÊö
---------
-¼ìÑéÁ½¾ØÕóÖ®¼äµÄÏà¹ØĞÔ£¬PartialĞèÒªÌá¹©¿ØÖÆ¾ØÕó£¨Í¨¹ıÑ¡Ôñ»·¾³Òò×ÓÀ´È·¶¨£©¡£
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+åŠŸèƒ½æè¿°
+--------
+æ£€éªŒä¸¤çŸ©é˜µä¹‹é—´çš„ç›¸å…³æ€§ï¼ŒPartialéœ€è¦æä¾›æ§åˆ¶çŸ©é˜µï¼ˆé€šè¿‡é€‰æ‹©ç¯å¢ƒå› å­æ¥ç¡®å®šï¼‰ã€‚
+
+
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
-self.otudistance = self.add_tool('meta.beta_diversity.distance_calc')
-self.facdistance = self.add_tool('statistical.factor_distance')
-self.discomparison = self.add_tool('statistical.discomparison')
+self.add_tool('meta.beta_diversity.distance_calc')
+self.add_tool('statistical.factor_distance')
+self.add_tool('statistical.discomparison')
 self.partial = self.add_tool('statistical.factor_distance')
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "level", "type": "string", "default": ""},  # ÎïÖÖ/¹¦ÄÜ·ÖÀàË®Æ½
-{"name": "abundtable", "type": "infile", "format": "abund_table"},##ÎïÖÖ/¹¦ÄÜ·á¶È±í¸ñ
-{"name": "otumatrixtype", "type": "string", "default": "bray_curtis"},  # ¼ÆËãÎïÖÖ/¹¦ÄÜ¾àÀë¾ØÕóµÄ·½·¨
-{"name": "envtable", "type": "infile", "format": "group_table"},##»·¾³Òò×Ó±í
-{"name": "partial_factor", "type": "string"},  # ¿ØÖÆµ¥Î»
-{"name": "factormatrixtype", "type": "string", "default": "bray_curtis"},  # ¼ÆËãÒò×Ó¾àÀë¾ØÕóµÄ·½·¨
-{"name": "factorselected", "type": "string", "default": ""},
-{"name": "partialmatrix", "type": "infile", "format": "meta.beta_diversity.distance_matrix"},
-{"name": "dis_matrix", "type": "outfile", "format": "meta.beta_diversity.distance_matrix"},
-{"name": "fac_matrix", "type": "outfile", "format": "meta.beta_diversity.distance_matrix"}
+{"name": "otutable", "type": "infile", "format": "meta.otu.otu_table, meta.otu.tax_summary_dir"}, #ç‰©ç§/åŠŸèƒ½/åŸºå› ä¸°åº¦è¡¨æ ¼
+{"name": "level", "type": "string", "default": "otu"},  # ç‰©ç§æ°´å¹³ï¼Œå½“éå¤šæ ·æ€§æµç¨‹æ—¶ï¼Œ"level"å‚æ•°é‡‡ç”¨é»˜è®¤å€¼"otu"
+{"name": "otumatrixtype", "type": "string", "default": "weighted_unifrac"},  # è®¡ç®—ç‰©ç§/åŠŸèƒ½è·ç¦»çŸ©é˜µçš„æ–¹æ³•,é»˜è®¤å€¼åªé€‚ç”¨å¤šæ ·æ€§
+{"name": "factor", "type": "infile", "format": "meta.otu.group_table"},  # ç¯å¢ƒå› å­è¡¨
+{"name": "partial_factor", "type": "string"},  # æ§åˆ¶å•ä½
+{"name": "factormatrixtype", "type": "string", "default": "bray_curtis"},  # è®¡ç®—å› å­è·ç¦»çŸ©é˜µçš„æ–¹æ³•
+{"name": "factorselected", "type": "string", "default": ""},  # æŒ‘é€‰çš„ç¯å¢ƒå› å­
+{"name": "newicktree", "type": "infile", "format": "meta.beta_diversity.newick_tree"},  #å¤šæ ·æ€§æµç¨‹ä¸­ä½¿ç”¨unifracè·ç¦»æ—¶å¿…é¡»æä¾›
+{"name": "partialmatrix", "type": "infile", "format": "meta.beta_diversity.distance_matrix"},  # åšPartial Mantel Test
+{"name": "dis_matrix", "type": "outfile", "format": "meta.beta_diversity.distance_matrix"},  # ç‰©ç§/åŠŸèƒ½/åŸºå› ä¸°åº¦è¡¨æ ¼ç”Ÿæˆçš„è·ç¦»æ–‡ä»¶
+{"name": "fac_matrix", "type": "outfile", "format": "meta.beta_diversity.distance_matrix"}  # ç¯å¢ƒå› å­ç”Ÿæˆçš„è·ç¦»æ–‡ä»¶
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-1.Ìá¹©ÎïÖÖ/¹¦ÄÜ·á¶È±í¸ñ¡¢»·¾³Òò×Ó±í¼°Æä¶ÔÓ¦µÄ¾àÀë·½·¨£¬·Ö±ğ¹¹½¨ÎïÖÖ/¹¦ÄÜ¾àÀë¡¢»·¾³Òò×Ó¾àÀë£»
+1.æä¾›ç‰©ç§/åŠŸèƒ½ä¸°åº¦è¡¨æ ¼ã€ç¯å¢ƒå› å­è¡¨åŠå…¶å¯¹åº”çš„è·ç¦»æ–¹æ³•ï¼Œåˆ†åˆ«æ„å»ºç‰©ç§/åŠŸèƒ½è·ç¦»ã€ç¯å¢ƒå› å­è·ç¦»ï¼›
 
-2.ÀûÓÃÁ½¸ö¾àÀëÈ¥×öÏà¹ØĞÔ·ÖÎö£¬ÈôÑ¡ÔñÁËPartialÔòĞèÌôÑ¡»·¾³Òò×Ó×÷Îª¿ØÖÆµ¥Î»£»
+2.åˆ©ç”¨ä¸¤ä¸ªè·ç¦»å»åšç›¸å…³æ€§åˆ†æï¼Œè‹¥é€‰æ‹©äº†Partialåˆ™éœ€æŒ‘é€‰ç¯å¢ƒå› å­ä½œä¸ºæ§åˆ¶å•ä½ï¼›
 
-3.Í³¼Æ½á¹ûÊä³ö¡£
+3.ç»Ÿè®¡ç»“æœè¾“å‡ºã€‚
+
+
+
+æµ‹è¯•å‘½ä»¤
+-----------------------------------
+```
+
+```
+
+æµ‹è¯•ç»“æœ
+-----------------------------------
+æ¨¡å—æµ‹è¯•çš„ç»“æœè·¯å¾„:
