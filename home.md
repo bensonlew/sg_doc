@@ -29,6 +29,7 @@ Sanger Bioinfo
 	+ [Web开发](#user-content-web开发)
 		+ [接口设计](/web_api)
 	+ [测试发布](#user-content-测试发布)
+		+ [测试流程及规范](/SOP/测试流程及规范)
     + [工具开发](#user-content-工具开发)
 * [培训资料](#user-content-培训资料)
 * [软件工具](#user-content-软件工具)
@@ -164,7 +165,7 @@ Sanger Bioinfo
 
     ```
 
-    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
+    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sanger
 
     ```
 
@@ -173,15 +174,15 @@ Sanger Bioinfo
     ```
 
     python ~/biocluster/scripts/dataexchange/v2/get_file_list.py -i ~/sg-users/liuwentian/tot/tot2 -l test.list
-    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange
+    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sanger
 
     ```
 
     - 只生成文件路径,可自行传输文件到桑格集群的磁盘位置：现在数据库中传入信息但不上传文件，再复制到相应文件夹内。（速度快）
 
     ```
-    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sange -f T
-    再将文件复制到任务的磁盘路径中，文件就能使用了。 
+    python ~/biocluster/scripts/dataexchange/v2/upload.py -i ~/sg-users/wangzhaoyue/test -l test.list -c '上传验证码' -m tsg/tsanger/sanger -f T
+    再将文件复制到任务的磁盘路径中，文件就能使用了。
 
     ```
 

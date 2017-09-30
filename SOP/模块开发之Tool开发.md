@@ -156,6 +156,15 @@ class DistanceCalcTool(Tool):
 
 	- 通过Command对象负责运行一个命令，并监控其运行过程，command会新建一个线程运行命令，发起一个子进程调用外部程序，返回命令程序退出时的状态编码(exit code，如果顺利运行，为0；如果有错误或异常状况，为>0的整数)）
 
+* Tool中add_command可调用路径：
+
+    - self.config.SOFTWARE_DIR：集群APP下安装的软件
+    - self.config.PACKAGE_DIR: biocluster/src/mbio/packages/下可自运行的python脚本
+    - 原APP下整理脚本在package下对应列表：[app下脚本整理0925.xls](../examples/app下脚本整理0925.xls)
+
+    > 开发人员自己编写的脚本程序或修改已有软件的代码程序均放到package目录下，通过git记录更改和版本。
+
+
 		**退出状态码**：
 
 			* 0 命令成功完成
