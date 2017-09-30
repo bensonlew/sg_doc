@@ -73,7 +73,7 @@ wf = SingleWorkflow(wsheet)
 wf.run()
 
 模块测试的结果路径:
-/mnt/ilustre/users/sanger-dev/workspace/20170930/Single_hcluster/BetaDiversity/hcluster
+/mnt/ilustre/users/sanger-dev/workspace/20170930/Single_hcluster/BetaDiversity/Hcluster
 
 测试结果
 -----------------------------------
