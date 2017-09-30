@@ -62,7 +62,7 @@ data = {
        "name": "meta_genomic.common_anno_stat",
        "options": {
             "nr_xml_dir":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/nr/MetaDiamond/blast_tmp",
-            "reads_profile_table":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/gene_profile.reads_number.txt",
+            "reads_profile_table":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/gene_profile.reads_number.total.txt",
             "cog_xml_dir":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/cog/Single_mg_cog_diamond/MetaDiamond/blast_tmp",
             "kegg_xml_dir":"/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/kegg/Single_kegg_diamond/MetaDiamond/blast_tmp"
            }

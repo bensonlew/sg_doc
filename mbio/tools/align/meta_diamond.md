@@ -1,10 +1,10 @@
-diamond(modify)
+meta_diamond
 ==========================
 
 模块Path
 -----------
 
-**tools.align.diamond**
+**tools.align.meta_diamond**
 
 功能描述
 -----------------------------------
@@ -15,36 +15,39 @@ diamond软件比对
 -----------------------------------
 
 ```
-             ####diamond index创建
-             cmd = os.path.join(self.cmd_path, "makedb")
-             self.db_path = os.path.join(self.work_dir, 'diamond')
-             cmd += " makedb -in {} -d {}".format(self.option("reference").prop['path'], db_name)
-             ###diamond比对
+            #### diamond index创建
+            cmd += " makedb -in {} -d {}".format(self.option("reference").prop['path'], db_name)
+            ### diamond比对
             cmd = os.path.join(self.cmd_path, "diamond")
             cmd += " {} -q {} -d {} -o {} -e {} -f {} -p {}".format(
             self.blast_type, self.option("query").prop['path'], db, outputfile,
             self.option("evalue"), outfmt, self.option("num_threads"))
+            if self.option("sensitive") == 1:
+                  cmd += " --sensitive"
+            elif self.option("sensitive") == 2:
+                  cmd += " --more-sensitive"
+            if self.option("unalign") == 1:
+                  unalignfile = os.path.join(self.output_dir,query_name + "_unalign.fasta")
+                  cmd += " --unal 1 --un {}".format(unalignfile)
 ```
 
 参数设计
 -----------------------------------
 
 ```
-
             {"name": "query", "type": "infile", "format": "sequence.fasta"},  # 输入文件
-            {"name": "query_type", "type": "string"，"default": "prot"},  # 输入的查询序列的格式，为nucl或者prot
-            {"name": "database", "type": "string", "default": "nr"},
-            # 比对数据库 nt nr string swissprot kegg customer_mode ardb card vfdb
-            {"name": "outfmt", "type": "int", "default": 5},  # 输出格式，只为5
-            {"name": "blast", "type": "string","default": "blastp"},#blastp or blastx
-            {"name": "identity", "type": "float", "default": 0.0},  #一致性阈值
-            {"name": "coverage", "type": "float"，"default": 0.0},  # 覆盖度阈值
+            {"name": "query_type", "type": "string", "default": "prot"},  # 输入的查询序列的格式，为nucl或者prot
+            {"name": "database", "type": "string", "default": "plant"},
+            # 比对数据库 plant, nr, etc.
+            {"name": "outfmt", "type": "int", "default": 5},  # 输出格式，数字默认为5，输出xml
+            {"name": "blast", "type": "string", "default": "blastp"},  # 设定diamond程序有blastp，blastx
+            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # 参考序列  选择customer时启用
             {"name": "evalue", "type": "float", "default": 1e-5},  # evalue值
             {"name": "num_threads", "type": "int", "default": 10},  # cpu数
-            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # 参考序列  选择customer时启用
-            {"name": "outxml", "type": "outfile", "format": "align.blast.blast_xml"},  # 输出格式为5时输出
-            {"name": "outtable", "type": "outfile", "format": "align.blast.blast_table"},  # 输出格式为6时输出
-            {"name": "sensitive", "type": "int", "default": 0} #fast模式
+            {"name": "sensitive", "type": "int", "default": 0},
+            {"name": "unalign", "type": "int", "default": 0},    # report unaligned queries (0=no, 1=yes)
+            {"name": "target_num", "type": "int", "default": 1}  # maximum number of target sequences to report alignments for
+
 ```
 
 运行逻辑
