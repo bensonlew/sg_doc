@@ -18,7 +18,7 @@ vfdb_annotation
      self.ardb_align = self.add_module("align.meta_diamond")
      self.anno_stat = self.add_tool("annotation.vfdb_anno_stat")
      self.anno_stat = self.add_module("annotation.vfdb_anno")
-     self.anno_stat = self.add_tool("annotation.vvfdb_split_core")
+     self.anno_stat = self.add_tool("annotation.vfdb_split_core")
 ```
 
 参数设计

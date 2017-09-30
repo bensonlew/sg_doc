@@ -1,50 +1,82 @@
-diamond(modify)
+meta_diamond
 ==========================
 
-Ä£¿éPath
+æ¨¡å—Path
 -----------
 
-**modules.align.diamond**
+**modules.align.meta_diamond**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 -----------------------------------
 
-ºê»ùÒòdiamondÈí¼ş±È¶ÔÄ£¿é
+å®åŸºå› diamondè½¯ä»¶æ¯”å¯¹æ¨¡å—
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 -----------------------------------
 
 ```
         self.splitfasta = self.add_tool("sequence.split_fasta")
-        self.add_tool('align.diamond')
-        #self.catblast = self.add_tool("align.cat_blastout")
+        self.add_tool('align.meta_diamond')
+        self.catblast = self.add_tool("align.cat_blastout")
+
 ```
 
-²ÎÊıÉè¼Æ
+å‚æ•°è®¾è®¡
 -----------------------------------
 
 ```
-            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # ÊäÈëÎÄ¼ş
-            {"name": "lines", "type": "int", "default": 100000},  # ½«fastaĞòÁĞ²ğ·Ö´ËĞĞÊıµÄ¶à¸öÎÄ¼ş
-            {"name": "query_type", "type": "string"£¬"default": "prot"},  # ÊäÈëµÄ²éÑ¯ĞòÁĞµÄ¸ñÊ½£¬Îªnucl»òÕßprot
+            {"name": "query", "type": "infile", "format": "sequence.fasta"},  # è¾“å…¥æ–‡ä»¶
+            {"name": "lines", "type": "int", "default": 500},  # å°†fastaåºåˆ—æ‹†åˆ†æ­¤è¡Œæ•°çš„å¤šä¸ªæ–‡ä»¶
+            {"name": "query_type", "type": "string"},  # è¾“å…¥çš„æŸ¥è¯¢åºåˆ—çš„æ ¼å¼ï¼Œä¸ºnuclæˆ–è€…prot
             {"name": "database", "type": "string", "default": "nr"},
-            # ±È¶ÔÊı¾İ¿â nt nr string swissprot kegg customer_mode ardb card vfdb eggNOG
-            {"name": "outfmt", "type": "int", "default": 5},  # Êä³ö¸ñÊ½£¬Ö»Îª5
-            {"name": "blast", "type": "string","default": "blastp"},#blastp or blastx
-            {"name": "identity", "type": "float", "default": 0.0},  #Ò»ÖÂĞÔãĞÖµ
-            {"name": "coverage", "type": "float"£¬"default": 0.0},  # ¸²¸Ç¶ÈãĞÖµ
-            {"name": "evalue", "type": "float", "default": 1e-5},  # evalueÖµ
-            {"name": "num_threads", "type": "int", "default": 10},  # cpuÊı
-            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # ²Î¿¼ĞòÁĞ  Ñ¡ÔñcustomerÊ±ÆôÓÃ
-            {"name": "outxml", "type": "outfile", "format": "align.blast.blast_xml"},  # Êä³ö¸ñÊ½Îª5Ê±Êä³ö
-            {"name": "outtable", "type": "outfile", "format": "align.blast.blast_table"},  # Êä³ö¸ñÊ½Îª6Ê±Êä³ö
-            {"name": "sensitive", "type": "int", "default": 0} #fastÄ£Ê½
-            # µ±Êä³ö¸ñÊ½Îª·Ç5£¬6Ê±£¬Ö»²úÉúÎÄ¼ş²»×÷Îªoutfile
+            # æ¯”å¯¹æ•°æ®åº“ nt nr string swissprot kegg customer_mode
+            {"name": "outfmt", "type": "int", "default": 5},  # è¾“å‡ºæ ¼å¼ï¼Œåªä¸º5
+            {"name": "blast", "type": "string"},
+            {"name": "reference", "type": "infile", "format": "sequence.fasta"},  # å‚è€ƒåºåˆ—  é€‰æ‹©customeræ—¶å¯ç”¨
+            {"name": "reference_type", "type": "string"},  # å‚è€ƒåºåˆ—(åº“)çš„ç±»å‹  ä¸ºnuclæˆ–è€…prot
+            {"name": "evalue", "type": "float", "default": 1e-5},  # evalueå€¼
+            {"name": "num_threads", "type": "int", "default": 10},  # cpuæ•°
+            {"name": "outxml", "type": "outfile", "format": "align.blast.blast_xml"},  # è¾“å‡ºæ ¼å¼ä¸º5æ—¶è¾“å‡º
+            {"name": "outtable", "type": "outfile", "format": "align.blast.blast_table"},  # è¾“å‡ºæ ¼å¼ä¸º6æ—¶è¾“å‡º
+            # å½“è¾“å‡ºæ ¼å¼ä¸ºé5ï¼Œ6æ—¶ï¼Œåªäº§ç”Ÿæ–‡ä»¶ä¸ä½œä¸ºoutfile
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -----------------------------------
 
-1¡¢ÏÈÊ¹ÓÃsplit_fasta½«ĞòÁĞÎÄ¼ş²ğ·Ö£»
-2¡¢ÔÙÓÃdiamond¹¤¾ß·Ö±ğ±È¶Ô£¬Ä¬ÈÏ²úÉúxmlÎÄ¼ş¼¯£»
-3¡¢ºÏ²¢xml½á¹û¡£
+å…ˆä½¿ç”¨split_fastaå°†åºåˆ—æ–‡ä»¶æ‹†åˆ†ï¼Œå†ç”¨meta_diamondå·¥å…·åˆ†åˆ«æ¯”å¯¹ï¼Œäº§ç”Ÿxmlæ–‡ä»¶é›†ï¼Œæ”¾å…¥ç‰¹å®šæ–‡ä»¶å¤¹ä¸‹
+
+
+å¯èƒ½å­˜åœ¨çš„é—®é¢˜
+-----------------------------------
+æš‚æ— 
+
+
+æµ‹è¯•å‘½ä»¤
+-----------------------------------
+```
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
+
+data = {
+       "id": "nr_diamond",
+       "type": "module",
+       "name": "align.meta_diamond",
+       "options": {
+           "query": "/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/gao.gene.uniGeneset.faa",
+           "query_type":"prot",
+           "database":"nr",
+           "lines":50000
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+
+æµ‹è¯•ç»“æœè·¯å¾„ï¼š/mnt/ilustre/users/sanger-dev/sg-users/yuanshaohua/annotation/nr/MetaDiamond
+```
+
+
+æµ‹è¯•ç»“æœ
+-----------------------------------
