@@ -1,50 +1,87 @@
-Ïà¹ØĞÔheatmap
+ç›¸å…³æ€§heatmap
 ===========
 
-Tool ËµÃ÷
------------------------------------
 
-PATH
+å·¥å…·PATH
 ---------
+**statistical.corr_heatmap**
 
-**statistical.pearsons_correlation**
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 --------
-½øĞĞÏà¹ØĞÔheatmap·ÖÎö¡£
+è¿›è¡Œç›¸å…³æ€§heatmapåˆ†æã€‚
 
-µ÷ÓÃ³ÌĞò
+
+è°ƒç”¨ç¨‹åº
 -------
 pearsonsCorrelation.py
 
-°²×°Â·¾¶
+å®‰è£…è·¯å¾„
 --------
 /mnt/ilustre/users/sanger-dev/app/bioinfo/statistical/scripts
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
 pearsonsCorrelation.py abundance_table env_table pearsons_correlation pearsons_pvalue method
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "otutable", "type": "infile", "format": "abund_table"},##ÎïÖÖ/¹¦ÄÜ·á¶È±í¸ñ
-{"name": "level", "type": "string", "default": "¶ÔÓ¦Êı¾İ¿â"},##Ñ¡Ôñ·ÖÎöµÄË®Æ½
-{"name": "envtable", "type": "infile", "format": "group_table"},##»·¾³Òò×Ó±í
-{"name": "envlabs", "type": "string", "default": ""},##»·¾³Òò×Ó±êÇ©
-{"name": "method", "type": "string", "default": "pearsonr"},##×öÏà¹ØĞÔ·ÖÎöµÄ·½·¨
-{"name": "env_cluster", "type": "string", "default": "average"},##»·¾³Òò×Ó¾ÛÀà·½·¨Ñ¡Ôñ
-{"name": "species_cluster", "type": "string", "default": "average"},##ÎïÖÖ/¹¦ÄÜ¾ÛÀà·½·¨
-{"name": "cor_table", "type": "outfile", "format": "group_table"},##Êä³öµÄÏà¹ØĞÔ¾ØÕó
-{"name": "pvalue_table", "type": "outfile", "format": "group_table"},##R¶ÔÓ¦µÄPÖµ
-{"name": "top_species", "type": "int", "default": 0},##ÌôÑ¡·á¶ÈÇ°¶àÉÙµÄÎïÖÖ/¹¦ÄÜ
+{"name": "otutable", "type": "infile", "format": "meta.otu.otu_table, meta.otu.tax_summary_dir"},   #ç‰©ç§/åŠŸèƒ½/åŸºå› ä¸°åº¦è¡¨æ ¼
+{"name": "level", "type": "string", "default": "otu"}, # ç‰©ç§æ°´å¹³ï¼Œå½“éå¤šæ ·æ€§æµç¨‹æ—¶ï¼Œ"level"å‚æ•°é‡‡ç”¨é»˜è®¤å€¼"otu"
+{"name": "envtable", "type": "infile", "format": "meta.otu.group_table"},  # ç¯å¢ƒå› å­è¡¨
+{"name": "envlabs", "type": "string", "default": ""},  # ç¯å¢ƒå› å­åç§°
+{"name": "method", "type": "string", "default": "pearsonr"}, # ç›¸å…³æ€§æ–¹æ³•ï¼Œ["pearsonr", "spearmanr", "kendalltau"]
+{"name": "env_cluster", "type": "string", "default": "average"},  # ç¯å¢ƒå› å­èšç±»æ–¹æ³•
+{"name": "species_cluster", "type": "string", "default": "average"}, # ç‰©ç§èšç±»æ–¹æ³•
+{"name": "cor_table", "type": "outfile", "format": "meta.otu.group_table"}, # è®¡ç®—å¾—åˆ°çš„ç›¸å…³æ€§æ•°å€¼è¡¨
+{"name": "pvalue_table", "type": "outfile", "format": "meta.otu.group_table"}, # è®¡ç®—å¾—åˆ°çš„pvalueè¡¨
+{"name": "top_species", "type": "int", "default": 0},åšç›¸å…³æ€§åˆ†æçš„ç‰©ç§æ•°ï¼Œä¸€èˆ¬ä¸º50
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-1.±ØĞëÌá¹©·á¶È±í¸ñºÍ»·¾³Òò×Ó±í¸ñ×÷ÎªÊäÈëÎÄ¼ş£»
+1.å¿…é¡»æä¾›ä¸°åº¦è¡¨æ ¼å’Œç¯å¢ƒå› å­è¡¨æ ¼ä½œä¸ºè¾“å…¥æ–‡ä»¶ã€‚
 
-2.Ñ¡Ôñ×öÏà¹ØĞÔµÄ·ÖÎö·½·¨ºÍÊÇ·ñ×÷¾ÛÀà·ÖÎö£¬¼ÆËãµÃ³öÏàÓ¦½á¹û£¬×÷Îª»­Í¼µÄÊäÈë£»
+2.é€‰æ‹©åšç›¸å…³æ€§çš„åˆ†ææ–¹æ³•å’Œæ˜¯å¦ä½œèšç±»åˆ†æã€‚
 
+3.æœ€ç»ˆè°ƒç”¨pearsonsCorrelation.pyåšç›¸å…³æ€§heatmapåˆ†æï¼Œå¾—åˆ°ç›¸å…³æ€§è¡¨å’Œpvalueè¡¨ã€‚
+
+
+èµ„æºé…ç½®
+-----------------------------------
+```
+self._cpu = 5
+self._memory = '5G'
+```
+
+æµ‹è¯•å‘½ä»¤
+-----------------------------------
+```
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
+
+data = {
+       "id": "corr_heatmap_kendalltau",
+       "type": "tool",
+       "name": "statistical.pearsons_correlation",
+       "options": {
+           "otutable": "/mnt/ilustre/users/sanger-dev/sg-users/zhujuan/corr_heatmap/species.xls",
+           "envtable": "/mnt/ilustre/users/sanger-dev/sg-users/zhujuan/dbRDA/env.xls",
+           "top_species": 20,
+           "method": "kendalltau"
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
+```
+
+æµ‹è¯•ç»“æœ
+-----------------------------------
+æ¨¡å—æµ‹è¯•çš„ç»“æœè·¯å¾„:
+/mnt/ilustre/users/sanger-dev/workspace/20170927/Single_corr_heatmap_kendalltau/PearsonsCorrelation/output
