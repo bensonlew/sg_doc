@@ -14,9 +14,7 @@ pca
 调用程序
 -----------------------------------
 
-clstr_merge.pl
-sort_clstr.pl
-transeq
+ordination.pl
 
 安装路径
 -----------------------------------
