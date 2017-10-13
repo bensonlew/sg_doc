@@ -31,7 +31,7 @@ regression_calculation.py
 ```
        {"name": "group_table", "type": "infile", "format": "toolapps.group_table"},
        {"name": "dis_matrix", "type": "infile", "format": "meta.beta_diversity.distance_matrix"},
-       {"name": "estimators", "type": "outfile", "format": "meta.alpha_diversity.estimators"}
+       {"name": "estimators", "type": "infile", "format": "meta.alpha_diversity.estimators"}
 ```
 
 运行逻辑
