@@ -191,7 +191,7 @@ Sanger Bioinfo
 * 从平台目录下载任务文件夹：
 
     ```
-    python ~/biocluster/scripts/dataexchange/download.py -c "KQUTSF|e0cac412c4956c0879f2025b51d2024b" -t ./target/ -m tsg
+    python ~/biocluster/scripts/dataexchange/v2/download.py -c "上传验证码" -t ./target/ -m tsg
 
     ```
 
