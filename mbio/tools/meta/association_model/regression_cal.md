@@ -20,8 +20,7 @@ regression_calculation.py
 -----------------------------------
 
 ```
- modules.meta.alpha_diversity.py
- modules.meta.beta_diversity.py
+
  tools.meta.beta_diversity.environmental_regression.py
 
 ```
@@ -30,18 +29,15 @@ regression_calculation.py
 -----------------------------------
 
 ```
-       {"name": "otutable", "type": "infile",
-             "format": "meta.otu.otu_table, meta.otu.tax_summary_dir, toolapps.table"}, 
-       {"name": "level", "type": "string", "default": "genus"}
-       {"name": "fun_abundance", "type": "infile", "format": "sequence.profile_table"}, # 功能丰度表格
-       {"name": "group_table", "type": "infile", "format": "toolapps.group_table"}  
-
+       {"name": "group_table", "type": "infile", "format": "toolapps.group_table"},
+       {"name": "dis_matrix", "type": "infile", "format": "meta.beta_diversity.distance_matrix"},
+       {"name": "estimators", "type": "outfile", "format": "meta.alpha_diversity.estimators"}
 ```
 
 运行逻辑
 -----------------------------------
 
-获取物种及功能丰度表，计算其α多样性指数或β多样性指数，并基于该结果进行回归分析。
+基于modules.meta.alpha_diversity.py得到的α多样性指数或modules.meta.beta_diversity.py得到的β多样性指数，进行回归分析。
 
 资源配置
 -----------------------------------
