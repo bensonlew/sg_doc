@@ -1,10 +1,10 @@
-hcluster
+anosim_box
 ==========================
 
 模块Path
 -----------
 
-**tools.meta.beta_diversity.hcluster**
+**tools.meta.beta_diversity.anosim_box**
 
 功能描述
 -----------------------------------
@@ -14,7 +14,7 @@ hcluster
 调用程序
 -----------------------------------
 
-plot-hcluster_tree.pl
+anosim_box.r
 
 安装路径
 -----------------------------------
@@ -27,8 +27,7 @@ plot-hcluster_tree.pl
 -----------------------------------
 
 ```
-perl plot-hcluster_tree.pl -i matrix -o output -m average
-
+Rscript anosim_box.r matrix group 999 output 
 ```
 
 参数设计
@@ -37,21 +36,21 @@ perl plot-hcluster_tree.pl -i matrix -o output -m average
 ```
             {"name": "dis_matrix", "type": "infile",
                 "format": "meta.beta_diversity.distance_matrix"},
-            {"name": "newicktree", "type": "outfile",
-                "format": "meta.beta_diversity.newick_tree"},
-            {"name": "linkage", "type": "string", "default": "average"}
+            {"name": "group", "type": "infile", "format": "meta.otu.group_table"},
+            {"name": "grouplab", "type": "string", "default": ""},
+            {"name": "permutations", "type": "int", "default": 999},
 ```
 
 运行逻辑
 -----------------------------------
 
-根据距离文件计算样品的聚类树
+anosim结果画箱式图
 
 资源配置
 -----------------------------------
 
 ```
-self._cpu = 1
+self._cpu = 2
 self._memory = '3G'
 
 测试命令
@@ -60,11 +59,13 @@ from mbio.workflows.single import SingleWorkflow
 from biocluster.wsheet import Sheet
 
 data = {
-       "id": "hcluster",
+       "id": "anosim_box",
        "type": "tool",
-       "name": "meta.beta_diversity.hcluster",
+       "name": "meta.beta_diversity.anosim_box",
        "options": {
            ""dis_matrix"":"/mnt/ilustre/users/sanger-dev/workspace/20170928/Single_pca/BetaDiversity/DistanceCalc/output/binary_pearson_species.xls"
+           "group_table":"/mnt/ilustre/users/sanger-dev/sg-users/zouxuan/beta_diversity/group"
+           "grouplab":"T,Q"
            }
       }
 
@@ -73,7 +74,7 @@ wf = SingleWorkflow(wsheet)
 wf.run()
 
 模块测试的结果路径:
-/mnt/ilustre/users/sanger-dev/workspace/20170930/Single_hcluster/BetaDiversity/Hcluster
+/mnt/ilustre/users/sanger-dev/workspace/20170930/Single_anosim_box/BetaDiversity/AnosimBox
 
 测试结果
 -----------------------------------
