@@ -51,9 +51,27 @@ self.partial = self.add_tool('statistical.factor_distance')
 测试命令
 -----------------------------------
 ```
+from mbio.workflows.single import SingleWorkflow
+from biocluster.wsheet import Sheet
 
+data = {
+       "id": "partial_mantel_test",
+       "type": "module",
+       "name": "statistical.mantel_test",
+       "options": {
+           "otutable": "/mnt/ilustre/users/sanger-dev/sg-users/zhujuan/corr_heatmap/species.xls",
+           "otumatrixtype": "bray_curtis",
+           "factor": "/mnt/ilustre/users/sanger-dev/sg-users/zhujuan/dbRDA/env.xls",
+           "partial_factor": "LAT",
+           }
+      }
+
+wsheet = Sheet(data=data)
+wf = SingleWorkflow(wsheet)
+wf.run()
 ```
 
 测试结果
 -----------------------------------
 模块测试的结果路径:
+/mnt/ilustre/users/sanger-dev/workspace/20171017/Single_partial_mantel_test/MantelTest/output
