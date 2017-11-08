@@ -21,7 +21,7 @@ regression_calculation.py
 
 ```
 
- tools.meta.beta_diversity.environmental_regression.py
+modules\statistical\regression_calculation.py
 
 ```
 
@@ -37,7 +37,7 @@ regression_calculation.py
 运行逻辑
 -----------------------------------
 
-基于modules.meta.alpha_diversity.py得到的α多样性指数或modules.meta.beta_diversity.py得到的β多样性指数，进行回归分析。
+基于tool.meta.alpha_diversity.estimators.py得到的α多样性指数或modules.meta.beta_diversity.beta_diversity.py得到的β多样性指数，进行回归分析。
 
 资源配置
 -----------------------------------
