@@ -1,7 +1,7 @@
-ÖÊ¿ØÖĞseq_prepÈ¥½ÓÍ·
+è´¨æ§ä¸­seq_prepå»æ¥å¤´
 ===========
 
-Tool ËµÃ÷
+Tool è¯´æ˜
 -----------------------------------
 
 PATH
@@ -9,39 +9,39 @@ PATH
 
 **sequence.seq_prep**
 
-³ÌĞò¼°°²×°Â·¾¶
+ç¨‹åºåŠå®‰è£…è·¯å¾„
 ------------
 /bioinfo/seq/SeqPrep
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 --------
-Êı¾İÖÊ¿Ø£¨QC£©ÖĞÏÈÈ¥³ıĞòÁĞÁ½¶ËµÄ½ÓÍ·
+æ•°æ®è´¨æ§ï¼ˆQCï¼‰ä¸­å…ˆå»é™¤åºåˆ—ä¸¤ç«¯çš„æ¥å¤´
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
 SeqPrep  -f raw.1.fq  -r raw.2.fq  -1 clip.1.fq.gz  -2 clip.2.fq.gz  -q 20  -L 50  -A adapter1  -B adapter2
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "fastq_r", "type": "infile", "format": "sequence.fastq"},  # ÊäÈëÎÄ¼şPEµÄÓÒ¶ËĞòÁĞ
-{"name": "fastq_l", "type": "infile", "format": "sequence.fastq"},  # PEµÄ×ó¶ËĞòÁĞ
-{"name": "seqprep_r", "type": "outfile", "format": "sequence.fastq"},  # PEµÄÓÒ¶ËÊä³ö½á¹û
-{"name": "seqprep_l", "type": "outfile", "format": "sequence.fastq"},  # PEµÄ×ó¶ËÊä³ö½á¹û
-{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqÎÄ¼ş¼Ğ
-{"name": "seqprep_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # fastqÎÄ¼ş¼Ğ
+{"name": "fastq_r", "type": "infile", "format": "sequence.fastq"},  # è¾“å…¥æ–‡ä»¶PEçš„å³ç«¯åºåˆ—
+{"name": "fastq_l", "type": "infile", "format": "sequence.fastq"},  # PEçš„å·¦ç«¯åºåˆ—
+{"name": "seqprep_r", "type": "outfile", "format": "sequence.fastq"},  # PEçš„å³ç«¯è¾“å‡ºç»“æœ
+{"name": "seqprep_l", "type": "outfile", "format": "sequence.fastq"},  # PEçš„å·¦ç«¯è¾“å‡ºç»“æœ
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqæ–‡ä»¶å¤¹
+{"name": "seqprep_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # fastqæ–‡ä»¶å¤¹
 {"name": "quality", "type": "int", "default": 30},
 {"name": "length", "type": "int", "default": 30},
 {"name": "adapter_a", "type": "string", "default": "AGATCGGAAGAGCACACGTC"},
 {"name": "adapter_b", "type": "string", "default": "AGATCGGAAGAGCGTCGTGT"},
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-1.ÊäÈë²ÎÊı£ºfqµÄÎÄ¼ş¼Ğ£¬ÄÚ¸½ËùÓĞÑùÆ·µÄfqÎÄ¼şÒÔ¼°¶ÔÓ¦list£»
+1.è¾“å…¥å‚æ•°ï¼šfqçš„æ–‡ä»¶å¤¹ï¼Œå†…é™„æ‰€æœ‰æ ·å“çš„fqæ–‡ä»¶ä»¥åŠå¯¹åº”listï¼›
 
-2.±éÀúËùÓÃÑùÆ·£¬ÓÃSeqPrepÈí¼şÈ¥³ıĞòÁĞ½ÓÍ·£»
+2.éå†æ‰€ç”¨æ ·å“ï¼Œç”¨SeqPrepè½¯ä»¶å»é™¤åºåˆ—æ¥å¤´ï¼›
 
-3.Êä³öÈ¥½ÓÍ·ºóµÄĞòÁĞ£¬²¢Éú³É¶ÔÓ¦µÄlistÎÄ¼ş¹©ÏÂ»·½ÚÊ¹ÓÃ¡£
+3.è¾“å‡ºå»æ¥å¤´åçš„åºåˆ—ï¼Œå¹¶ç”Ÿæˆå¯¹åº”çš„listæ–‡ä»¶ä¾›ä¸‹ç¯èŠ‚ä½¿ç”¨ã€‚
