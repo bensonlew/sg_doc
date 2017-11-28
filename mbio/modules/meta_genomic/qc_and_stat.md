@@ -1,37 +1,52 @@
-qc_and_stat
-==========================
+ÖÊ¿Ø
+===========
 
-æ¨¡å—Path
------------
-
-**modules.meta_genomic.qc_and_stat**
-
-åŠŸèƒ½æè¿°
+Moudle ËµÃ÷
 -----------------------------------
 
-å®åŸºå› è´¨æ§åŠè´¨æ§å‰ååºåˆ—ä¿¡æ¯ç»Ÿè®¡æ¨¡å—
+PATH
+---------
 
-ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
------------------------------------
+**meta_genomic.qc_and_stat**
 
+³ÌĞò¼°°²×°Â·¾¶
+------------
+
+/app/bioinfo/seq/SeqPrep
+
+/app/bioinfo/seq/sickle-1.33/sickle
+
+¹¦ÄÜÃèÊö
+--------
+Seqprep¶ÔĞòÁĞ3¡¯¶ËºÍ5¡¯¶Ë½øĞĞÖÊÁ¿¼ôÇĞ£»
+SickleÈ¥³ı¼ôÇĞºó³¤¶ÈĞ¡ÓÚ50bp¡¢Æ½¾ùÖÊÁ¿ÖµµÍÓÚ20ÒÔ¼°º¬N¼î»ùµÄreads£¬±£Áô¸ßÖÊÁ¿µÄpair-end readsºÍ single-end reads£»
+Í³¼ÆĞòÁĞÏà¹ØĞÅÏ¢
+
+Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+------------------
 ```
-     self.qc = self.add_module("sequence.hiseq_qc")  # ä½¿ç”¨ç»Ÿä¸€çš„è´¨æ§æ¨¡å—ï¼Œç”¨å‚æ•°æ§åˆ¶ä½¿ç”¨è¯¥æ¨¡å—
-     self.qc_stat = self.add_tool("sequence.sickle_stat")  # è´¨æ§å‰ååºåˆ—ä¿¡æ¯ç»Ÿè®¡
+SeqPrep  -f raw.1.fq  -r raw.2.fq  -1 clip.1.fq.gz  -2 clip.2.fq.gz  -q 20  -L 50  -A adapter1  -B adapter2
+sickle pe  -f clip.1.fq.gz  -r clip.2.fq.gz -t sanger -q 20 -l 50 -n -o clip.sickle.1.fq -p clip.sickle.2.fq -s clip.sickle.s.fq
 ```
 
-å‚æ•°è®¾è®¡
------------------------------------
-
+²ÎÊıÉèÖÃ
+--------
 ```
-			{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # è¾“å…¥çš„fastqæ–‡ä»¶å¤¹å…¶ä¸­åŒ…å«listæ–‡ä»¶
-            {"name": "insert_size", "type": "infile", "format": "paternity_test.tab"},  # å…³äºå„ä¸ªæ ·æœ¬çš„insert_sizeçš„æ–‡ä»¶
-            {"name": "stat_dir", "type": "infile", "format": "sequence.baif_dir"},  # è¾“å…¥çš„ç¢±åŸºè´¨é‡ç»Ÿè®¡ç»“æœæ–‡ä»¶å¤¹
-            {"name": "sickle_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # è®¾ç½®ç»“æœæ–‡ä»¶åé¢è¦ç”¨
-            {"name": "before_qc_stat", "type": "outfile", "format": "paternity_test.tab"},  # åŸå§‹åºåˆ—ç»Ÿè®¡ä¿¡æ¯æ–‡ä»¶
-            {"name": "after_qc_stat", "type": "outfile", "format": "paternity_test.tab"}  # è´¨æ§åçš„é«˜è´¨é‡åºåˆ—ä¿¡æ¯
-``` 
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # ÊäÈëµÄfastqÎÄ¼ş¼ĞÆäÖĞ°üº¬listÎÄ¼ş
+{"name": "insert_size", "type": "infile", "format": "sequence.profile_table"},  # ¹ØÓÚ¸÷¸öÑù±¾µÄinsert_sizeµÄÎÄ¼ş
+{"name": "stat_dir", "type": "infile", "format": "sequence.baif_dir"},  # ÊäÈëµÄ¼î»ùÖÊÁ¿Í³¼Æ½á¹ûÎÄ¼ş¼Ğ
+{"name": "result_fq_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # ÉèÖÃ½á¹ûÎÄ¼şºóÃæÒªÓÃ
+{"name": "before_qc_stat", "type": "outfile", "format": "sequence.profile_table"},  # Ô­Ê¼ĞòÁĞÍ³¼ÆĞÅÏ¢ÎÄ¼ş
+{"name": "after_qc_stat", "type": "outfile", "format": "sequence.profile_table"}  # ÖÊ¿ØºóµÄ¸ßÖÊÁ¿ĞòÁĞĞÅÏ¢
+```
 
-è¿è¡Œé€»è¾‘
------------------------------------
-
-è°ƒç”¨hiseq_qcæ¨¡å—å¯¹è¾“å…¥çš„fastqæ–‡ä»¶è¿›è¡Œè´¨æ§ï¼Œç»“æŸåï¼Œæ ¹æ®è´¨æ§å‰ä¼ å…¥çš„ç¢±åŸºè´¨é‡ç»Ÿè®¡æ–‡ä»¶ä»¥åŠè´¨æ§ç”Ÿæˆçš„é«˜è´¨é‡åºåˆ—æ–‡ä»¶å¤¹åˆ©ç”¨toolï¼šsickle_statè¿›è¡Œä¿¡æ¯ç»Ÿè®¡
+ÔËĞĞÂß¼­
+-------
+µ±"fastq_dir"¡¢"insert_size"¡¢"stat_dir"Èı¸ö²ÎÊı¶¼Âú×ãÊ±£¬µ÷ÓÃsequence.hiseq_qcÄ£¿éÈ¥¿ØÖÆSeqPrep¡¢sickle,»ñÈ¡
+sequence.meta_genomicÄ£¿éÉú³ÉµÄfastqºÍÔ­Ê¼Êı¾İµÄlistÎÄ¼şµÈ½á¹û:
+```
+1.ÆäÖĞfastq£¨Ô­Ê¼Êı¾İlist£©×÷ÎªSeqPrepµÄÊäÈëÎÄ¼ş£¬Éú³ÉµÄfastqºÍÏàÓ¦µÄlist[sequence.seq_prep]£»
+2.SeqPrepÉú³ÉµÄfastq£¨SeqPrep µÄlist£©×÷ÎªsickleµÄÊäÈëÎÄ¼ş£¬Í¬ÑùÉú³ÉfastqºÍÏàÓ¦µÄlist[sequence.sickle]£»
+3.¸ù¾İsickle listÈ¥³ı³¤¶È<50bpµÄreadsºó×÷ÎªÖÊ¿ØºóµÄ½á¹û[sequence.remove_short_reads];
+4.½øĞĞÖÊ¿ØÇ°ºóĞòÁĞĞÅÏ¢Í³¼Æ[sequence.sickle_stat]¡£
+```
