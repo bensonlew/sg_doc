@@ -1,7 +1,7 @@
-ÖÊ¿Øhiseq_qc
+è´¨æ§hiseq_qc
 ===========
 
-Moudle ËµÃ÷
+Moudle è¯´æ˜
 -----------------------------------
 
 PATH
@@ -9,18 +9,18 @@ PATH
 
 **sequence.hiseq_qc**
 
-³ÌĞò¼°°²×°Â·¾¶
+ç¨‹åºåŠå®‰è£…è·¯å¾„
 ------------
 
 /app/bioinfo/seq/SeqPrep
 
 /app/bioinfo/seq/sickle-1.33/sickle
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 --------
-hiseqÊı¾İÖ¸¿ØÄ£¿é£¬Ö÷Òªµ÷ÓÃseqprep¡¢sickleÈí¼ş×öÖÊÁ¿¼ôÇĞÓëÈ¥½ÓÍ·
+hiseqæ•°æ®æŒ‡æ§æ¨¡å—ï¼Œä¸»è¦è°ƒç”¨seqprepã€sickleè½¯ä»¶åšè´¨é‡å‰ªåˆ‡ä¸å»æ¥å¤´
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
 add_tool('sequence.fastx_clipper')
@@ -28,26 +28,26 @@ add_tool('sequence.seq_prep')
 add_tool('sequence.sickle')
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqÎÄ¼ş¼Ğ
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqæ–‡ä»¶å¤¹
 {"name": "fq_type", "type": "string"},  # PE OR SE
-{"name": "clip_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # SEÈ¥½ÓÍ·Êä³ö½á¹ûÎÄ¼ş¼Ğ
-{"name": "sickle_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # ÖÊÁ¿¼ôÇĞÊä³ö½á¹ûÎÄ¼ş¼Ğ(°üÀ¨×óÓÒ¶Î)
-{"name": "sickle_r_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # ÖÊÁ¿¼ôÇĞÓÒ¶ËÊä³ö½á¹ûÎÄ¼ş¼Ğ
-{"name": "sickle_l_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # ÖÊÁ¿¼ôÇĞ×ó¶ËÊä³ö½á¹ûÎÄ¼ş¼Ğ
-{"name": "seqprep_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # PEµÄÈ¥½ÓÍ·Êä³ö½á¹ûÎÄ¼ş
-{"name": "fq_s", "type": "outfile", "format": "sequence.fastq"},  # SEËùÓĞÑù±¾cat¼¯ºÏ
-{"name": "fq_r", "type": "outfile", "format": "sequence.fastq"},  # PEËùÓĞÓÒ¶ËĞòÁĞÑù±¾cat¼¯ºÏ
-{"name": "fq_l", "type": "outfile", "format": "sequence.fastq"},  # PEËùÓĞ×ó¶ËĞòÁĞÑù±¾cat¼¯ºÏ
-{"name": "quality_q", "type": "int", "default": 30},  # ÖÊÁ¿¼ôÇĞ¼î»ùÖÊÁ¿ sickle
-{"name": "length_q", "type": "int", "default": 50},  # ÖÊÁ¿¼ôÇĞ¼î»ù³¤¶È sickle
+{"name": "clip_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # SEå»æ¥å¤´è¾“å‡ºç»“æœæ–‡ä»¶å¤¹
+{"name": "sickle_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # è´¨é‡å‰ªåˆ‡è¾“å‡ºç»“æœæ–‡ä»¶å¤¹(åŒ…æ‹¬å·¦å³æ®µ)
+{"name": "sickle_r_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # è´¨é‡å‰ªåˆ‡å³ç«¯è¾“å‡ºç»“æœæ–‡ä»¶å¤¹
+{"name": "sickle_l_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # è´¨é‡å‰ªåˆ‡å·¦ç«¯è¾“å‡ºç»“æœæ–‡ä»¶å¤¹
+{"name": "seqprep_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # PEçš„å»æ¥å¤´è¾“å‡ºç»“æœæ–‡ä»¶
+{"name": "fq_s", "type": "outfile", "format": "sequence.fastq"},  # SEæ‰€æœ‰æ ·æœ¬caté›†åˆ
+{"name": "fq_r", "type": "outfile", "format": "sequence.fastq"},  # PEæ‰€æœ‰å³ç«¯åºåˆ—æ ·æœ¬caté›†åˆ
+{"name": "fq_l", "type": "outfile", "format": "sequence.fastq"},  # PEæ‰€æœ‰å·¦ç«¯åºåˆ—æ ·æœ¬caté›†åˆ
+{"name": "quality_q", "type": "int", "default": 30},  # è´¨é‡å‰ªåˆ‡ç¢±åŸºè´¨é‡ sickle
+{"name": "length_q", "type": "int", "default": 50},  # è´¨é‡å‰ªåˆ‡ç¢±åŸºé•¿åº¦ sickle
 {"name": "pipe_type", "type": "string", "default": ""},  # add by zhouxuan 20170527
-{"name": "quality_s", "type": "int", "default": 30},  # ÖÊÁ¿ seq_prep # add by zhouxuan 20170606
-{"name": "length_s", "type": "int", "default": 30},  # ³¤¶È seq_prep # add by zhouxuan 20170606
+{"name": "quality_s", "type": "int", "default": 30},  # è´¨é‡ seq_prep # add by zhouxuan 20170606
+{"name": "length_s", "type": "int", "default": 30},  # é•¿åº¦ seq_prep # add by zhouxuan 20170606
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-¶ÔÔ­Ê¼Êı¾İÖ÷Òªµ÷ÓÃseqprep¡¢sickleÈí¼ş½øĞĞÖÊ¿Ø
+å¯¹åŸå§‹æ•°æ®ä¸»è¦è°ƒç”¨seqprepã€sickleè½¯ä»¶è¿›è¡Œè´¨æ§
