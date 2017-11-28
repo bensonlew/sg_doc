@@ -1,7 +1,7 @@
-ÖÊ¿ØÖĞsickleÈ¥µÍÖÊ
+è´¨æ§ä¸­sickleå»ä½è´¨
 ===========
 
-Tool ËµÃ÷
+Tool è¯´æ˜
 -----------------------------------
 
 PATH
@@ -9,32 +9,32 @@ PATH
 
 **sequence.sickle**
 
-³ÌĞò¼°°²×°Â·¾¶
+ç¨‹åºåŠå®‰è£…è·¯å¾„
 ------------
 /bioinfo/seq/sickle-1.33/sickle
 
-¹¦ÄÜÃèÊö
+åŠŸèƒ½æè¿°
 --------
-Êı¾İÖÊ¿Ø£¨QC£©ÖĞÈ¥³ıµÍÖÊÁ¿²¿·Ö
+æ•°æ®è´¨æ§ï¼ˆQCï¼‰ä¸­å»é™¤ä½è´¨é‡éƒ¨åˆ†
 
-Ö÷ÒªÃüÁî¼°¹¦ÄÜÄ£¿é
+ä¸»è¦å‘½ä»¤åŠåŠŸèƒ½æ¨¡å—
 ------------------
 ```
 sickle pe  -f clip.1.fq.gz  -r clip.2.fq.gz -t sanger -q 20 -l 50 -n -o clip.sickle.1.fq -p clip.sickle.2.fq -s clip.sickle.s.fq
 ```
 
-²ÎÊıÉèÖÃ
+å‚æ•°è®¾ç½®
 --------
 ```
-{"name": "fastq_r", "type": "infile", "format": "sequence.fastq"},  # ÊäÈëÎÄ¼şPEµÄÓÒ¶ËĞòÁĞ
-{"name": "fastq_l", "type": "infile", "format": "sequence.fastq"},  # PEµÄ×ó¶ËĞòÁĞ
-{"name": "fastq_s", "type": "infile", "format": "sequence.fastq"},  # SEĞòÁĞ
-{"name": "sickle_r", "type": "outfile", "format": "sequence.fastq"},  # PEµÄÓÒ¶ËÊä³ö½á¹û
-{"name": "sickle_l", "type": "outfile", "format": "sequence.fastq"},  # PEµÄ×ó¶ËÊä³ö½á¹û
-{"name": "sickle_un", "type": "outfile", "format": "sequence.fastq"},  # PEµÄÎ´Åä¶ÔÊä³ö½á¹û
-{"name": "sickle_s", "type": "outfile", "format": "sequence.fastq"},  # SEÊä³ö½á¹û
-{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqÎÄ¼ş¼Ğ
-{"name": "sickle_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # fastqÎÄ¼ş¼Ğ
+{"name": "fastq_r", "type": "infile", "format": "sequence.fastq"},  # è¾“å…¥æ–‡ä»¶PEçš„å³ç«¯åºåˆ—
+{"name": "fastq_l", "type": "infile", "format": "sequence.fastq"},  # PEçš„å·¦ç«¯åºåˆ—
+{"name": "fastq_s", "type": "infile", "format": "sequence.fastq"},  # SEåºåˆ—
+{"name": "sickle_r", "type": "outfile", "format": "sequence.fastq"},  # PEçš„å³ç«¯è¾“å‡ºç»“æœ
+{"name": "sickle_l", "type": "outfile", "format": "sequence.fastq"},  # PEçš„å·¦ç«¯è¾“å‡ºç»“æœ
+{"name": "sickle_un", "type": "outfile", "format": "sequence.fastq"},  # PEçš„æœªé…å¯¹è¾“å‡ºç»“æœ
+{"name": "sickle_s", "type": "outfile", "format": "sequence.fastq"},  # SEè¾“å‡ºç»“æœ
+{"name": "fastq_dir", "type": "infile", "format": "sequence.fastq_dir"},  # fastqæ–‡ä»¶å¤¹
+{"name": "sickle_dir", "type": "outfile", "format": "sequence.fastq_dir"},  # fastqæ–‡ä»¶å¤¹
 {"name": "quality", "type": "int", "default": 30},
 {"name": "length", "type": "int", "default": 30},
 {"name": "qual_type", "type": "string", "default": 'sanger'},
@@ -43,10 +43,10 @@ sickle pe  -f clip.1.fq.gz  -r clip.2.fq.gz -t sanger -q 20 -l 50 -n -o clip.sic
 {"name": "pipeline", "type": "string", "default": ''}
 ```
 
-ÔËĞĞÂß¼­
+è¿è¡Œé€»è¾‘
 -------
-1.ÊäÈë²ÎÊı£ºfqµÄÎÄ¼ş¼Ğ£¬ÄÚ¸½ËùÓĞÑùÆ·µÄfqÎÄ¼şÒÔ¼°¶ÔÓ¦list£¨¼´seq_prepµÄÊä³ö½á¹û£©£»
+1.è¾“å…¥å‚æ•°ï¼šfqçš„æ–‡ä»¶å¤¹ï¼Œå†…é™„æ‰€æœ‰æ ·å“çš„fqæ–‡ä»¶ä»¥åŠå¯¹åº”listï¼ˆå³seq_prepçš„è¾“å‡ºç»“æœï¼‰ï¼›
 
-2.±éÀúËùÓÃÑùÆ·£¬ÓÃsickleÈí¼şÈ¥µÍÖÊĞòÁĞ£»
+2.éå†æ‰€ç”¨æ ·å“ï¼Œç”¨sickleè½¯ä»¶å»ä½è´¨åºåˆ—ï¼›
 
-3.Êä³öÖÊ¿ØºóµÄĞòÁĞ£¬²¢Éú³É¶ÔÓ¦µÄlistÎÄ¼ş¹©ÏÂ»·½ÚÊ¹ÓÃ¡£
+3.è¾“å‡ºè´¨æ§åçš„åºåˆ—ï¼Œå¹¶ç”Ÿæˆå¯¹åº”çš„listæ–‡ä»¶ä¾›ä¸‹ç¯èŠ‚ä½¿ç”¨ã€‚
