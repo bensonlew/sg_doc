@@ -19,7 +19,7 @@ cd-hit-est
 安装路径
 -----------------------------------
 
-/mnt/ilustre/users/sanger-dev/app/bioinfo/gene-structure/TransDecoder-3.0.0/util/bin/  # cd-hit软件安装路径`
+/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/cd-hit-v4.6.1-2012-08-27/ # cd-hit软件安装路径`
 
 
 
@@ -38,7 +38,7 @@ cd-hit-est -i gene.geneset.tmp.fa.div-n -o gene.geneset.tmp.fa.div-n/o -c 0.95 -
             {"name": "qunum", "type": "int", "default": 0},  # fasta编号
             {"name": "identity", "type": "float", "default": 0.95},  ##给出cdhit的参数identity
             {"name": "coverage", "type": "float", "default": 0.9},  # 给出cdhit的参数coverage
-            {"name": "memory_limit", "type": "int", "default": 0},  # 内存大小，0为无限制
+            {"name": "memory_limit", "type": "int", "default": 10000},  # 内存大小，0为无限制
             {"name": "method", "type": "int", "default": 0},  # 1为全局比对，0为局部比对
             {"name": "direction", "type": "int", "default": 1},  # 1为双向比对，0为单向比对
             {"name": "num_threads", "type": "int", "default": 8},  # cpu数
