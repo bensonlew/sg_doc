@@ -19,7 +19,7 @@ cd-hit-est-2d
 安装路径
 -----------------------------------
 
-/mnt/ilustre/users/sanger-dev/app/bioinfo/gene-structure/TransDecoder-3.0.0/util/bin/  # cd-hit软件安装路径`
+/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/cd-hit-v4.6.1-2012-08-27/ # cd-hit软件安装路径`
 
 
 
