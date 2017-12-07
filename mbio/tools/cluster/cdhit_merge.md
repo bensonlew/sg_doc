@@ -21,7 +21,7 @@ transeq
 安装路径
 -----------------------------------
 
-`/mnt/ilustre/users/sanger-dev/app/bioinfo/gene-structure/TransDecoder-3.0.0/util/bin/  # cd-hit软件安装路径`
+`/mnt/ilustre/users/sanger-dev/app/bioinfo/uniGene/cd-hit-v4.6.1-2012-08-27 # cd-hit软件安装路径`
 `/mnt/ilustre/users/sanger-dev/app/bioinfo/seq/EMBOSS-6.6.0/emboss/transeq  # transeq安装路径`
 
 
@@ -56,8 +56,9 @@ transeq -sequence gene.uniGeneset.fa -table 11 -trim -outseq gene.uniGeneset.faa
 -----------------------------------
 
 ```
-self._cpu = 2
-self._memory = '3G'
+        self._cpu = 1
+        self._memory = str(len(os.listdir(self.option("compare_dir").prop['path'])) / 6 + 1) + 'G'
+```
 
 测试命令
 -----------------------------------
