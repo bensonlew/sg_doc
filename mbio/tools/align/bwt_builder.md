@@ -47,7 +47,7 @@ bwt_build
 -----------------------------------
 
 ```
-self._cpu = 10
+self._cpu = 2
 self._memory = '5G'
 
 ```
