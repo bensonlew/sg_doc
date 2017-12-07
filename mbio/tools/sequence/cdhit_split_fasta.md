@@ -48,8 +48,8 @@ cd-hit-div -i gene.geneset.tmp.fa -o gene.geneset.tmp.fa.div -div n
 -----------------------------------
 
 ```
-self._cpu = 2
-self._memory = '3G'
+        self._cpu = 1
+        self._memory = str(os.path.getsize(self.option("gene_tmp_fa").prop['path']) / 100000000 + 2) + 'G'
 ```
 
 测试命令
