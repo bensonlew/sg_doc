@@ -17,21 +17,24 @@ fastq_ungz
 -----------------------------------
 
 ```
-subprocess.check_call('gunzip -c ' + fastq + " > " + new_fastq, shell=True)
+ subprocess.check_output('gunzip -c ' + fastq + " > " + new_fastq, shell=True)
 ```
 
 参数设计
 -----------------------------------
 
 ```
-    {"name": "fastq", "type": "infile", "format": "sequence.fastq"},  # 需要被解压的文件
-    {"name": "result_path", "type": "string"} # 解压后放置的位置
+{"name": "fastq", "type": "string"},  # 样品的压缩文件，当有补测样品时需要用空格连接文件名如：“a.R1.gz a1.R1.gz”
+{"name": "sample_name", "type": "string"},  # 样品名
+{"name": "direction", "type": "string"},	# 序列方向，1/2或r/l
+{"name": "result_path", "type": "string"}  # 输出文件存放路径
 ``` 
 
 运行逻辑
 -----------------------------------
 
-解压
+将样品压缩文件直接解压解压
+
 
 资源配置
 -----------------------------------

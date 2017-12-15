@@ -22,10 +22,9 @@ packages.statistical.env_vif
 --------
 ```
 {"name": "abundtable", "type": "infile", "format": "meta.otu.otu_table,meta.otu.tax_summary_dir"},  # 物种/功能/基因丰度表格
-{"name": "level", "type": "string", "default": "otu"}  # 物种水平，当非多样性流程时，"level"参数采用默认值"otu"
-{"name": "group", "type": "infile", "format": "meta.otu.group_table"},  # 分组表格
-{"name": "envtable", "type": "infile", "format": "group_table"},  # 环境因子表
+{"name": "envtable", "type": "infile", "format": "meta.otu.group_table"},  # 环境因子表
 {"name": "viflim“, "type": "int", "default": 10},  # 膨胀因子的筛选阈值[10-20]
+{"name": "method", "type": "string", "default": ""},  # rda|cca，默认根据 DCA result（DCA1>=3.5,CCA;DCA1<3.5,RDA）
 ```
 
 运行逻辑
@@ -40,8 +39,8 @@ packages.statistical.env_vif
 资源配置
 ------------------------
 ```
-self._cpu = 
-self._memory = ''
+self._cpu = 2
+self._memory = '3G'
 ```
 
 测试命令

@@ -4,7 +4,7 @@ venn
 
 工具PATH
 -----------
-**graph.venn**
+**graph.venn_table**
 
 
 功能描述
@@ -22,9 +22,10 @@ packages.graph.venn_table
 参数设计
 -----------------------------------
 ```
-{"name": "otu_table", "type": "infile", "format": "meta.otu.otu_table,meta.otu.tax_summary_dir,denovo_rna.express.express_matrix,toolapps.table"},  # 物种/功能/基因丰度表格
-{"name": "group_table", "type": "infile", "format": " meta.otu.group_table, toolapps.group_table"},  # 分组文件，可挑选样品/合并分组，组数不能大于六组
-{"name": "level", "type": "string", "default": "otu"}  # 物种水平，当非多样性流程时，"level"参数采用默认值"otu"
+            {"name": "otu_table", "type": "infile", "format": "meta.otu.otu_table,meta.otu.tax_summary_dir,denovo_rna.express.express_matrix,toolapps.table"},
+            {"name": "group_table", "type": "infile", "format": " meta.otu.group_table, toolapps.group_table"},  # 输入的group表格,不能大于留住
+            {"name": "level", "type": "string", "default": "otu"},  # 物种水平
+            {"name": "analysis_model", "type": "string", "default": ""}  # venn结果中物种/功能的连接符，因宏基因组的功能名称中含有逗号与默认连接符冲突，特设mg
 ```
 
 
@@ -32,14 +33,16 @@ packages.graph.venn_table
 -----------------------------------
 1. "otu_table"丰度表和"group_table"分组文件必须提供，当是多样性流程时，"level"可选物种水平eg：genus/species。
 
-2. 根据分组去处理丰度表格，用于R统计生成作图文件。
+2. 当流程为宏基因组时，"analysis_model"需设置，不为空即可，建议为“mg”。
+
+3. 根据分组去处理丰度表格，用于R统计生成作图文件。
 
 
 资源配置
 ------------------------
 ```
-self._cpu = 10
-self._memory = '10G'
+self._cpu = 1
+self._memory = '5G'
 ```
 
 测试命令
@@ -55,6 +58,7 @@ data = {
        "options": {
            "otu_table": "/mnt/ilustre/users/sanger-dev/sg-users/zhujuan/otu_table.xls",
            "group_table": "/mnt/ilustre/users/sanger-dev/sg-users/zhujuan/group",
+           "analysis_model": "mg"
            }
       }
 
